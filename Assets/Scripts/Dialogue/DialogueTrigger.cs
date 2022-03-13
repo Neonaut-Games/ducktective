@@ -6,6 +6,7 @@ public class DialogueTrigger : MonoBehaviour
 
     public void TriggerDialogue()
     {
+        Debug.Log("Dialogue was triggered by " + gameObject.name);
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
     }
 

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,7 +11,7 @@ public class MainMenu : MonoBehaviour
 
     public void About()
     {
-        Application.OpenURL("http://ducktective.coopersully.me/about/");
+        Application.OpenURL("https://ducktective.coopersully.me/about/");
     }
     
     public void QuitGame()

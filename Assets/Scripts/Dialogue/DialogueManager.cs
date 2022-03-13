@@ -6,23 +6,28 @@ using UnityEngine;
 public class DialogueManager : MonoBehaviour
 {
     public Animator dialogueBox;
+    public Animator startButton;
     public TextMeshProUGUI messageElement;
     public TextMeshProUGUI authorElement;
-    
-    private Queue<string> _messages;
-    
-    void Start()
-    {
-        _messages = new Queue<string>();
-    }
 
+    private Dictionary<int, KeyValuePair<string, string>> _dialoguePackage;
+    private Queue<KeyValuePair<string, string>> _messageQueue;
+
+    // Initializes private variables
+    private void Start()
+    {
+        _messageQueue = new Queue<KeyValuePair<string, string>>();
+    }
+    
+    // Shows & hides dialogue elements all at once
     private void ShowElements(bool activity)
     {
-        //dialogueBox.gameObject.SetActive(activity);
+        startButton.SetBool("isEnabled", !activity);
         dialogueBox.SetBool("isOpen", activity);
     }
 
-    IEnumerator AnimateMessage(string  message)
+    // Gives the "write-on" animation for each message
+    private IEnumerator AnimateMessage(string  message)
     {
         messageElement.SetText("");
         foreach (char character in message)
@@ -32,40 +37,57 @@ public class DialogueManager : MonoBehaviour
         }
     }
     
+    /* !START! - Initiates the dialogue sequence.
+    This function is called by DialogueTrigger only. */
     public void StartDialogue(Dialogue dialogue)
     {
-        Debug.Log("Dialogue with " +  dialogue.author + " was initiated.");
-        
-        authorElement.SetText(dialogue.author);
-        
-        _messages.Clear();
-        foreach (string message in dialogue.messages)
+        // Get packaged dialogue
+        _dialoguePackage = dialogue.GetPackage();
+
+        // Log to console
+        Debug.Log("A new dialogue is being initiated.");
+
+        // Queue each dialogue entry from package into the messages
+        _messageQueue.Clear();
+        foreach (KeyValuePair<string, string> entry in _dialoguePackage.Values)
         {
-            _messages.Enqueue(message);
+            Debug.Log("QUEUEING DIALOGUE ENTRY >> Key = {" + entry.Key + "}, Value=  {" + entry.Value + "}");
+            _messageQueue.Enqueue(entry);
         }
 
+        // Make dialogue elements visible to the user
+        ShowElements(true); 
+        
+        // Display & animate dialogue to the user
         DisplayNextMessage();
-        ShowElements(true); // Make dialogue elements visible.
     }
 
-    public void DisplayNextMessage()
+    private void DisplayNextMessage()
     {
-        // If there are no messages left, end the dialogue
-        if (_messages.Count < 1)
+        // If there are no messages left in the queue, end the dialogue
+        if (_messageQueue.Count == 0)
         {
             EndDialogue();
             return;
         }
+        
+        // Load the current message's author and message
+        KeyValuePair<string, string> subpackage = _messageQueue.Dequeue();
+        string author = subpackage.Key;
+        string message = subpackage.Value;
 
-        string message = _messages.Dequeue();
+        // Log the message to the console
+        Debug.Log("Dialogue >> " + author + ": " + message);
+        
+        // Set the current author
+        authorElement.SetText(author);
 
         // Animate the next message onto the TextMeshProUI element (messageElement)
-        Debug.Log("Dialogue >> " + message);
         StopAllCoroutines(); // Debug in-case player continues without typing finishing.
         StartCoroutine(AnimateMessage(message));
     }
 
-    public void EndDialogue()
+    private void EndDialogue()
     {
         Debug.Log("Dialogue was was abandoned/ended.");
         ShowElements(false); // Make dialogue elements invisible.
