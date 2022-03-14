@@ -7,6 +7,7 @@ using UnityEngine.Networking.PlayerConnection;
 [Serializable]
 public class Dialogue
 {
+    
     [TextArea(3, 10)] [SerializeField] private string[] messages;
     
     public Dictionary<int, KeyValuePair<string, string>> GetPackage()
@@ -28,7 +29,6 @@ public class Dialogue
             dialogue.Add(i, new KeyValuePair<string, string>(authorEntry, messageEntry));
             Debug.Log("PACKAGING DIALOGUE ENTRY >> Key = {" + authorEntry + "}, Value=  {" + messageEntry + "}");
         }
-
         return dialogue;
     }
 }

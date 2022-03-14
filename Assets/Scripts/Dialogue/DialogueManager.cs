@@ -1,14 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using TMPro;
 using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
+    public CinemachineVirtualCamera virtualCamera;
     public Animator dialogueBox;
     public Animator startButton;
     public TextMeshProUGUI messageElement;
     public TextMeshProUGUI authorElement;
+    public Func<GameObject> test;
 
     private Dictionary<int, KeyValuePair<string, string>> _dialoguePackage;
     private Queue<KeyValuePair<string, string>> _messageQueue;
@@ -41,6 +45,9 @@ public class DialogueManager : MonoBehaviour
     This function is called by DialogueTrigger only. */
     public void StartDialogue(Dialogue dialogue)
     {
+        // Enable inspection mode for the player
+        FindObjectOfType<PlayerInspect>().BeginInspect();
+
         // Get packaged dialogue
         _dialoguePackage = dialogue.GetPackage();
 
@@ -89,6 +96,9 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogue()
     {
+        // Disable inspection mode for the player
+        FindObjectOfType<PlayerInspect>().EndInspect();
+        
         Debug.Log("Dialogue was was abandoned/ended.");
         ShowElements(false); // Make dialogue elements invisible.
     }

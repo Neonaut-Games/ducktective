@@ -16,13 +16,17 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 3.0f;
     public float sprintMultiplier = 1.25f;
     private float _sprintAdditive = 1.0f;
+
     void Start()
     {
         _characterController = GetComponent<CharacterController>();
     }
     
-    void FixedUpdate()
+    void Update()
     {
+
+        if (PlayerInspect.isInspecting) return;
+        
         // Get the movement inputs from the W, A, S, D keys
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
@@ -42,32 +46,17 @@ public class PlayerController : MonoBehaviour
             // Modify movement to be in the direction of the camera
             Vector3 movementDirectionModded = Quaternion.Euler(0f, (float) targetAngle, 0f) * Vector3.forward;
             
-            // Check if player is sprinting
-            if (Input.GetKey(KeyCode.LeftShift))
-            {
-                _sprintAdditive = sprintMultiplier;
-            }
-            else
-            { 
-                _sprintAdditive = 1.0f;
-            }
+            // Check if player is sprinting and update _sprintAdditive accordingly
+            _sprintAdditive = Input.GetKey(KeyCode.LeftShift) ? sprintMultiplier : 1.0f;
             
             // Move the player along the X, Z 
             _characterController.Move(movementDirectionModded.normalized * movementMultiplier * _sprintAdditive * Time.deltaTime);
         }
 
-        if (_characterController.isGrounded)
-        {
-            if (Input.GetKey(KeyCode.Space))
-            {
-                _characterController.Move(new Vector3(0f, jumpForce, 0f));
-            }
-        }
-        else
+        if (!_characterController.isGrounded)
         {
             _characterController.SimpleMove(new Vector3(0f, gravityStrength * -1, 0f));
         }
-        
-        
+
     }
 }
