@@ -17,6 +17,10 @@ public class PlayerController : MonoBehaviour
     public float sprintMultiplier = 1.25f;
     private float _sprintAdditive = 1.0f;
 
+    [Header("Animation Settings")]
+    public string animationVariable = "movementState";
+    public Animator playerAnimator;
+
     void Start()
     {
         _characterController = GetComponent<CharacterController>();
@@ -24,6 +28,8 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
+        
+        playerAnimator.SetInteger(animationVariable, 0);
 
         if (PlayerInspect.isInspecting) return;
         
@@ -47,8 +53,17 @@ public class PlayerController : MonoBehaviour
             Vector3 movementDirectionModded = Quaternion.Euler(0f, (float) targetAngle, 0f) * Vector3.forward;
             
             // Check if player is sprinting and update _sprintAdditive accordingly
-            _sprintAdditive = Input.GetKey(KeyCode.LeftShift) ? sprintMultiplier : 1.0f;
-            
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                _sprintAdditive = sprintMultiplier;
+                playerAnimator.SetInteger(animationVariable, 2);
+            }
+            else
+            {
+                _sprintAdditive = 1.0f;
+                playerAnimator.SetInteger(animationVariable, 1);
+            }
+
             // Move the player along the X, Z 
             _characterController.Move(movementDirectionModded.normalized * movementMultiplier * _sprintAdditive * Time.deltaTime);
         }

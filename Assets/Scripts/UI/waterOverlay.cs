@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-public class waterOverlay : MonoBehaviour
+public class WaterOverlay : MonoBehaviour
 {
     public GameObject overlay;
 

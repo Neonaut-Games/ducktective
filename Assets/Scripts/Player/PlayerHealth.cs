@@ -4,10 +4,22 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
 
-    public static int health;
+    public static int health = 100;
     public int maxHealth = 100;
     public Slider healthSlider;
 
+    private void Start()
+    {
+        RefreshHealth();
+    }
+
+    public void RefreshHealth()
+    {
+        // Adjust slider health stat (decoration)
+        healthSlider.maxValue = maxHealth;
+        healthSlider.value = health;
+    }
+    
     public void SetHealth(int amount)
     {
         // Adjust global health stat (real)

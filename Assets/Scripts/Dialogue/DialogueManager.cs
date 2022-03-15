@@ -7,12 +7,10 @@ using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
-    public CinemachineVirtualCamera virtualCamera;
     public Animator dialogueBox;
     public Animator startButton;
     public TextMeshProUGUI messageElement;
     public TextMeshProUGUI authorElement;
-    public Func<GameObject> test;
 
     private Dictionary<int, KeyValuePair<string, string>> _dialoguePackage;
     private Queue<KeyValuePair<string, string>> _messageQueue;
