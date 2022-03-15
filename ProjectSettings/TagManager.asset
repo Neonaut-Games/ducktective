@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Ground
   - InspectRegion
-  - PlayerHead
   layers:
   - Default
   - TransparentFX
