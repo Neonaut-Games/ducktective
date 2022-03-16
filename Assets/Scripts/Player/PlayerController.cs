@@ -4,14 +4,14 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private CharacterController _characterController;
-    
-    [Header("Camera Settings")]
-    public Transform playerCamera;
+
+    [Header("Camera Settings")] public Transform playerCamera;
     [Range(0, 1)] public float rotationSmoothTime = 0.1f;
     private float _turnSmoothVelocity;
-    
-    [Header("Player Movement Settings")]
-    [Range(1, 50)] public float movementMultiplier = 5;
+
+    [Header("Player Movement Settings")] [Range(1, 50)]
+    public float movementMultiplier = 5;
+
     public float gravityStrength = 0.5f;
     public float jumpForce = 3.0f;
     public float sprintMultiplier = 1.25f;
@@ -20,23 +20,26 @@ public class PlayerController : MonoBehaviour
     [Header("Animation Settings")]
     public string animationVariable = "movementState";
     public Animator playerAnimator;
-
+    
     void Start()
     {
         _characterController = GetComponent<CharacterController>();
     }
-    
+
     void Update()
     {
         
+        // Set the player's movement state == 0 ("idle")
         playerAnimator.SetInteger(animationVariable, 0);
 
+        // If the player is currently inspecting something, ignore their movement input
         if (PlayerInspect.isInspecting) return;
         
-        // Get the movement inputs from the W, A, S, D keys
+        // Get the movement inputs from the W, A, S, D, and space keys
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
-        Vector3 movementDirection = new Vector3(horizontal, 0f, vertical).normalized;
+        float jump = Input.GetAxisRaw("Jump");
+        Vector3 movementDirection = new Vector3(horizontal, jump, vertical).normalized;
 
         // If the player is attempting to move at all
         if (movementDirection.magnitude >= 0.1f)
@@ -56,11 +59,13 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 _sprintAdditive = sprintMultiplier;
+                // Set the player's movement state == 2 ("running")
                 playerAnimator.SetInteger(animationVariable, 2);
             }
             else
             {
                 _sprintAdditive = 1.0f;
+                // Set the player's movement state == 1 ("walking")
                 playerAnimator.SetInteger(animationVariable, 1);
             }
 

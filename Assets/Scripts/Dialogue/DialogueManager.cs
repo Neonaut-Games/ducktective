@@ -1,12 +1,11 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Cinemachine;
 using TMPro;
 using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
+    [Header("Component Settings")]
     public Animator dialogueBox;
     public Animator startButton;
     public TextMeshProUGUI messageElement;
@@ -67,7 +66,7 @@ public class DialogueManager : MonoBehaviour
         DisplayNextMessage();
     }
 
-    private void DisplayNextMessage()
+    public void DisplayNextMessage()
     {
         // If there are no messages left in the queue, end the dialogue
         if (_messageQueue.Count == 0)
@@ -99,6 +98,9 @@ public class DialogueManager : MonoBehaviour
         
         Debug.Log("Dialogue was was abandoned/ended.");
         ShowElements(false); // Make dialogue elements invisible.
+        
+        // Set the player's quest level if applicable
+        if (PlayerInspect.loadedTrigger.shouldChangeQuestLevel) PlayerLevel.SetLevel(PlayerInspect.loadedTrigger.rewardedQuestLevel);
     }
 
 }

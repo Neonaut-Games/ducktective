@@ -1,27 +1,31 @@
 using Cinemachine;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class PlayerInspect : MonoBehaviour
 {
     public static bool isInspecting;
+    public static bool canInspect;
+    [CanBeNull] public static DialogueTrigger loadedTrigger = null;
 
     [Header("Camera Settings")]
     public Camera stillCamera;
     public CinemachineBrain followCamera;
-    
-    [Header("Scene Settings")]
-    [SerializeField] private bool inspectAvailable;
-    public Animator inspectButton;
 
     private void Update()
     {
         if (Input.GetKey(KeyCode.I) && !isInspecting)
         {
             Debug.Log("Player attempted to perform inspect");
-            if (inspectAvailable)
+            if (canInspect)
             {
                 Debug.Log("Inspect initiated.");
-                FindObjectOfType<DialogueTrigger>().TriggerDialogue();
+                if (loadedTrigger == null)
+                {
+                    Debug.LogError("Player attempted inspect but loadedDialogue was not assigned.");
+                    return;
+                }
+                loadedTrigger.TriggerDialogue();
             }
             else
             {
@@ -45,22 +49,4 @@ public class PlayerInspect : MonoBehaviour
         isInspecting = false;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("InspectRegion"))
-        {
-            inspectButton.SetBool("isEnabled", true);
-            inspectAvailable = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("InspectRegion"))
-        {
-            inspectButton.SetBool("isEnabled", false);
-            inspectAvailable = false;
-        }
-    }
-    
 }
