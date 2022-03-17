@@ -249,7 +249,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &24166133
 PrefabInstance:
@@ -488,8 +488,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 1258291200
-  m_fontColor: {r: 0, g: 0, b: 0, a: 0.29411766}
+    rgba: 2519739694
+  m_fontColor: {r: 0.18039216, g: 0.1764706, b: 0.18823531, a: 0.5882353}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -7504,6 +7504,7 @@ Transform:
   - {fileID: 185872615}
   - {fileID: 982972892}
   - {fileID: 613022026}
+  - {fileID: 1841122263}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12360,7 +12361,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1486781258
 GameObject:
@@ -15309,6 +15310,75 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 449477927373711850, guid: 061a135fd56dba04da9595cfbb667632, type: 3}
   m_PrefabInstance: {fileID: 1739192005}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1741822060
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1741822063}
+  - component: {fileID: 1741822062}
+  - component: {fileID: 1741822061}
+  m_Layer: 0
+  m_Name: DialogueTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1741822061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741822060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf66f6f01881714abfdd2067824c3d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    messages:
+    - You WHAT THE QUACK?
+    - You Mom!? Are you here?
+    - '  ...'
+    - You "I'll keep her safe"? Who writes that after kidnapping someone's mom?
+    - You Okay, okay. Think. THINK!
+    - You Go to the police. I should go to the police and tell them what happened.
+  shouldRequireQuestLevel: 1
+  requiredQuestLevel: 1
+  shouldChangeQuestLevel: 1
+  rewardedQuestLevel: 2
+--- !u!65 &1741822062
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741822060}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1741822063
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741822060}
+  m_LocalRotation: {x: 0.0020814787, y: 0.19680445, z: -0.010368932, w: 0.9803857}
+  m_LocalPosition: {x: -2.61, y: -0.34, z: 7.41}
+  m_LocalScale: {x: 7.1340423, y: 1.4941651, z: 11.15225}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0.468, y: 22.697, z: -1.118}
 --- !u!1001 &1743922680
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15929,12 +15999,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1841122261}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.49, y: 0.75, z: 3.65}
-  m_LocalScale: {x: 1, y: 3, z: 1.5}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.28425, y: -0.1887039, z: -0.8536446}
+  m_LocalScale: {x: 0.5, y: 1.5, z: 0.75}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 817474793}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1841122264
 MonoBehaviour:
@@ -15948,10 +16018,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac154bd482cb6b4e814d62e312f671a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: 
-  destinationX: 0
-  destinationY: 0
-  destinationZ: 0
+  sceneName: island01
+  destinationX: -36
+  destinationY: 1.4
+  destinationZ: -151
   shouldRequireQuestLevel: 0
   requiredQuestLevel: 0
 --- !u!1001 &1850344267
