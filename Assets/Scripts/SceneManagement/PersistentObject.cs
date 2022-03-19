@@ -1,26 +1,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PersistentObject : MonoBehaviour
+namespace SceneManagement
 {
-    private static Dictionary<string, PersistentObject> _persistentObjects = new Dictionary<string, PersistentObject>();
-
-    void Awake()
+    public class PersistentObject : MonoBehaviour
     {
-        if (_persistentObjects.ContainsKey(gameObject.name))
+        private static Dictionary<string, PersistentObject> _persistentObjects = new Dictionary<string, PersistentObject>();
+
+        void Awake()
         {
-            Debug.Log("A previously existing version of " + gameObject.name + " was found; destroying new object.");
+            if (_persistentObjects.ContainsKey(gameObject.name))
+            {
+                Debug.Log("A previously existing version of " + gameObject.name + " was found; destroying new object.");
 
-            Destroy(gameObject);
+                Destroy(gameObject);
+            }
+            else
+            {
+                Debug.Log("No previously existing versions of " + gameObject.name + " were found; keeping conserved object.");
+
+                _persistentObjects.Add(gameObject.name, this);
+                DontDestroyOnLoad(gameObject);
+            }
+
         }
-        else
-        {
-            Debug.Log("No previously existing versions of " + gameObject.name + " were found; keeping conserved object.");
-
-            _persistentObjects.Add(gameObject.name, this);
-            DontDestroyOnLoad(gameObject);
-        }
-
-    }
     
+    }
 }

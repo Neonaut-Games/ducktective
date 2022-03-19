@@ -1,22 +1,25 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour
+namespace UI
 {
-
-    public void StartGame()
+    public class MainMenu : MonoBehaviour
     {
-        SceneManager.LoadScene(1);
-    }
 
-    public void About()
-    {
-        Application.OpenURL("https://ducktective.coopersully.me/about/");
-    }
+        public void StartGame()
+        {
+            SceneManager.LoadScene(1);
+        }
+
+        public void About()
+        {
+            Application.OpenURL("https://coopersully.me/projects/ducktective/");
+        }
     
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
+        public void QuitGame()
+        {
+            Application.Quit();
+        }
 
+    }
 }
