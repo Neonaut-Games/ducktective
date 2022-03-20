@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using Player;
 using UnityEngine;
 
@@ -19,6 +20,7 @@ namespace Dialogue
         [Header("Completion Rewards")]
         public bool shouldChangeQuestLevel;
         public int rewardedQuestLevel;
+        [CanBeNull] public GameObject rewardFunction;
 
         public void Start()
         {

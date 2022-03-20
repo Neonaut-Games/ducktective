@@ -1,4 +1,4 @@
-using Dialogue;
+using Player;
 using UnityEngine;
 
 namespace Items
@@ -14,11 +14,19 @@ namespace Items
             // If a player did not perform the event, ignore it.
             if (!other.CompareTag("Player")) return;
             
-            // Play the sound
+            // Increment coins counter and UI element
+            amount++;
+            FindObjectOfType<CoinsManager>().RefreshAmount();
+            
+            // Level up the player's quest level if applicable
+            if (amount >= 50) PlayerLevel.SetLevel(8);
+
+                // Play the sound
             pickupSound.Play();
             
-            amount++;
-            Destroy(gameObject);
+            // move the game object off screen while it finishes it's sound, then destroy it
+            transform.position = Vector3.one * 9999f;
+            Destroy(gameObject, pickupSound.clip.length);
         }
         
     }

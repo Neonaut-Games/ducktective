@@ -53,7 +53,6 @@ namespace Player
         public void TakeDamage(int amount)
         {
             Debug.Log("The player took damage (" + amount + "hp).");
-
             SetHealth(health - amount);
         }
 

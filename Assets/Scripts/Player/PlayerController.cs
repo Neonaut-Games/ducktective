@@ -22,7 +22,8 @@ namespace Player
         public float attackRange;
         public LayerMask damageableLayer;
         public int damage = 10;
-        public float attackCooldown = 0.5f;
+        public float attackCooldown = 1.0f;
+        public AudioSource attackSound;
         
         [Header("Animation Settings")]
         public Animator playerAnimator;
@@ -112,16 +113,13 @@ namespace Player
             PlayerInspect.movementRestricted = true;
             
             // Set the player's animator to be attacking
-            playerAnimator.SetBool("isAttacking", true);
+            playerAnimator.SetTrigger("attacking");
 
             // Deal damage at the transform point
             Collider[] results = Physics.OverlapSphere(damagePoint.position, attackRange, damageableLayer.value);
-            foreach (Collider damagedEntity in results)
-            {
-                Debug.Log("Player damaged " + damagedEntity.name);
-                damagedEntity.GetComponent<DamageableEntity>().TakeDamage(damage);
-            }
-            
+            if (results.Length > 0) DamageEntities(results);
+            else attackSound.Play(); // Play attack miss sound
+
             /* Wait for enough of the animation to finish so that
             it's not super odd looking if they attack again. This
             serves as a sort of "attack cooldown". */
@@ -129,9 +127,16 @@ namespace Player
             
             // Restrict the player's movement while attacking
             PlayerInspect.movementRestricted = false;
-            
-            // Set the player's animator to be attacking
-            playerAnimator.SetBool("isAttacking", false);
+        }
+
+        private void DamageEntities(Collider[] entities)
+        {
+            // Have each entity take damage
+            foreach (Collider entity in entities)
+            {
+                Debug.Log("Player damaged " + entity.name);
+                entity.GetComponent<DamageableEntity>().TakeDamage(damage);
+            }
         }
 
         #endregion
