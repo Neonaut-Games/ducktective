@@ -261,7 +261,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &31570507
 PrefabInstance:
@@ -3624,7 +3624,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: b0929bcf658f0d34c87db9325b3a63bb, type: 2}
     - target: {fileID: 6032814883673558259, guid: d0ebde99279bb344b95db6b16e7f9b3a, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6032814883673558259, guid: d0ebde99279bb344b95db6b16e7f9b3a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3668,7 +3668,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6032814883673558268, guid: d0ebde99279bb344b95db6b16e7f9b3a, type: 3}
       propertyPath: m_Name
-      value: NPC
+      value: RandyNPC
       objectReference: {fileID: 0}
     - target: {fileID: 9170642378919420985, guid: d0ebde99279bb344b95db6b16e7f9b3a, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -6265,8 +6265,10 @@ Transform:
   - {fileID: 613022026}
   - {fileID: 1841122263}
   - {fileID: 539778313}
+  - {fileID: 8034688050458746424}
+  - {fileID: 1164605491}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &824612578
 PrefabInstance:
@@ -7679,6 +7681,7 @@ GameObject:
   - component: {fileID: 1164605491}
   - component: {fileID: 1164605490}
   - component: {fileID: 1164605489}
+  - component: {fileID: 1164605492}
   m_Layer: 0
   m_Name: DialogueTrigger.2
   m_TagString: Untagged
@@ -7714,12 +7717,12 @@ MonoBehaviour:
     - Quackintinus The scene is too powerful for me to show you. It would require...
       a cutscene!
     - You Can you tell me what happened?
-    - Quackintinus Your mother was taken hostage by a duck with black fur. There
+    - Quackintinus Your mother was taken hostage by a duck with black feathers. There
       appears to have been a struggle. He took her to another island.
     - You Where? Where did he take her?
     - Quackintinus I'm... not sure. My power does not reach outside of this island.
-    - You Alright; thanks anyways. At least now I know it's a white duck.
-    - Quackintinus If you can bring me a sample of the white duck's DNA, I may be
+    - You Alright; thanks anyways. At least now I know it's a black duck.
+    - Quackintinus If you can bring me a sample of the black duck's DNA, I may be
       able to locate them for you.
     - You Uhm, alright. I'll see what I can do.
   shouldRequireQuestLevel: 1
@@ -7746,13 +7749,51 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1164605488}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.06, y: 5.11, z: 2.16}
-  m_LocalScale: {x: 10, y: 2, z: 10}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.5092499, y: 1.9912962, z: -1.5986446}
+  m_LocalScale: {x: 5, y: 1, z: 5}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 817474793}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1164605492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164605488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf66f6f01881714abfdd2067824c3d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    messages:
+    - You I found a black feather back at the house. Think you could use it?
+    - Quackintinius Let me have a look.
+    - Quackintinius Oh, this is not very good. Some would even call it bad.
+    - You What is it!?
+    - Quackintinius This feather seems to have come from a duck from the Temedos
+      region.
+    - You ... what's the Temedos region?
+    - Quackintinius An island of psychopathic, black-feathered ducks. They're completely
+      insane and fall in love with almost anyone they meet.
+    - Quackintinius They're known to attach themselves to a person and fall completely
+      in love with that person. Which is not good considering this one seems to have
+      your mother.
+    - Quackintinius Some would even call it a bad situation.
+    - You SOME? MY MOM WAS TAKEN BY A SERIAL KILLER.
+    - Quackintinius Temedos ducks are not killers. He would never hurt your mother,
+      just hold her hostage indefinitely.
+    - You How do I get to Temedos?
+    - Quackintinus I'm not too sure. You'd need private transportation, so I'd try
+      Meemaw's Transportation Station. It's right by Eddy's Package Store.
+    - You Alright, thanks I guess. I'll try that.
+  shouldRequireQuestLevel: 1
+  requiredQuestLevel: 5
+  shouldChangeQuestLevel: 1
+  rewardedQuestLevel: 6
 --- !u!1001 &1173648280
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8832,7 +8873,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: b0929bcf658f0d34c87db9325b3a63bb, type: 2}
     - target: {fileID: 6032814883673558259, guid: d0ebde99279bb344b95db6b16e7f9b3a, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6032814883673558259, guid: d0ebde99279bb344b95db6b16e7f9b3a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8876,7 +8917,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6032814883673558268, guid: d0ebde99279bb344b95db6b16e7f9b3a, type: 3}
       propertyPath: m_Name
-      value: NPC.1
+      value: SarahNPC
       objectReference: {fileID: 0}
     - target: {fileID: 9170642378919420985, guid: d0ebde99279bb344b95db6b16e7f9b3a, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -15929,7 +15970,7 @@ GameObject:
   - component: {fileID: 6032814882159265935}
   - component: {fileID: 6032814882159265932}
   m_Layer: 0
-  m_Name: NPC.2
+  m_Name: QuackintinusNPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15962,7 +16003,7 @@ Transform:
   m_Children:
   - {fileID: 1552457753210508321}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 178.077, z: 0}
 --- !u!1 &6103816646206994642
 GameObject:
@@ -16320,12 +16361,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8034688050458746373}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.13, y: -0.24, z: -3.8}
-  m_LocalScale: {x: 2.3933992, y: 1.4941651, z: 9.889369}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.60425, y: -0.6837039, z: -4.5786448}
+  m_LocalScale: {x: 1.1966996, y: 0.74708253, z: 4.9446845}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 817474793}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &8034688050458746427
 BoxCollider:

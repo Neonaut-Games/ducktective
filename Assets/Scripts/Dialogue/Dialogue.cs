@@ -8,6 +8,10 @@ namespace Dialogue
     [Serializable]
     public class Dialogue
     {
+        public Dialogue(String[] messages)
+        {
+            this.messages = messages;
+        }
 
         [TextArea(3, 10)] [SerializeField] private string[] messages;
 

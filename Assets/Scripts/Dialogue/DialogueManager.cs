@@ -51,7 +51,7 @@ namespace Dialogue
         }
     
         /* !START! - Initiates the dialogue sequence.
-    This function is called by DialogueTrigger only. */
+        This function is called by DialogueTrigger only. */
         public void StartDialogue(Dialogue dialogue)
         {
             // Enable inspection mode for the player

@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 namespace Player
@@ -6,6 +7,7 @@ namespace Player
     {
 
         private static int _questLevel;
+        public TextMeshProUGUI levelIndicator;
 
         public static int GetLevel()
         {
@@ -21,6 +23,7 @@ namespace Player
         
             // Set the player's new quest level
             _questLevel = level;
+            FindObjectOfType<PlayerLevel>().levelIndicator.SetText(level.ToString());
         }
     
     }

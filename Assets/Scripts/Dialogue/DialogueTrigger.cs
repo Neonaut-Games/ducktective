@@ -31,7 +31,7 @@ namespace Dialogue
             Debug.Log("Dialogue was triggered by " + gameObject.name);
             FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
         }
-    
+
         private void OnTriggerEnter(Collider other)
         {
             // If the object is not a player, ignore the event.

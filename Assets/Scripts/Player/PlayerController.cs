@@ -1,5 +1,5 @@
 using System;
-using Player;
+using System.Collections;
 using UnityEngine;
 
 namespace Player
@@ -12,14 +12,19 @@ namespace Player
         [Range(0, 1)] public float rotationSmoothTime = 0.1f;
         private float _turnSmoothVelocity;
 
-        [Header("Player Movement Settings")] [Range(1, 50)]
-        public float movementMultiplier = 5;
-
-        public float gravityStrength = 0.5f;
+        [Header("Movement Settings")] 
+        [Range(1, 50)] public float movementMultiplier = 5;
         public float sprintMultiplier = 1.25f;
         private float _sprintAdditive = 1.0f;
 
-        [Header("Animation Settings")] public string animationVariable = "movementState";
+        [Header("Combat Settings")]
+        public Transform damagePoint;
+        public float attackRange;
+        public LayerMask damageableLayer;
+        public int damage = 10;
+        public float attackCooldown = 0.5f;
+        
+        [Header("Animation Settings")]
         public Animator playerAnimator;
 
         void Start()
@@ -29,9 +34,17 @@ namespace Player
 
         void Update()
         {
+            Move();
+            Combat();
+        }
 
+        #region Movement Mechanics
+
+        public void Move()
+        {
+            
             // Set the player's movement state == 0 ("idle")
-            playerAnimator.SetInteger(animationVariable, 0);
+            playerAnimator.SetInteger("movementState", 0);
 
             // If the player is currently inspecting something, ignore their movement input
             if (PlayerInspect.movementRestricted) return;
@@ -62,13 +75,13 @@ namespace Player
                 {
                     _sprintAdditive = sprintMultiplier;
                     // Set the player's movement state == 2 ("running")
-                    playerAnimator.SetInteger(animationVariable, 2);
+                    playerAnimator.SetInteger("movementState", 2);
                 }
                 else
                 {
                     _sprintAdditive = 1.0f;
                     // Set the player's movement state == 1 ("walking")
-                    playerAnimator.SetInteger(animationVariable, 1);
+                    playerAnimator.SetInteger("movementState", 1);
                 }
 
                 // Move the player along the X, Z 
@@ -79,8 +92,49 @@ namespace Player
             {
                 _characterController.Move(Physics.gravity * Time.deltaTime);
             }
-
         }
+
+        #endregion
+
+        #region Combat Mechanics
+
+        public void Combat()
+        {
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                if (!PlayerInspect.movementRestricted) StartCoroutine(Attack());
+            }
+        }
+
+        public IEnumerator Attack()
+        {
+            // Restrict the player's movement while attacking
+            PlayerInspect.movementRestricted = true;
+            
+            // Set the player's animator to be attacking
+            playerAnimator.SetBool("isAttacking", true);
+
+            // Deal damage at the transform point
+            Collider[] results = Physics.OverlapSphere(damagePoint.position, attackRange, damageableLayer.value);
+            foreach (Collider damagedEntity in results)
+            {
+                Debug.Log("Player damaged " + damagedEntity.name);
+                damagedEntity.GetComponent<DamageableEntity>().TakeDamage(damage);
+            }
+            
+            /* Wait for enough of the animation to finish so that
+            it's not super odd looking if they attack again. This
+            serves as a sort of "attack cooldown". */
+            yield return new WaitForSeconds(attackCooldown);
+            
+            // Restrict the player's movement while attacking
+            PlayerInspect.movementRestricted = false;
+            
+            // Set the player's animator to be attacking
+            playerAnimator.SetBool("isAttacking", false);
+        }
+
+        #endregion
 
     }
 }
