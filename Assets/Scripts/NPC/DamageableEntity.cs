@@ -1,4 +1,5 @@
 using System.Collections;
+using JetBrains.Annotations;
 using Player;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ public class DamageableEntity : MonoBehaviour
     private Collider _collider;
 
     [Header("Health Settings")]
+    public bool requiresExperienceToDamage;
     public int maxHealth = 100;
     private int _health;
     
@@ -17,7 +19,7 @@ public class DamageableEntity : MonoBehaviour
     public int fadeTime = 10;
 
     [Header("Loot Settings")]
-    public GameObject loot;
+    [CanBeNull] public GameObject loot;
     public int lootMinimum;
     public int lootMaximum;
 
@@ -33,7 +35,7 @@ public class DamageableEntity : MonoBehaviour
         /* The health of the entity will only decrement
         if the player has the appropriate quest level. This is to prevent
         players from already having 50 coins by the time they get to Meemaw. */
-        if (PlayerLevel.GetLevel() >= 7) _health -= damage;
+        if (requiresExperienceToDamage == PlayerLevel.GetLevel() >= 7) _health -= damage;
         
         // Play "take damage" audio cue
         takeDamageSound.Play();
@@ -59,13 +61,14 @@ public class DamageableEntity : MonoBehaviour
         Destroy(_rigidbody);
         Destroy(_collider);
         
+        StartCoroutine(FadeAway());
+        
         // Spawn loot
+        if (loot == null) return;
         for (int i = 0; i < Random.Range(lootMinimum, lootMaximum); i++)
         {
             Instantiate(loot, transform.position, Quaternion.identity);
         }
-
-        StartCoroutine(FadeAway());
     }
     
     public IEnumerator FadeAway()
