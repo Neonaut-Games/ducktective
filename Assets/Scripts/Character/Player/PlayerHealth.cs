@@ -1,10 +1,10 @@
 using System.Collections;
-using System.Runtime.CompilerServices;
+using Player;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Player
+namespace Character.Player
 {
     public class PlayerHealth : MonoBehaviour
     {
@@ -18,20 +18,21 @@ namespace Player
         public Slider healthSlider;
         public GameObject gameOverUI;
         public TextMeshProUGUI secondsLeftUI;
+        public AudioSource takeDamageSound;
 
         private void Start()
         {
             RefreshHealth();
         }
 
-        public void RefreshHealth()
+        private void RefreshHealth()
         {
             // Adjust slider health stat (decoration)
             healthSlider.maxValue = maxHealth;
             healthSlider.value = health;
         }
 
-        public void SetHealth(int amount)
+        private void SetHealth(int amount)
         {
             // Adjust global health stat (real)
             health = AdjustHealth(amount);
@@ -52,11 +53,14 @@ namespace Player
 
         public void TakeDamage(int amount)
         {
+            // Play "take damage" audio cue
+            takeDamageSound.Play();
+            
             Debug.Log("The player took damage (" + amount + "hp).");
             SetHealth(health - amount);
         }
 
-        public void Die()
+        private void Die()
         {
             Debug.Log("The player has died.");
             
@@ -89,7 +93,7 @@ namespace Player
             Respawn();
         }
 
-        public void Respawn()
+        private void Respawn()
         {
             Debug.Log("The player has respawned.");
             

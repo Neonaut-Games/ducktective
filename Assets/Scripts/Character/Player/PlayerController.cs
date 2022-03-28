@@ -1,8 +1,9 @@
 using System;
 using System.Collections;
+using Player;
 using UnityEngine;
 
-namespace Player
+namespace Character.Player
 {
     public class PlayerController : MonoBehaviour
     {
@@ -28,12 +29,9 @@ namespace Player
         [Header("Animation Settings")]
         public Animator playerAnimator;
 
-        void Start()
-        {
-            _characterController = GetComponent<CharacterController>();
-        }
+        private void Start() => _characterController = GetComponent<CharacterController>();
 
-        void Update()
+        private void Update()
         {
             Move();
             Combat();
@@ -41,7 +39,7 @@ namespace Player
 
         #region Movement Mechanics
 
-        public void Move()
+        private void Move()
         {
             
             // Set the player's movement state == 0 ("idle")
@@ -86,28 +84,28 @@ namespace Player
                 }
 
                 // Move the player along the X, Z 
-                _characterController.Move(movementDirectionModded.normalized * movementMultiplier * _sprintAdditive * Time.deltaTime);
+                _characterController.Move(movementDirectionModded.normalized *
+                                          movementMultiplier *
+                                          _sprintAdditive *
+                                          Time.deltaTime);
             }
             
-            if (!_characterController.isGrounded)
-            {
-                _characterController.Move(Physics.gravity * Time.deltaTime);
-            }
+            if (!_characterController.isGrounded) _characterController.Move(Physics.gravity * Time.deltaTime);
         }
 
         #endregion
 
         #region Combat Mechanics
 
-        public void Combat()
+        private void Combat()
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Mouse0) && !PlayerInspect.movementRestricted)
             {
-                if (!PlayerInspect.movementRestricted) StartCoroutine(Attack());
+                StartCoroutine(Attack());
             }
         }
 
-        public IEnumerator Attack()
+        private IEnumerator Attack()
         {
             // Restrict the player's movement while attacking
             PlayerInspect.movementRestricted = true;
@@ -134,8 +132,12 @@ namespace Player
             // Have each entity take damage
             foreach (Collider entity in entities)
             {
-                Debug.Log("Player damaged " + entity.name);
-                entity.GetComponent<DamageableEntity>().TakeDamage(damage);
+                try
+                {
+                    entity.GetComponent<Mortal>().TakeDamage(damage);
+                    Debug.Log("The player attacked " + entity.name);
+                }
+                catch (NullReferenceException ignored) { }
             }
         }
 
