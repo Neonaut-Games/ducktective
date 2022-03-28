@@ -137,7 +137,7 @@ namespace Character.Player
                     entity.GetComponent<Mortal>().TakeDamage(damage);
                     Debug.Log("The player attacked " + entity.name);
                 }
-                catch (NullReferenceException ignored) { }
+                catch (NullReferenceException) { }
             }
         }
 

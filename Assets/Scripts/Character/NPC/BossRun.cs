@@ -14,14 +14,14 @@ namespace Character.NPC
         public float attackRange = 3.0f;
         
         // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-        override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             _player = GameObject.FindGameObjectWithTag("Player").transform;
             _rigidbody = animator.GetComponentInParent<Rigidbody>();
         }
 
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-        override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             /* Find the player and begin moving towards him. This snippet
             also forces the boss to always look at the player. */
@@ -39,7 +39,7 @@ namespace Character.NPC
         }
 
         // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-        override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             animator.ResetTrigger("attack");
         }

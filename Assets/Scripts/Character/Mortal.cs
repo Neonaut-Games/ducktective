@@ -7,11 +7,11 @@ namespace Character
 {
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(CapsuleCollider))]
-    public class Mortal : MonoBehaviour
+    public abstract class Mortal : MonoBehaviour
     {
 
-        private Rigidbody _rigidbody;
-        private CapsuleCollider _collider;
+        [HideInInspector] public Rigidbody rigidbody;
+        [HideInInspector] public CapsuleCollider collider;
 
         [Header("Health Settings")]
         public int minimumQuestLevelRequired;
@@ -31,8 +31,8 @@ namespace Character
             
             /* Initialize all required components for
             mortal entities into their respective variables. */
-            _rigidbody = GetComponent<Rigidbody>();
-            _collider = GetComponent<CapsuleCollider>();
+            rigidbody = GetComponent<Rigidbody>();
+            collider = GetComponent<CapsuleCollider>();
         }
 
         public void TakeDamage(int amount)
@@ -66,8 +66,8 @@ namespace Character
             /* Disable the mortal's standing collider
             and make the Rigidbody kinematic to better sell the
             death animation physics. */
-            _rigidbody.isKinematic = true;
-            _collider.enabled = false;
+            rigidbody.isKinematic = true;
+            collider.enabled = false;
 
             StartCoroutine(BodyDecay());
             
@@ -75,7 +75,7 @@ namespace Character
         }
 
 
-        private void DeathReward() { }
+        public abstract void DeathReward();
 
         private IEnumerator BodyDecay()
         {
