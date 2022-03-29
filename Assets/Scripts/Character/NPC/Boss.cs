@@ -1,11 +1,12 @@
-using System;
 using UnityEngine;
 
 namespace Character.NPC
 {
     public class Boss : Mortal
     {
+    
         public int sightRange = 30;
+
         public void Update()
         {
             var playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;

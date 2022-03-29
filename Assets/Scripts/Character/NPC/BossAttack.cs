@@ -13,6 +13,7 @@ namespace Character.NPC
         
         [Header("Cosmetic Settings")]
         public AudioSource attackSound;
+        public ParticleSystem attackParticles;
         
         public void Attack()
         {
@@ -25,6 +26,7 @@ namespace Character.NPC
         private void PerformSuccessfulAttack(Collider[] entities)
         {
             attackSound.Play();
+            attackParticles.Play();
             
             /* Have each enemy that was touched by the boss's attack collider
             take damage. This includes the player and damageable NPCs. */
