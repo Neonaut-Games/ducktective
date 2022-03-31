@@ -1,5 +1,6 @@
 using System;
 using Player;
+using UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -50,7 +51,7 @@ namespace SceneManagement
             _destination = new Vector3(destinationX, destinationY, destinationZ);
         
             // Load the given scene
-            SceneManager.LoadScene(sceneName);
+            FindObjectOfType<LoadingScreen>().Load(sceneName);
         }
     }
 }

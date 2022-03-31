@@ -20,7 +20,7 @@ namespace Dialogue
         [Header("Completion Rewards")]
         public bool shouldChangeQuestLevel;
         public int rewardedQuestLevel;
-        [CanBeNull] public GameObject rewardFunction;
+        [CanBeNull] public GameObject rewardObject;
 
         public void Start()
         {

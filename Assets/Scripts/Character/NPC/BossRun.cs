@@ -27,15 +27,21 @@ namespace Character.NPC
             also forces the boss to always look at the player. */
             var playerPosition = _player.position;
             var bossPosition = _rigidbody.position;
-            
+
             Vector3 destination = new Vector3(playerPosition.x, bossPosition.y, playerPosition.z);
             Vector3 towardsPosition = Vector3.MoveTowards(bossPosition, destination, speed * Time.fixedDeltaTime);
-            _rigidbody.MovePosition(towardsPosition);
-            _rigidbody.gameObject.transform.LookAt(towardsPosition);
-
-            /* If the boss is within the defined attack range of the player, stop running
-            and switch to the attack phase. */
-            if (Vector3.Distance(playerPosition, bossPosition) <= attackRange) animator.SetTrigger("attack");
+            _rigidbody.transform.LookAt(towardsPosition);
+            
+            /* If the boss is within the defined attack range of the
+             player, stop running and switch to the attack phase. */
+            if (Vector3.Distance(playerPosition, bossPosition) <= attackRange)
+            {
+                animator.SetTrigger("attack");
+            }
+            else
+            {
+                _rigidbody.MovePosition(towardsPosition);
+            }
         }
 
         // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

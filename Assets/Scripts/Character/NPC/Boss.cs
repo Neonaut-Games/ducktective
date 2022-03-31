@@ -1,3 +1,6 @@
+using System.Collections;
+using Character.Player;
+using Player;
 using UnityEngine;
 
 namespace Character.NPC
@@ -6,6 +9,7 @@ namespace Character.NPC
     {
     
         public int sightRange = 30;
+        public GameObject victoryUI;
 
         public void Update()
         {
@@ -24,7 +28,13 @@ namespace Character.NPC
 
         public override void DeathReward()
         {
-            Debug.Log("The boss death reward function has run.");
+            StartCoroutine(ShowVictoryScreen());
+        }
+
+        private IEnumerator ShowVictoryScreen()
+        {
+            yield return new WaitForSeconds(4.0f);
+            victoryUI.SetActive(true);
         }
     }
 }

@@ -123,7 +123,7 @@ namespace Dialogue
             if (PlayerInspect.loadedTrigger.shouldChangeQuestLevel) PlayerLevel.SetLevel(PlayerInspect.loadedTrigger.rewardedQuestLevel);
             
             // Set gameObject to active if applicable
-            if (PlayerInspect.loadedTrigger.rewardFunction != null) PlayerInspect.loadedTrigger.rewardFunction.SetActive(true);
+            if (PlayerInspect.loadedTrigger.rewardObject != null) PlayerInspect.loadedTrigger.rewardObject.SetActive(true);
         }
 
     }
