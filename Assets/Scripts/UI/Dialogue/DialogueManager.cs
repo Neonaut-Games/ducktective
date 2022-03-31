@@ -4,6 +4,7 @@ using Character.Player;
 using Player;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace UI.Dialogue
 {
@@ -14,8 +15,17 @@ namespace UI.Dialogue
         public Animator startButton;
         public TextMeshProUGUI messageElement;
         public TextMeshProUGUI authorElement;
-        public AudioSource characterSound;
 
+        [Header("Audio Settings")]
+        [FormerlySerializedAs("characterSound")] public AudioSource messageSound;
+        public AudioSource voicePlayer;
+        public AudioSource voiceMom;
+        public AudioSource voiceEddy;
+        public AudioSource voiceRandy;
+        public AudioSource voiceQuackintinius;
+        public AudioSource voiceMeemaw;
+        public AudioSource voiceBoss;
+        
         private Dictionary<int, KeyValuePair<string, string>> _dialoguePackage;
         private Queue<KeyValuePair<string, string>> _messageQueue;
 
@@ -43,7 +53,7 @@ namespace UI.Dialogue
             messageElement.SetText("");
             foreach (char character in message)
             {
-                if (!characterSound.isPlaying) characterSound.Play();
+                if (!messageSound.isPlaying) messageSound.Play();
                 messageElement.SetText(messageElement.text + character);
                 yield return new WaitForSeconds(0.025f);
             }
@@ -81,7 +91,7 @@ namespace UI.Dialogue
         {
             // Stop playing the character typing sound
             StopAllCoroutines();
-            characterSound.Stop();
+            messageSound.Stop();
         
             // If there are no messages left in the queue, end the dialogue
             if (_messageQueue.Count == 0)
@@ -110,7 +120,7 @@ namespace UI.Dialogue
         {
             // Stop playing the character typing sound if they skipped the last message
             StopAllCoroutines();
-            characterSound.Stop();
+            messageSound.Stop();
             
             // Disable inspection mode for the player
             FindObjectOfType<PlayerInspect>().EndInspect();

@@ -8,12 +8,14 @@ namespace UI.Dialogue
     [Serializable]
     public class Dialogue
     {
-        public Dialogue(String[] messages)
+        public Dialogue(String[] messages, VoiceType[] voices)
         {
             this.messages = messages;
+            this.voices = voices;
         }
 
         [TextArea(3, 10)] [SerializeField] private string[] messages;
+        [SerializeField] private VoiceType[] voices;
 
         public Dictionary<int, KeyValuePair<string, string>> GetPackage()
         {

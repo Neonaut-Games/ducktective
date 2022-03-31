@@ -11,7 +11,7 @@ namespace Character.NPC
         [CanBeNull] public GameObject loot;
         public int lootMinimumAmount;
         public int lootMaximumAmount;
-        
+
         public override void DeathReward()
         {
             if (loot == null) return;

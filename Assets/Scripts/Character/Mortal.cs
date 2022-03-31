@@ -1,7 +1,5 @@
 ﻿using System.Collections;
 using Character.Player;
-using JetBrains.Annotations;
-using Player;
 using UnityEngine;
 
 namespace Character
@@ -11,8 +9,8 @@ namespace Character
     public abstract class Mortal : MonoBehaviour
     {
 
-        [HideInInspector] public Rigidbody rigidbody;
-        [HideInInspector] public CapsuleCollider collider;
+        [HideInInspector] public Rigidbody mortalRigidbody;
+        [HideInInspector] public CapsuleCollider mortalCollider;
 
         [Header("Health Settings")]
         public int minimumQuestLevelRequired;
@@ -32,8 +30,8 @@ namespace Character
             
             /* Initialize all required components for
             mortal entities into their respective variables. */
-            rigidbody = GetComponent<Rigidbody>();
-            collider = GetComponent<CapsuleCollider>();
+            mortalRigidbody = GetComponent<Rigidbody>();
+            mortalCollider = GetComponent<CapsuleCollider>();
         }
 
         public void TakeDamage(int amount)
@@ -56,8 +54,8 @@ namespace Character
             // Play hit animation
             animator.SetTrigger("takeHit");
         }
-        
-        public void Die()
+
+        private void Die()
         {
             Debug.Log(gameObject.name + " was killed.");
             
@@ -67,8 +65,8 @@ namespace Character
             /* Disable the mortal's standing collider
             and make the Rigidbody kinematic to better sell the
             death animation physics. */
-            rigidbody.isKinematic = true;
-            collider.enabled = false;
+            mortalRigidbody.isKinematic = true;
+            mortalCollider.enabled = false;
 
             StartCoroutine(BodyDecay());
             

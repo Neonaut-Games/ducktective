@@ -14,7 +14,7 @@ namespace Character.NPC
         public void Update()
         {
             var playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
-            var bossPosition = rigidbody.position;
+            var bossPosition = mortalRigidbody.position;
 
             if (Vector3.Distance(playerPosition, bossPosition) > sightRange)
             {
