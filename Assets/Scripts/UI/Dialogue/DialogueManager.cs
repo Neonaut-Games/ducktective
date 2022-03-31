@@ -1,12 +1,11 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
+using Character.Player;
 using Player;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-namespace Dialogue
+namespace UI.Dialogue
 {
     public class DialogueManager : MonoBehaviour
     {
@@ -28,7 +27,7 @@ namespace Dialogue
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space)) EndDialogue();
+            if (Input.GetKeyDown(KeyCode.Space) && PlayerInspect.movementRestricted) EndDialogue();
         }
 
         // Shows & hides dialogue elements all at once

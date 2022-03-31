@@ -1,6 +1,6 @@
 using Cinemachine;
-using Dialogue;
 using JetBrains.Annotations;
+using UI.Dialogue;
 using UnityEngine;
 
 namespace Player

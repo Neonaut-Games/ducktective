@@ -1,12 +1,12 @@
+using Character.Player;
 using JetBrains.Annotations;
 using Player;
 using UnityEngine;
 
-namespace Dialogue
+namespace UI.Dialogue
 {
     public class DialogueTrigger : MonoBehaviour
     {
-    
         private Animator _inspectIndicator;
         private AudioSource _inspectSound;
     
@@ -56,7 +56,7 @@ namespace Dialogue
             if (!other.CompareTag("Player")) return;
         
             // If the player does not have the required quest level, ignore the event.
-            if (shouldRequireQuestLevel) if (PlayerLevel.GetLevel() != requiredQuestLevel) return;
+            if (shouldRequireQuestLevel) if (PlayerLevel.IsQualified(requiredQuestLevel)) return;
 
             _inspectIndicator.SetBool("isEnabled", false);
             PlayerInspect.canInspect = false;

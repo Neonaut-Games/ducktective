@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace Player
+namespace Character.Player
 {
     public class PlayerLevel : MonoBehaviour
     {
@@ -24,6 +24,11 @@ namespace Player
             // Set the player's new quest level
             _questLevel = level;
             FindObjectOfType<PlayerLevel>().levelIndicator.SetText(level.ToString());
+        }
+
+        public static bool IsQualified(int level)
+        {
+            return _questLevel >= level && _questLevel <= level + 1;
         }
     
     }

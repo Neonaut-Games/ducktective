@@ -1,5 +1,6 @@
-using Dialogue;
+using Character.Player;
 using Player;
+using UI.Dialogue;
 using UnityEngine;
 
 namespace Items
@@ -10,7 +11,7 @@ namespace Items
         public static int amount;
         
         [Header("Dialogue")]
-        public Dialogue.Dialogue pickupMessage;
+        public UI.Dialogue.Dialogue pickupMessage;
         
         [Header("Trigger Requirements")]
         public bool shouldRequireQuestLevel;
