@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44429716, g: 0.49375373, b: 0.5731202, a: 1}
+  m_IndirectSpecularColor: {r: 0.44429612, g: 0.49375284, b: 0.5731184, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6328,6 +6328,7 @@ MonoBehaviour:
     - You This is it, a black feather!
     - You I should head back to the police station to show Quackintinus.
     - You God, I've got to stop talking to myself like this.
+    voices: 
   shouldRequireQuestLevel: 1
   requiredQuestLevel: 4
   shouldChangeQuestLevel: 1
@@ -7623,7 +7624,6 @@ Transform:
   - {fileID: 613022026}
   - {fileID: 1841122263}
   - {fileID: 634985808}
-  - {fileID: 1741822063}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15463,14 +15463,15 @@ MonoBehaviour:
     messages:
     - You WHAT THE QUACK?
     - You Mom!? Are you here?
-    - '  ...'
     - You "I'll keep her safe"? Who writes that after kidnapping someone's mom?
     - You Okay, okay. Think. THINK!
     - You Go to the police. I should go to the police and tell them what happened.
+    voices: 0000000000000000000000000000000000000000
   shouldRequireQuestLevel: 1
   requiredQuestLevel: 1
   shouldChangeQuestLevel: 1
   rewardedQuestLevel: 2
+  rewardObject: {fileID: 0}
 --- !u!65 &1741822062
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15492,11 +15493,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741822060}
   m_LocalRotation: {x: 0.0020814787, y: 0.19680445, z: -0.010368932, w: 0.9803857}
-  m_LocalPosition: {x: 1.3342499, y: -0.7587039, z: 0.5663552}
-  m_LocalScale: {x: 5.312008, y: 0.74708253, z: 7.636504}
+  m_LocalPosition: {x: -0.4100001, y: -0.39, z: 6.49}
+  m_LocalScale: {x: 10.624015, y: 1.4941651, z: 15.273008}
   m_Children: []
-  m_Father: {fileID: 817474793}
-  m_RootOrder: 10
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0.468, y: 22.697, z: -1.118}
 --- !u!1001 &1743922680
 PrefabInstance:

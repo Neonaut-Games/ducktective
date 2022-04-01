@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44429716, g: 0.49375373, b: 0.5731202, a: 1}
+  m_IndirectSpecularColor: {r: 0.44429612, g: 0.49375284, b: 0.5731184, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -14937,10 +14937,12 @@ MonoBehaviour:
     - You Yes sir, do you have it?
     - Eddy Yeah she said she'd swing by later so I put it on the table for ya.
     - You Awesome, thanks! I'll check it out.
+    voices: 02000000000000000200000000000000
   shouldRequireQuestLevel: 0
   requiredQuestLevel: 0
   shouldChangeQuestLevel: 0
   rewardedQuestLevel: 0
+  rewardObject: {fileID: 0}
 --- !u!4 &8034688050458746424
 Transform:
   m_ObjectHideFlags: 0
@@ -15036,7 +15038,9 @@ MonoBehaviour:
     - You You're telling me, Eddy.
     - Eddy Have any idea who could've sent it?
     - You I'm not sure. I better get home and tell mom about it.
+    voices: 0000000002000000000000000600000002000000000000000200000000000000
   shouldRequireQuestLevel: 0
   requiredQuestLevel: 0
   shouldChangeQuestLevel: 1
   rewardedQuestLevel: 1
+  rewardObject: {fileID: 0}

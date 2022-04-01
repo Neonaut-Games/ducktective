@@ -17,27 +17,39 @@ namespace UI.Dialogue
         [TextArea(3, 10)] [SerializeField] private string[] messages;
         [SerializeField] private VoiceType[] voices;
 
-        public Dictionary<int, KeyValuePair<string, string>> GetPackage()
+        /* This function packages the separate, editor-defined arrays into
+        a single Dictionary object with several nested objects inside. */
+        public List<DialogueElement> GetPackage()
         {
-            Dictionary<int, KeyValuePair<string, string>>
-                dialogue = new Dictionary<int, KeyValuePair<string, string>>();
 
-            for (int i = 0; i < messages.Length; i++)
+            /* Ensure that the length of both messages[] and
+            voices[] are the same so that all displayed messages 
+            can be voiced over during the dialogue sequence. */
+            if (voices.Length != messages.Length)
+            {
+                throw new ArgumentException(
+                    "Unequal amount of messages and voices; dialogue could not be packaged.");
+            }
+
+            List<DialogueElement> dialogue = new List<DialogueElement>();
+
+            foreach (var message in messages)
             {
                 // Initialize current message entry
-                string messageEntry = messages[i];
-
+                var messageEntry = message;
+                
                 // Set the author to the first word of the message
-                string authorEntry = messageEntry.Split(' ').First();
+                var authorEntry = messageEntry.Split(' ').First();
 
                 // Remove the author from the message itself
                 messageEntry = messageEntry.Substring(authorEntry.Length + 1);
-
+                
                 // Add the current message's author and message to the dictionary
-                dialogue.Add(i, new KeyValuePair<string, string>(authorEntry, messageEntry));
-                Debug.Log("PACKAGING DIALOGUE ENTRY >> Key = {" + authorEntry + "}, Value=  {" + messageEntry + "}");
-            }
+                dialogue.Add(new DialogueElement(authorEntry, messageEntry, VoiceType.Player));
+                Debug.Log("PACKAGING DIALOGUE ENTRY >> Author: {" + authorEntry + "}, Message: {" + messageEntry + "}, Voice: {" + null + "}");
 
+            }
+            
             return dialogue;
         }
     }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44429716, g: 0.49375373, b: 0.5731202, a: 1}
+  m_IndirectSpecularColor: {r: 0.44429612, g: 0.49375284, b: 0.5731184, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6265,8 +6265,6 @@ Transform:
   - {fileID: 613022026}
   - {fileID: 1841122263}
   - {fileID: 539778313}
-  - {fileID: 8034688050458746424}
-  - {fileID: 1164605491}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7725,10 +7723,12 @@ MonoBehaviour:
     - Quackintinus If you can bring me a sample of the black duck's DNA, I may be
       able to locate them for you.
     - You Uhm, alright. I'll see what I can do.
+    voices: 0400000004000000040000000000000004000000000000000400000004000000000000000400000000000000040000000000000004000000000000000400000000000000
   shouldRequireQuestLevel: 1
   requiredQuestLevel: 3
   shouldChangeQuestLevel: 1
   rewardedQuestLevel: 4
+  rewardObject: {fileID: 0}
 --- !u!65 &1164605490
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7750,11 +7750,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1164605488}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5092499, y: 1.9912962, z: -1.5986446}
-  m_LocalScale: {x: 5, y: 1, z: 5}
+  m_LocalPosition: {x: -0.059999943, y: 5.11, z: 2.16}
+  m_LocalScale: {x: 10, y: 2, z: 10}
   m_Children: []
-  m_Father: {fileID: 817474793}
-  m_RootOrder: 12
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1164605492
 MonoBehaviour:
@@ -7790,10 +7790,12 @@ MonoBehaviour:
     - Quackintinus I'm not too sure. You'd need private transportation, so I'd try
       Meemaw's Transportation Station. It's right by Eddy's Package Store.
     - You Alright, thanks I guess. I'll try that.
+    voices: 0000000004000000040000000000000004000000000000000400000004000000040000000000000004000000000000000400000000000000
   shouldRequireQuestLevel: 1
   requiredQuestLevel: 5
   shouldChangeQuestLevel: 1
   rewardedQuestLevel: 6
+  rewardObject: {fileID: 0}
 --- !u!1001 &1173648280
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16350,10 +16352,12 @@ MonoBehaviour:
     - Randy It's not that simple. You gotta talk to Quackintinius.
     - You ... who?
     - Randy Head upstairs to your right. You'll know him when you see him.
+    voices: 030000000000000003000000000000000300000000000000000000000300000000000000030000000000000003000000
   shouldRequireQuestLevel: 1
   requiredQuestLevel: 2
   shouldChangeQuestLevel: 1
   rewardedQuestLevel: 3
+  rewardObject: {fileID: 0}
 --- !u!4 &8034688050458746424
 Transform:
   m_ObjectHideFlags: 0
@@ -16362,11 +16366,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8034688050458746373}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.60425, y: -0.6837039, z: -4.5786448}
-  m_LocalScale: {x: 1.1966996, y: 0.74708253, z: 4.9446845}
+  m_LocalPosition: {x: 4.13, y: -0.24000001, z: -3.8000002}
+  m_LocalScale: {x: 2.3933992, y: 1.4941651, z: 9.889369}
   m_Children: []
-  m_Father: {fileID: 817474793}
-  m_RootOrder: 11
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &8034688050458746427
 BoxCollider:

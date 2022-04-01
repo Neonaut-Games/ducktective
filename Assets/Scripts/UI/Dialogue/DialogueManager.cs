@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Character.Player;
@@ -26,13 +27,13 @@ namespace UI.Dialogue
         public AudioSource voiceMeemaw;
         public AudioSource voiceBoss;
         
-        private Dictionary<int, KeyValuePair<string, string>> _dialoguePackage;
-        private Queue<KeyValuePair<string, string>> _messageQueue;
+        private List<DialogueElement> _dialoguePackage;
+        private Queue<DialogueElement> _messageQueue;
 
         // Initializes private variables
         private void Start()
         {
-            _messageQueue = new Queue<KeyValuePair<string, string>>();
+            _messageQueue = new Queue<DialogueElement>();
         }
 
         private void Update()
@@ -74,9 +75,9 @@ namespace UI.Dialogue
 
             // Queue each dialogue entry from package into the messages
             _messageQueue.Clear();
-            foreach (KeyValuePair<string, string> entry in _dialoguePackage.Values)
+            foreach (DialogueElement entry in _dialoguePackage)
             {
-                Debug.Log("QUEUEING DIALOGUE ENTRY >> Key = {" + entry.Key + "}, Value=  {" + entry.Value + "}");
+                Debug.Log("QUEUEING DIALOGUE ENTRY >> Author: {" + entry.GetAuthor() + "}, Message: {" + entry.GetMessage() + "}, Voice: {" + entry.GetVoice() + "}");
                 _messageQueue.Enqueue(entry);
             }
 
@@ -84,10 +85,10 @@ namespace UI.Dialogue
             ShowElements(true); 
         
             // Display & animate dialogue to the user
-            DisplayNextMessage();
+            NextMessage();
         }
 
-        public void DisplayNextMessage()
+        public void NextMessage()
         {
             // Stop playing the character typing sound
             StopAllCoroutines();
@@ -101,9 +102,9 @@ namespace UI.Dialogue
             }
         
             // Load the current message's author and message
-            KeyValuePair<string, string> subpackage = _messageQueue.Dequeue();
-            string author = subpackage.Key;
-            string message = subpackage.Value;
+            DialogueElement subpackage = _messageQueue.Dequeue();
+            string author = subpackage.GetAuthor();
+            string message = subpackage.GetMessage();
 
             // Log the message to the console
             Debug.Log("Dialogue >> " + author + ": " + message);
@@ -129,6 +130,8 @@ namespace UI.Dialogue
             ShowElements(false); // Make dialogue elements invisible.
         
             // Set the player's quest level if applicable
+            if (PlayerInspect.loadedTrigger == null)
+                throw new NullReferenceException("No dialogue was loaded, but a sequence was triggered.");
             if (PlayerInspect.loadedTrigger.shouldChangeQuestLevel) PlayerLevel.SetLevel(PlayerInspect.loadedTrigger.rewardedQuestLevel);
             
             // Set gameObject to active if applicable
