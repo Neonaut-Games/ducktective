@@ -30,7 +30,7 @@ namespace UI.Dialogue
 
         public void TriggerDialogue()
         {
-            Debug.Log("Dialogue was triggered by " + gameObject.name);
+            DuckLog.Normal("Dialogue was triggered by " + gameObject.name);
             FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
         }
 

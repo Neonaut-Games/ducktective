@@ -11,7 +11,7 @@ namespace Items
         public static int amount;
         
         [Header("Dialogue")]
-        public UI.Dialogue.Dialogue pickupMessage;
+        public Dialogue pickupMessage;
         
         [Header("Trigger Requirements")]
         public bool shouldRequireQuestLevel;

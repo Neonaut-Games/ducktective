@@ -109,14 +109,22 @@ namespace Character.Player
         {
             // Restrict the player's movement while attacking
             PlayerInspect.movementRestricted = true;
-            
+
             // Set the player's animator to be attacking
             playerAnimator.SetTrigger("attacking");
 
             // Deal damage at the transform point
             Collider[] results = Physics.OverlapSphere(damagePoint.position, attackRange, damageableLayer.value);
-            if (results.Length > 0) DamageEntities(results);
-            else attackSound.Play(); // Play attack miss sound
+            if (results.Length > 0)
+            {
+                PlayerStats.totalHits++;
+                DamageEntities(results);
+            }
+            else
+            {
+                PlayerStats.totalMisses++;
+                attackSound.Play(); // Play attack miss sound
+            }
 
             /* Wait for enough of the animation to finish so that
             it's not super odd looking if they attack again. This
@@ -134,8 +142,9 @@ namespace Character.Player
             {
                 try
                 {
-                    entity.GetComponent<Mortal>().TakeDamage(damage);
-                    Debug.Log("The player attacked " + entity.name);
+                    var wasKilled = entity.GetComponent<Mortal>().TakeDamage(damage);
+                    if (wasKilled) PlayerStats.totalKills++;
+                    DuckLog.Normal("The player attacked " + entity.name);
                 }
                 catch (NullReferenceException) { }
             }

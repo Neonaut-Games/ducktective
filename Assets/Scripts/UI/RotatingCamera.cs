@@ -1,10 +1,13 @@
 using UnityEngine;
 
-public class RotatingCamera : MonoBehaviour
+namespace UI
 {
-    public float angle;
-    private void FixedUpdate()
+    public class RotatingCamera : MonoBehaviour
     {
-        transform.Rotate(new Vector3(0, angle, 0), Space.World);
+        public float angle;
+        private void FixedUpdate()
+        {
+            transform.Rotate(new Vector3(0, angle, 0), Space.World);
+        }
     }
 }

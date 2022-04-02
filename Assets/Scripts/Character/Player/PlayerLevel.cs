@@ -19,7 +19,7 @@ namespace Character.Player
             // Don't let the player's quest level downgrade
             if (level < _questLevel) return;
         
-            Debug.Log("Player's quest level was set to " + level);
+            DuckLog.Normal("Player's quest level was set to " + level);
         
             // Set the player's new quest level
             _questLevel = level;

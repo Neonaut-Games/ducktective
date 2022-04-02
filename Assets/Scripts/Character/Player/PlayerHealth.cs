@@ -56,14 +56,15 @@ namespace Character.Player
             // Play "take damage" audio cue
             takeDamageSound.Play();
             
-            Debug.Log("The player took damage (" + amount + "hp).");
+            DuckLog.Normal("The player took damage (" + amount + "hp).");
             SetHealth(health - amount);
         }
 
         private void Die()
         {
-            Debug.Log("The player has died.");
-            
+            PlayerStats.totalDeaths++;
+            DuckLog.Normal("The player has died.");
+
             // Restrict player from moving around
             PlayerInspect.movementRestricted = true;
             
@@ -95,7 +96,7 @@ namespace Character.Player
 
         private void Respawn()
         {
-            Debug.Log("The player has respawned.");
+            DuckLog.Normal("The player has respawned.");
             
             // Un-restrict player from moving around
             PlayerInspect.movementRestricted = false;

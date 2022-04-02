@@ -24,7 +24,7 @@ namespace Player
                 // If the player can currently inspect something, perform inspect.
                 if (canInspect)
                 {
-                    Debug.Log("Player began inspecting something.");
+                    DuckLog.Normal("Player began inspecting something.");
                     if (loadedTrigger == null)
                     {
                         Debug.LogError("Player attempted inspect but loadedDialogue was not assigned.");
@@ -32,7 +32,7 @@ namespace Player
                     }
                     loadedTrigger.TriggerDialogue();
                 }
-                else Debug.Log("No inspect available right now.");
+                else DuckLog.Normal("No inspect available right now.");
             }
         }
 

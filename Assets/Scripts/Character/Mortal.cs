@@ -34,7 +34,7 @@ namespace Character
             mortalCollider = GetComponent<CapsuleCollider>();
         }
 
-        public void TakeDamage(int amount)
+        public bool TakeDamage(int amount)
         {
             /* The health of the entity will only decrement if the player has the appropriate quest level.
             This is to stop players from completing multiple quests at once and/or cheesing the game. */
@@ -48,16 +48,17 @@ namespace Character
             below, transition to the death function. */
             if (health <= 0) {
                 Die();
-                return;
+                return true;
             }
 
             // Play hit animation
             animator.SetTrigger("takeHit");
+            return false;
         }
 
         private void Die()
         {
-            Debug.Log(gameObject.name + " was killed.");
+            DuckLog.Normal(gameObject.name + " was killed.");
             
             // Animate death 
             animator.SetTrigger("die");

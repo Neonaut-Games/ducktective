@@ -4880,7 +4880,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1805609689}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-        m_MethodName: NextMessage
+        m_MethodName: NextDialogueElement
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -35,7 +35,7 @@ namespace Character.NPC
                 // If the damaged entity is a player
                 if (entity.CompareTag("Player"))
                 {
-                    Debug.Log(gameObject.name + " damaged the Player.");
+                    DuckLog.Normal(gameObject.name + " damaged the Player.");
                     entity.GetComponent<PlayerHealth>().TakeDamage(20);
                 }
             }

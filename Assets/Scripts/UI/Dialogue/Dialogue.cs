@@ -8,7 +8,7 @@ namespace UI.Dialogue
     [Serializable]
     public class Dialogue
     {
-        public Dialogue(String[] messages, VoiceType[] voices)
+        public Dialogue(string[] messages, VoiceType[] voices)
         {
             this.messages = messages;
             this.voices = voices;
@@ -32,11 +32,11 @@ namespace UI.Dialogue
             }
 
             List<DialogueElement> dialogue = new List<DialogueElement>();
-
-            foreach (var message in messages)
+            
+            foreach (var mv in messages.Zip(voices, Tuple.Create)) 
             {
                 // Initialize current message entry
-                var messageEntry = message;
+                var messageEntry = mv.Item1;
                 
                 // Set the author to the first word of the message
                 var authorEntry = messageEntry.Split(' ').First();
@@ -45,11 +45,10 @@ namespace UI.Dialogue
                 messageEntry = messageEntry.Substring(authorEntry.Length + 1);
                 
                 // Add the current message's author and message to the dictionary
-                dialogue.Add(new DialogueElement(authorEntry, messageEntry, VoiceType.Player));
-                Debug.Log("PACKAGING DIALOGUE ENTRY >> Author: {" + authorEntry + "}, Message: {" + messageEntry + "}, Voice: {" + null + "}");
-
+                dialogue.Add(new DialogueElement(authorEntry, messageEntry, mv.Item2));
+                DuckLog.Normal("Packing Dialogue Element >> Author: {" + authorEntry + "}, Message: {" + messageEntry + "}, Voice: {" + mv.Item2 + "}");
             }
-            
+
             return dialogue;
         }
     }

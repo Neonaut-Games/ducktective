@@ -11,13 +11,13 @@ namespace SceneManagement
         {
             if (_persistentObjects.ContainsKey(gameObject.name))
             {
-                Debug.Log("A previously existing version of " + gameObject.name + " was found; destroying new object.");
+                DuckLog.Normal("A previously existing version of " + gameObject.name + " was found; destroying new object.");
 
                 Destroy(gameObject);
             }
             else
             {
-                Debug.Log("No previously existing versions of " + gameObject.name + " were found; keeping conserved object.");
+                DuckLog.Normal("No previously existing versions of " + gameObject.name + " were found; keeping conserved object.");
 
                 _persistentObjects.Add(gameObject.name, this);
                 DontDestroyOnLoad(gameObject);
