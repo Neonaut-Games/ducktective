@@ -10817,6 +10817,7 @@ GameObject:
   - component: {fileID: 8034688050458746427}
   - component: {fileID: 8034688050458746374}
   - component: {fileID: 8034688050458746375}
+  - component: {fileID: 8034688050458746376}
   m_Layer: 0
   m_Name: DialogueTrigger
   m_TagString: Untagged
@@ -10883,7 +10884,25 @@ MonoBehaviour:
   requiredQuestLevel: 8
   shouldChangeQuestLevel: 1
   rewardedQuestLevel: 9
-  rewardObject: {fileID: 0}
+  rewardObject: {fileID: 1502126733}
+--- !u!114 &8034688050458746376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8034688050458746373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eac154bd482cb6b4e814d62e312f671a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: island02
+  destinationX: 166.25
+  destinationY: 54.5
+  destinationZ: 355.25
+  shouldRequireQuestLevel: 1
+  requiredQuestLevel: 9
 --- !u!4 &8034688050458746424
 Transform:
   m_ObjectHideFlags: 0

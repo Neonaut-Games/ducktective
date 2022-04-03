@@ -2,9 +2,9 @@ namespace UI.Dialogue
 {
     public class DialogueElement
     {
-        private string _author;
-        private string _message;
-        private VoiceType _voice;
+        private readonly string _author;
+        private readonly string _message;
+        private readonly VoiceType _voice;
 
         public DialogueElement(string author, string message, VoiceType voice)
         {
@@ -27,10 +27,6 @@ namespace UI.Dialogue
         {
             return _voice;
         }
-
-        public void SetAuthor(string author) => _author = author;
-        public void SetMessage(string message) => _message = message;
-        public void SetVoice(VoiceType voice) => _voice = voice;
 
     }
 }

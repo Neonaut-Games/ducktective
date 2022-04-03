@@ -11,7 +11,9 @@ namespace UI
         [Header("UI Elements")]
         public GameObject pauseMenu;
         public GameObject mainMenu;
+        public GameObject optionsMenu;
         public GameObject statsMenu;
+        public GameObject controlsMenu;
         public TextMeshProUGUI statsElement;
 
         [Header("Audio Settings")]
@@ -21,38 +23,64 @@ namespace UI
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                buttonClick.Play();
                 if (!pauseMenu.activeSelf) Pause();
                 else Resume();
             }
         }
 
-        public void RevealMain()
+        public void RevealSectionMain()
         {
             buttonClick.Play();
-            mainMenu.SetActive(true);
+            optionsMenu.SetActive(false);
             statsMenu.SetActive(false);
+            controlsMenu.SetActive(false);
+            mainMenu.SetActive(true);
         }
 
-        public void Pause()
+        private void Pause()
         {
-            RevealMain();
+            buttonClick.Play();
+            RevealSectionMain();
             pauseMenu.SetActive(true);
             Time.timeScale = 0.0f;
         }
 
         public void Resume()
         {
+            buttonClick.Play();
             pauseMenu.SetActive(false);
             Time.timeScale = 1.0f;
         }
 
-        public void Stats()
+        public void ReportAnIssue() => Application.OpenURL("https://github.com/coopersully/ducktective/issues/new?assignees=&labels=bug&template=bug_report.md&title=");
+        public void SuggestAFeature() => Application.OpenURL("https://github.com/coopersully/ducktective/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=");
+
+        public void RevealSectionStats()
         {
             buttonClick.Play();
-            RevealStats();
+            RefreshStatsElement();
             mainMenu.SetActive(false);
+            optionsMenu.SetActive(false);
+            controlsMenu.SetActive(false);
             statsMenu.SetActive(true);
+        }
+        
+        public void RevealSectionControls()
+        {
+            buttonClick.Play();
+            mainMenu.SetActive(false);
+            optionsMenu.SetActive(false);
+            statsMenu.SetActive(false);
+            controlsMenu.SetActive(true);
+        }
+        
+        public void RevealSectionOptions()
+        {
+            buttonClick.Play();
+            mainMenu.SetActive(false);
+            statsMenu.SetActive(false);
+            controlsMenu.SetActive(false);
+            optionsMenu.SetActive(true);
         }
         
         public void QuitGame()
@@ -61,7 +89,7 @@ namespace UI
             Application.Quit();
         }
 
-        public void RevealStats()
+        private void RefreshStatsElement()
         {
             var playerStats = new StringBuilder();
             playerStats

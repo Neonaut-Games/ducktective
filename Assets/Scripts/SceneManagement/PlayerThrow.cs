@@ -1,9 +1,8 @@
 using System;
 using Character.Player;
-using Player;
 using UI;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 namespace SceneManagement
 {
@@ -18,7 +17,8 @@ namespace SceneManagement
 
         [Header("Player Settings")]
         public bool shouldRequireQuestLevel;
-        public int requiredQuestLevel;
+        [FormerlySerializedAs("requiredQuestLevel")] public int minQuestLevel;
+        public int maxQuestLevel = 10;
 
         private void Awake()
         {
@@ -42,8 +42,12 @@ namespace SceneManagement
             if (!other.CompareTag("Player")) return;
 
             // If the player does not have the required quest level, ignore the event.
-            if (shouldRequireQuestLevel) if (PlayerLevel.GetLevel() != requiredQuestLevel) return;
-        
+            if (shouldRequireQuestLevel)
+            {
+                var level = PlayerLevel.GetLevel();
+                if (!(level >= minQuestLevel && level <= maxQuestLevel)) return;
+            }
+
             // Disable the character controller (temporarily)
             other.GetComponent<CharacterController>().enabled = false;
         
@@ -54,5 +58,6 @@ namespace SceneManagement
             // Load the given scene
             FindObjectOfType<LoadingScreen>().Load(sceneName);
         }
+        
     }
 }

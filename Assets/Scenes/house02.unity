@@ -14977,7 +14977,7 @@ MonoBehaviour:
     - You You're telling me, Eddy.
     - Eddy Have any idea who could've sent it?
     - You I'm not sure. I better get home and tell mom about it.
-    voices: 0000000002000000000000000600000002000000000000000200000000000000
+    voices: 0000000002000000000000000000000002000000000000000200000000000000
   shouldRequireQuestLevel: 0
   requiredQuestLevel: 0
   shouldChangeQuestLevel: 1

@@ -3789,7 +3789,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 580345557}
         m_TargetAssemblyTypeName: UI.PauseMenu, Assembly-CSharp
-        m_MethodName: Stats
+        m_MethodName: RevealSectionStats
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5855,7 +5855,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 580345557}
         m_TargetAssemblyTypeName: UI.PauseMenu, Assembly-CSharp
-        m_MethodName: RevealMain
+        m_MethodName: RevealSectionMain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

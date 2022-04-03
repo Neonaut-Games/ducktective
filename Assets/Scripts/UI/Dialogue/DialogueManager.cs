@@ -27,7 +27,8 @@ namespace UI.Dialogue
         public AudioSource[] voiceQuackintinius;
         public AudioSource[] voiceMeemaw;
         public AudioSource[] voiceBoss;
-        
+
+        private DialogueTrigger _trigger;
         private Queue<DialogueElement> _messageQueue;
         private PlayerInspect _playerInspect;
         private AudioSource _currentVoice;
@@ -45,10 +46,15 @@ namespace UI.Dialogue
         
         /* Initiates a given dialogue sequence. This function
         is called by DialogueTrigger and BlackFeather. */
-        public void StartDialogue(Dialogue dialogue)
+        public void StartDialogue(Dialogue dialogue, DialogueTrigger trigger)
         {
             DuckLog.Normal("A new dialogue is being initiated.");
             
+            // Load the trigger
+            if (trigger == null)
+                throw new NullReferenceException("No dialogue was loaded, but a sequence was triggered.");
+            _trigger = trigger;
+
             // Enable inspection mode for the player
             _playerInspect.BeginInspect();
 
@@ -171,12 +177,10 @@ namespace UI.Dialogue
             ShowUI(false);
         
             // Set the player's quest level if applicable
-            if (PlayerInspect.loadedTrigger == null)
-                throw new NullReferenceException("No dialogue was loaded, but a sequence was triggered.");
-            if (PlayerInspect.loadedTrigger.shouldChangeQuestLevel) PlayerLevel.SetLevel(PlayerInspect.loadedTrigger.rewardedQuestLevel);
+            if (_trigger.shouldChangeQuestLevel) PlayerLevel.SetLevel(_trigger.rewardedQuestLevel);
             
             // Set gameObject to active if applicable
-            if (PlayerInspect.loadedTrigger.rewardObject != null) PlayerInspect.loadedTrigger.rewardObject.SetActive(true);
+            if (_trigger.rewardObject != null) _trigger.rewardObject.SetActive(true);
         }
 
     }

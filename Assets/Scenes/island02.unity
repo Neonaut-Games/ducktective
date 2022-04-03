@@ -1458,8 +1458,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 429087764}
-  m_LocalRotation: {x: 0.20490833, y: 0.6767663, z: -0.20490833, w: 0.6767663}
-  m_LocalPosition: {x: -9.000001, y: 6, z: 0.0000009536743}
+  m_LocalRotation: {x: 0.006008329, y: 0.95688635, z: -0.28972188, w: 0.019844161}
+  m_LocalPosition: {x: -0.3731286, y: 6, z: 8.992264}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1053504723}
@@ -1609,8 +1609,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484762778}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -166.72, y: 56.73, z: 353.13}
+  m_LocalRotation: {x: -0, y: -0.99978507, z: -0, w: 0.020733824}
+  m_LocalPosition: {x: -166.25, y: 54.4, z: 355.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 429087768}
@@ -1622,7 +1622,7 @@ Transform:
   - {fileID: 899238387}
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -177.624, z: 0}
 --- !u!1 &518046999
 GameObject:
   m_ObjectHideFlags: 3
@@ -2299,6 +2299,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 747811184}
+  mainMenu: {fileID: 0}
+  statsMenu: {fileID: 0}
+  statsElement: {fileID: 0}
+  buttonClick: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2771,7 +2775,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863624968}
-  m_LocalRotation: {x: 0.1801896, y: 0.6837629, z: -0.1801896, w: 0.6837629}
+  m_LocalRotation: {x: 0.0052835243, y: 0.96677893, z: -0.2547718, w: 0.020049315}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3065,13 +3069,20 @@ MonoBehaviour:
   messageElement: {fileID: 1550227649}
   authorElement: {fileID: 1488940977}
   messageSound: {fileID: 1926423815}
-  voicePlayer: {fileID: 0}
-  voiceMom: {fileID: 0}
-  voiceEddy: {fileID: 0}
-  voiceRandy: {fileID: 0}
-  voiceQuackintinius: {fileID: 0}
-  voiceMeemaw: {fileID: 0}
-  voiceBoss: {fileID: 0}
+  voicePlayer:
+  - {fileID: 0}
+  voiceMom:
+  - {fileID: 0}
+  voiceEddy:
+  - {fileID: 0}
+  voiceRandy:
+  - {fileID: 0}
+  voiceQuackintinius:
+  - {fileID: 0}
+  voiceMeemaw:
+  - {fileID: 0}
+  voiceBoss:
+  - {fileID: 0}
 --- !u!1 &993548372
 GameObject:
   m_ObjectHideFlags: 0
@@ -3272,7 +3283,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1091910501}
-  m_LocalRotation: {x: 0.20490831, y: 0.6767663, z: -0.20490831, w: 0.6767663}
+  m_LocalRotation: {x: 0.006008328, y: 0.95688635, z: -0.28972185, w: 0.019844161}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3346,7 +3357,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104526451}
-  m_LocalRotation: {x: 0.19256438, y: 0.68038154, z: -0.19256441, w: 0.68038154}
+  m_LocalRotation: {x: 0.005646375, y: 0.9619979, z: -0.27226868, w: 0.01995015}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6912,7 +6923,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2060623056}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.000001, y: 6, z: 0.0000009536743}
+  m_LocalPosition: {x: -0.3731286, y: 6, z: 8.992264}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1091910502}

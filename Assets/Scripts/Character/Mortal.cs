@@ -34,6 +34,9 @@ namespace Character
             mortalCollider = GetComponent<CapsuleCollider>();
         }
 
+        /* This function manages all damage taken by Mortal enemies
+        (unless expanded upon or changed by a subclass) and returns a
+        boolean value indicating whether or not the damage killed the enemy. */
         public bool TakeDamage(int amount)
         {
             /* The health of the entity will only decrement if the player has the appropriate quest level.
@@ -41,8 +44,9 @@ namespace Character
             if (PlayerLevel.GetLevel() >= minimumQuestLevelRequired)
             {
                 health -= amount;
-                takeDamageSound.Play();
             }
+            
+            takeDamageSound.Play();
 
             /* If the mortal's health is == 0 or
             below, transition to the death function. */

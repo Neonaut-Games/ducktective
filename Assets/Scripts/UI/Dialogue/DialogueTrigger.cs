@@ -31,7 +31,7 @@ namespace UI.Dialogue
         public void TriggerDialogue()
         {
             DuckLog.Normal("Dialogue was triggered by " + gameObject.name);
-            FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+            FindObjectOfType<DialogueManager>().StartDialogue(dialogue, this);
         }
 
         private void OnTriggerEnter(Collider other)

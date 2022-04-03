@@ -1,10 +1,14 @@
+using Character.Player;
 using UnityEngine;
 
-public class TakeCoins : MonoBehaviour
+namespace Quests
 {
-    private void Awake()
+    public class TakeCoins : MonoBehaviour
     {
-        Items.Coin.amount -= 100;
-        FindObjectOfType<CoinsManager>().RefreshAmount();
+        private void Awake()
+        {
+            Items.Coin.amount -= 50;
+            FindObjectOfType<CoinsManager>().RefreshAmount();
+        }
     }
 }
