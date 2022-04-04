@@ -1,11 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Character;
 using Character.Player;
 using Player;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace UI.Dialogue
@@ -17,16 +17,6 @@ namespace UI.Dialogue
         public Animator startButton;
         public TextMeshProUGUI messageElement;
         public TextMeshProUGUI authorElement;
-
-        [Header("Audio Settings")]
-        [FormerlySerializedAs("characterSound")] public AudioSource messageSound;
-        public AudioSource[] voicePlayer;
-        public AudioSource[] voiceMom;
-        public AudioSource[] voiceEddy;
-        public AudioSource[] voiceRandy;
-        public AudioSource[] voiceQuackintinius;
-        public AudioSource[] voiceMeemaw;
-        public AudioSource[] voiceBoss;
 
         private DialogueTrigger _trigger;
         private Queue<DialogueElement> _messageQueue;
@@ -81,7 +71,7 @@ namespace UI.Dialogue
         {
             // Stop playing the character typing sound
             StopAllCoroutines();
-            messageSound.Stop();
+            AudioManager.a.messageSound.Stop();
             if (_currentVoice != null) _currentVoice.Stop();
         
             // If there are no messages left in the queue, end the dialogue
@@ -101,25 +91,25 @@ namespace UI.Dialogue
             switch (voiceType)
             {
                 case VoiceType.Boss:
-                    voice = voiceBoss;
+                    voice = AudioManager.a.voiceBoss;
                     break;
                 case VoiceType.Eddy:
-                    voice = voiceEddy;
+                    voice = AudioManager.a.voiceEddy;
                     break;
                 case VoiceType.Meemaw:
-                    voice = voiceMeemaw;
+                    voice = AudioManager.a.voiceMeemaw;
                     break;
                 case VoiceType.Mom:
-                    voice = voiceMom;
+                    voice = AudioManager.a.voiceMom;
                     break;
                 case VoiceType.Player:
-                    voice = voicePlayer;
+                    voice = AudioManager.a.voicePlayer;
                     break;
                 case VoiceType.Quackintinius:
-                    voice = voiceQuackintinius;
+                    voice = AudioManager.a.voiceQuackintinius;
                     break;
                 case VoiceType.Randy:
-                    voice = voiceRandy;
+                    voice = AudioManager.a.voiceRandy;
                     break;
                 default:
                     throw new ArgumentException("The given voice has no sound available.");
@@ -142,7 +132,7 @@ namespace UI.Dialogue
             {
                 /* Animate message typing onto screen
                 character-by-character with a typing sound. */
-                if (!messageSound.isPlaying) messageSound.Play();
+                if (!AudioManager.a.messageSound.isPlaying) AudioManager.a.messageSound.Play();
                 messageElement.SetText(messageElement.text + character);
                 
                 /* If the previous voice-line is not playing, play a new
@@ -168,7 +158,7 @@ namespace UI.Dialogue
             
             // Stop playing the character typing sound
             StopAllCoroutines();
-            messageSound.Stop();
+            AudioManager.a.messageSound.Stop();
             if (_currentVoice != null) _currentVoice.Stop();
             
             // Disable inspection mode for the player
