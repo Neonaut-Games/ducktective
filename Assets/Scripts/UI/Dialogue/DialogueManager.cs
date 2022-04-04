@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Character;
 using Character.Player;
-using Player;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;

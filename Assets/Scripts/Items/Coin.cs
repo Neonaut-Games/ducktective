@@ -1,5 +1,5 @@
 using Character.Player;
-using Player;
+using UI;
 using UnityEngine;
 
 namespace Items

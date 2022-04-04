@@ -1,9 +1,13 @@
-using System;
+using System.Collections;
+using Items;
 using TMPro;
 using UnityEngine;
 
-public class CoinsManager : MonoBehaviour
+namespace UI
 {
-    public TextMeshProUGUI textElement;
-    public void RefreshAmount() => textElement.SetText(String.Format("{0:n0}", Items.Coin.amount));
+    public class CoinsManager : MonoBehaviour
+    {
+        public TextMeshProUGUI textElement;
+        public void RefreshAmount() => textElement.SetText($"{Coin.amount:n0}");
+    }
 }

@@ -1,15 +1,16 @@
+using System;
 using Cinemachine;
 using JetBrains.Annotations;
-using UI.Dialogue;
+using UI;
 using UnityEngine;
 
-namespace Player
+namespace Character.Player
 {
     public class PlayerInspect : MonoBehaviour
     {
         public static bool movementRestricted;
         public static bool canInspect;
-        [CanBeNull] public static DialogueTrigger loadedTrigger = null;
+        [CanBeNull] public static InspectTrigger loadedTrigger = null;
 
         [Header("Camera Settings")]
         public Camera stillCamera;
@@ -27,19 +28,21 @@ namespace Player
                     DuckLog.Normal("Player began inspecting something.");
                     if (loadedTrigger == null)
                     {
-                        Debug.LogError("Player attempted inspect but loadedDialogue was not assigned.");
+                        Debug.LogError("Player attempted inspect but loadedTrigger was not assigned.");
                         return;
                     }
-                    loadedTrigger.TriggerDialogue();
-                }
-                else DuckLog.Normal("No inspect available right now.");
+
+                    try { loadedTrigger.Trigger(); } catch (NullReferenceException) { }
+
+                } else DuckLog.Normal("No inspect available right now.");
             }
         }
 
         public void BeginInspect()
         {
             // Swap to still-positioned camera and disable Cinemachine follow camera
-            stillCamera.transform.SetPositionAndRotation(followCamera.transform.position, followCamera.transform.rotation);
+            var followCameraTransform = followCamera.transform;
+            stillCamera.transform.SetPositionAndRotation(followCameraTransform.position, followCameraTransform.rotation);
             followCamera.gameObject.SetActive(false);
             stillCamera.gameObject.SetActive(true);
             

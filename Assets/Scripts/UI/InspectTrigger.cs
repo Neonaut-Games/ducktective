@@ -1,41 +1,40 @@
-using Character.Player;
-using JetBrains.Annotations;
+﻿using Character.Player;
 using UnityEngine;
 
-namespace UI.Dialogue
+namespace UI
 {
-    public class DialogueTrigger : InspectTrigger
+    public abstract class InspectTrigger : MonoBehaviour
     {
+        
         private Animator _inspectIndicator;
         private AudioSource _inspectSound;
-    
-        [Header("Dialogue Settings")]
-        public Dialogue dialogue;
-
-        [Header("Completion Rewards")]
-        public bool shouldChangeQuestLevel;
-        public int rewardedQuestLevel;
-        [CanBeNull] public GameObject rewardObject;
         
-
-        public override void Trigger()
+        [Header("Trigger Requirements")]
+        public bool shouldRequireQuestLevel;
+        public int requiredQuestLevel;
+        
+        public void Start()
         {
-            DuckLog.Normal("Dialogue was triggered by " + gameObject.name);
-            FindObjectOfType<DialogueManager>().StartDialogue(dialogue, this);
+            _inspectIndicator = GameObject.FindGameObjectWithTag("InspectIndicator").GetComponent<Animator>();
+            _inspectSound = _inspectIndicator.GetComponent<AudioSource>();
         }
+
+        public abstract void Trigger();
 
         private void OnTriggerEnter(Collider other)
         {
             // If the object is not a player, ignore the event.
             if (!other.CompareTag("Player")) return;
-        
+
             // If the player does not have the required quest level, ignore the event.
-            if (shouldRequireQuestLevel) if (PlayerLevel.questLevel != requiredQuestLevel) return;
-        
+            if (shouldRequireQuestLevel)
+                if (PlayerLevel.questLevel != requiredQuestLevel)
+                    return;
+
             _inspectIndicator.SetBool("isEnabled", true);
             PlayerInspect.canInspect = true;
             PlayerInspect.loadedTrigger = this;
-        
+
             // Play audio cue
             _inspectSound.Play();
         }
