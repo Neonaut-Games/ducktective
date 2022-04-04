@@ -15,6 +15,9 @@ namespace Character
         public AudioSource thud;
         public AudioSource impact;
         
+        [Header("Player-only Audios")]
+        public AudioSource[] hurt;
+        
         [Header("Dialogue-related Audios")]
         public AudioSource messageSound;
         public AudioSource[] voicePlayer;
@@ -48,6 +51,12 @@ namespace Character
         public static void Impact() => a.impact.Play();
 
         #endregion
+        
+        #region Player-only Audios
+
+        public static void Hurt() => PlayRandomSoundFromArray(a.hurt);
+
+        #endregion
 
         #region Dialogue-related Audios
 
@@ -67,5 +76,10 @@ namespace Character
         public static void BodyFall() => a.bodyFall.Play();
 
         #endregion
+        
+        private static void PlayRandomSoundFromArray(AudioSource[] audioSources)
+        {
+            audioSources[Random.Range(0, audioSources.Length)].Play();
+        }
     }
 }

@@ -17,7 +17,6 @@ namespace Character.Player
         public Slider healthSlider;
         public GameObject gameOverUI;
         public TextMeshProUGUI secondsLeftUI;
-        public AudioSource takeDamageSound;
 
         private void Start()
         {
@@ -53,7 +52,7 @@ namespace Character.Player
         public void TakeDamage(int amount)
         {
             // Play "take damage" audio cue
-            takeDamageSound.Play();
+            AudioManager.Hurt();
             
             DuckLog.Normal("The player took damage (" + amount + "hp).");
             SetHealth(health - amount);
