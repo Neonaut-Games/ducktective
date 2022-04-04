@@ -1,30 +1,34 @@
+using System;
 using System.Collections;
 using Character.Player;
-using Player;
 using UnityEngine;
 
 namespace UI
 {
     public class WaterOverlay : MonoBehaviour
     {
-        private void OnTriggerEnter(Collider other)
+        private bool _isTakingDamage;
+        
+        private void OnTriggerStay(Collider other)
         {
             if (!other.CompareTag("Player")) return;
-            StartCoroutine(DrownTick());
+            if (!_isTakingDamage) StartCoroutine(DamageTick());
         }
 
         private void OnTriggerExit(Collider other)
         {
             if (!other.CompareTag("Player")) return;
             StopAllCoroutines();
+            _isTakingDamage = false;
         }
 
-        private IEnumerator DrownTick()
+        private IEnumerator DamageTick()
         {
+            _isTakingDamage = true;
             while (PlayerHealth.health > 0)
             {
                 FindObjectOfType<PlayerHealth>().TakeDamage(10);
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(1.0f);
             }
         }
     }

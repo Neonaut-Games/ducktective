@@ -11,7 +11,13 @@ namespace UI
         public void StartGame()
         {
             ButtonClick();
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene("house00");
+        }
+        
+        public void Tutorial()
+        {
+            ButtonClick();
+            SceneManager.LoadScene("tutorial");
         }
 
         public void About()

@@ -93,7 +93,7 @@ namespace UI
         {
             var playerStats = new StringBuilder();
             playerStats
-                .Append("Quest Level: " + PlayerLevel.GetLevel())
+                .Append("Quest Level: " + PlayerLevel.questLevel)
                 .AppendLine()
                 .AppendLine("Total Kills: " + PlayerStats.totalKills)
                 .AppendLine("Total Deaths: " + PlayerStats.totalDeaths)

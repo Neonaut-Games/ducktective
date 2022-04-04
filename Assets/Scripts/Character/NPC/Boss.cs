@@ -1,5 +1,6 @@
 using System.Collections;
 using Character.Player;
+using JetBrains.Annotations;
 using Player;
 using UnityEngine;
 
@@ -15,6 +16,7 @@ namespace Character.NPC
         {
             var playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
             var bossPosition = mortalRigidbody.position;
+
 
             if (Vector3.Distance(playerPosition, bossPosition) > sightRange)
             {

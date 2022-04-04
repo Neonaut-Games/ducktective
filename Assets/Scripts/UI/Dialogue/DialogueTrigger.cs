@@ -40,7 +40,7 @@ namespace UI.Dialogue
             if (!other.CompareTag("Player")) return;
         
             // If the player does not have the required quest level, ignore the event.
-            if (shouldRequireQuestLevel) if (PlayerLevel.GetLevel() != requiredQuestLevel) return;
+            if (shouldRequireQuestLevel) if (PlayerLevel.questLevel != requiredQuestLevel) return;
         
             _inspectIndicator.SetBool("isEnabled", true);
             PlayerInspect.canInspect = true;

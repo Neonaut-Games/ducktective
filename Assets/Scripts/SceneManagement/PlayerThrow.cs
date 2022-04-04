@@ -44,8 +44,7 @@ namespace SceneManagement
             // If the player does not have the required quest level, ignore the event.
             if (shouldRequireQuestLevel)
             {
-                var level = PlayerLevel.GetLevel();
-                if (!(level >= minQuestLevel && level <= maxQuestLevel)) return;
+                if (!(PlayerLevel.questLevel >= minQuestLevel && PlayerLevel.questLevel <= maxQuestLevel)) return;
             }
 
             // Disable the character controller (temporarily)

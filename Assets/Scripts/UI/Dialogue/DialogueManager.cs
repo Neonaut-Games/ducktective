@@ -177,7 +177,7 @@ namespace UI.Dialogue
             ShowUI(false);
         
             // Set the player's quest level if applicable
-            if (_trigger.shouldChangeQuestLevel) PlayerLevel.SetLevel(_trigger.rewardedQuestLevel);
+            if (_trigger.shouldChangeQuestLevel) PlayerLevel.SetQuestLevel(_trigger.rewardedQuestLevel);
             
             // Set gameObject to active if applicable
             if (_trigger.rewardObject != null) _trigger.rewardObject.SetActive(true);

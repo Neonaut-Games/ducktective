@@ -12,7 +12,7 @@ namespace Items
             if (!other.CompareTag("Player")) return;
             
             // If the player does not have the required level, ignore it.
-            if (shouldRequireQuestLevel) if (PlayerLevel.GetLevel() != requiredQuestLevel) return;
+            if (shouldRequireQuestLevel) if (PlayerLevel.questLevel != requiredQuestLevel) return;
             
             // Start a new dialogue for the player
             FindObjectOfType<DialogueManager>().StartDialogue(dialogue, this);

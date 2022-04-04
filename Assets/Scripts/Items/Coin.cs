@@ -20,7 +20,7 @@ namespace Items
             FindObjectOfType<CoinsManager>().RefreshAmount();
             
             // Level up the player's quest level if applicable
-            if (amount >= 50) PlayerLevel.SetLevel(8);
+            if (amount >= 50) PlayerLevel.SetQuestLevel(8);
 
                 // Play the sound
             pickupSound.Play();

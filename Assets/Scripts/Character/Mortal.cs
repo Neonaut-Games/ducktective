@@ -41,7 +41,7 @@ namespace Character
         {
             /* The health of the entity will only decrement if the player has the appropriate quest level.
             This is to stop players from completing multiple quests at once and/or cheesing the game. */
-            if (PlayerLevel.GetLevel() >= minimumQuestLevelRequired)
+            if (PlayerLevel.questLevel >= minimumQuestLevelRequired)
             {
                 health -= amount;
             }

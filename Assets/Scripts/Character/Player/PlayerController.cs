@@ -7,8 +7,7 @@ namespace Character.Player
 {
     public class PlayerController : MonoBehaviour
     {
-        private CharacterController _characterController;
-
+        public CharacterController _characterController;
         [Header("Camera Settings")] public Transform playerCamera;
         [Range(0, 1)] public float rotationSmoothTime = 0.1f;
         private float _turnSmoothVelocity;
@@ -28,7 +27,7 @@ namespace Character.Player
         
         [Header("Animation Settings")]
         public Animator playerAnimator;
-
+        
         private void Start() => _characterController = GetComponent<CharacterController>();
 
         private void Update()
@@ -89,10 +88,10 @@ namespace Character.Player
                                           _sprintAdditive *
                                           Time.deltaTime);
             }
-            
+
             if (!_characterController.isGrounded) _characterController.Move(Physics.gravity * Time.deltaTime);
         }
-
+        
         #endregion
 
         #region Combat Mechanics
