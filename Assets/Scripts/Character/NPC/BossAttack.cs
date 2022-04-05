@@ -1,4 +1,5 @@
 using Character.Player;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Character.NPC
@@ -10,9 +11,10 @@ namespace Character.NPC
         public Transform attackPoint;
         public float attackRange = 1.0f;
         public LayerMask damageLayer;
+        public int attackDamage = 20;
         
         [Header("Cosmetic Settings")]
-        public ParticleSystem attackParticles;
+        [CanBeNull] public ParticleSystem attackParticles;
         
         public void Attack()
         {
@@ -25,7 +27,7 @@ namespace Character.NPC
         private void PerformSuccessfulAttack(Collider[] entities)
         {
             AudioManager.Impact();
-            attackParticles.Play();
+            if (attackParticles != null) attackParticles.Play();
             
             /* Have each enemy that was touched by the boss's attack collider
             take damage. This includes the player and damageable NPCs. */
@@ -35,7 +37,7 @@ namespace Character.NPC
                 if (entity.CompareTag("Player"))
                 {
                     DuckLog.Normal(gameObject.name + " damaged the Player.");
-                    entity.GetComponent<PlayerHealth>().TakeDamage(20);
+                    entity.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
                 }
             }
         }

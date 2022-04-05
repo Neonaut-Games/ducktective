@@ -1997,7 +1997,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7709494183734749487, guid: 184c624ad36bb4efe9d06ce5f82f1cc5, type: 3}
       propertyPath: minimumQuestLevelRequired
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 184c624ad36bb4efe9d06ce5f82f1cc5, type: 3}
@@ -2263,7 +2263,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7709494183734749487, guid: 184c624ad36bb4efe9d06ce5f82f1cc5, type: 3}
       propertyPath: minimumQuestLevelRequired
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 184c624ad36bb4efe9d06ce5f82f1cc5, type: 3}
@@ -3346,7 +3346,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7709494183734749487, guid: 184c624ad36bb4efe9d06ce5f82f1cc5, type: 3}
       propertyPath: minimumQuestLevelRequired
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 184c624ad36bb4efe9d06ce5f82f1cc5, type: 3}
@@ -6994,7 +6994,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7709494183734749487, guid: 184c624ad36bb4efe9d06ce5f82f1cc5, type: 3}
       propertyPath: minimumQuestLevelRequired
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 184c624ad36bb4efe9d06ce5f82f1cc5, type: 3}

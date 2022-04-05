@@ -67,11 +67,7 @@ namespace Character
 
         #region Global Character Audios
 
-        public static void Footstep()
-        {
-            var sound = a.footstepSounds[Random.Range(0, a.footstepSounds.Length)];
-            sound.Play();
-        }
+        public static void Footstep() => PlayRandomSoundFromArray(a.footstepSounds);
 
         public static void BodyFall() => a.bodyFall.Play();
 

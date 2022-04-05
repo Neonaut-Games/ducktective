@@ -326,8 +326,8 @@ MonoBehaviour:
   damageLayer:
     serializedVersion: 2
     m_Bits: 64
-  attackDamage: 20
-  attackParticles: {fileID: 934475955245647219}
+  attackDamage: 5
+  attackParticles: {fileID: 0}
 --- !u!114 &934475956184248280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6054,9 +6054,9 @@ GameObject:
   - component: {fileID: 6867762668037948917}
   - component: {fileID: 6867762668037948918}
   - component: {fileID: 6867762668037948921}
-  - component: {fileID: 6867762668037948920}
+  - component: {fileID: 8645368925567093641}
   m_Layer: 6
-  m_Name: Boss
+  m_Name: TemedosMini
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -6071,7 +6071,7 @@ Transform:
   m_GameObject: {fileID: 6867762668037948922}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children:
   - {fileID: 934475956377092308}
   - {fileID: 934475954938587993}
@@ -6111,7 +6111,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &6867762668037948920
+--- !u!114 &8645368925567093641
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6120,20 +6120,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 6867762668037948922}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 171e5125051414c869b4fa1cac4ac6fc, type: 3}
+  m_Script: {fileID: 11500000, guid: 94c27318d21387345a4aa979a2344dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mortalRigidbody: {fileID: 0}
   mortalCollider: {fileID: 0}
   minimumQuestLevelRequired: 0
   health: 0
-  maxHealth: 200
+  maxHealth: 30
   animator: {fileID: 934475955220511044}
   takeDamageSound: {fileID: 934475954938587994}
-  bodyDecayTime: 120
+  bodyDecayTime: 10
   sightRange: 30
-  shouldReward: 1
-  rewardGameObject: {fileID: 0}
+  loot: {fileID: 2560821115435214408, guid: 130d4514c4c1c7245b8775a95945762b, type: 3}
+  lootMinimumAmount: 10
+  lootMaximumAmount: 15
 --- !u!1 &6930812120464554008
 GameObject:
   m_ObjectHideFlags: 0

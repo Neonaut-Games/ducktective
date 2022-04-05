@@ -7,15 +7,16 @@ using Debug = System.Diagnostics.Debug;
 
 namespace Character.NPC
 {
-    public class Boss : Mortal
+    public class MiniBoss : Mortal
     {
     
         [Header("Combat Settings")]
         public int sightRange = 30;
 
-        [Header("Reward Settings")]
-        public bool shouldReward;
-        [FormerlySerializedAs("victoryUI")] [CanBeNull] public GameObject rewardGameObject;
+        [Header("Loot Settings")]
+        [CanBeNull] public GameObject loot;
+        public int lootMinimumAmount;
+        public int lootMaximumAmount;
 
         public void Update()
         {
@@ -35,13 +36,11 @@ namespace Character.NPC
 
         public override void DeathReward()
         {
-            if (shouldReward && rewardGameObject != null) StartCoroutine(ShowVictoryScreen());
-        }
-
-        private IEnumerator ShowVictoryScreen()
-        {
-            yield return new WaitForSeconds(4.0f);
-            rewardGameObject!.SetActive(true);
+            if (loot == null) return;
+            for (int i = 0; i < Random.Range(lootMinimumAmount, lootMaximumAmount); i++)
+            {
+                Instantiate(loot, transform.position, Quaternion.identity);
+            }
         }
     }
 }
