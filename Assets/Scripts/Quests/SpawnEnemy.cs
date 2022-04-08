@@ -9,7 +9,7 @@ namespace Quests
 
         private void OnEnable()
         {
-            Instantiate(enemy);
+            Instantiate(enemy, new Vector3(0, 6, 0), Quaternion.identity);
             gameObject.SetActive(false);
         }
     }

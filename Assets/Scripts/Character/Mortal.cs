@@ -73,18 +73,29 @@ namespace Character
             mortalRigidbody.isKinematic = true;
             mortalCollider.enabled = false;
 
+            StartCoroutine(BodyDescend());
             StartCoroutine(BodyDecay());
             
             DeathReward();
         }
-
-
+        
         public abstract void DeathReward();
+
+        public IEnumerator BodyDescend()
+        {
+            var destination = mortalRigidbody.position;
+            destination.y -= 10;
+            while (true)
+            {
+                mortalRigidbody.MovePosition(destination);
+            }
+        }
 
         private IEnumerator BodyDecay()
         {
             yield return new WaitForSeconds(bodyDecayTime);
             Destroy(gameObject);
+            StopAllCoroutines();
         }
         
     }

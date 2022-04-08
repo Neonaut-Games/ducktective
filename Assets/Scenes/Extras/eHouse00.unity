@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6339384, g: 0.7140164, b: 0.740649, a: 1}
+  m_IndirectSpecularColor: {r: 0.6339488, g: 0.7140159, b: 0.7405487, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8618,7 +8618,7 @@ MonoBehaviour:
     price: 5
   shouldChangeQuestLevel: 0
   rewardedQuestLevel: 0
-  rewardObject: {fileID: 0}
+  rewardObject: {fileID: 1090376444}
 --- !u!65 &1277565079
 BoxCollider:
   m_ObjectHideFlags: 0

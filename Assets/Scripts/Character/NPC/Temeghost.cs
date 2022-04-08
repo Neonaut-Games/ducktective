@@ -1,15 +1,13 @@
-using System.Collections;
-using Character.Player;
 using JetBrains.Annotations;
 using UnityEngine;
-using UnityEngine.Serialization;
-using Debug = System.Diagnostics.Debug;
 
 namespace Character.NPC
 {
-    public class MiniBoss : Mortal
+    public class Temeghost : Mortal
     {
-    
+        [Header("Cosmetic Settings")]
+        public ParticleSystem ambientParticles;
+        
         [Header("Combat Settings")]
         public int sightRange = 30;
 
@@ -41,6 +39,8 @@ namespace Character.NPC
             {
                 Instantiate(loot, transform.position, Quaternion.identity);
             }
+            ambientParticles.Stop();
+            ambientParticles.time = 2.0f;
         }
     }
 }
