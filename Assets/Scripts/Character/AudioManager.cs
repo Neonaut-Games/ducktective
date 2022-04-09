@@ -7,6 +7,7 @@ namespace Character
     {
 
         [Header("UI Audios")]
+        public AudioSource pause;
         public AudioSource buttonClick;
         public AudioSource decline;
         public AudioSource purchase;
@@ -37,7 +38,8 @@ namespace Character
         private void Start() => a = this;
 
         #region UI Audios
-        
+
+        public static void Pause() => a.pause.Play();
         public static void ButtonClick() => a.buttonClick.Play();
         public static void Decline() => a.decline.Play();
         public static void Purchase() => a.purchase.Play();

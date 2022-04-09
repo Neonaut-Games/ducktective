@@ -22,8 +22,6 @@ namespace Character.Player
         {
             return questLevel >= level && questLevel <= level + 1;
         }
-        
-        
-    
+
     }
 }

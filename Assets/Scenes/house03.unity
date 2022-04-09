@@ -1803,6 +1803,99 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3627632174947109160, guid: f7d4b943c25cc374b8bdeb428edda149, type: 3}
   m_PrefabInstance: {fileID: 247502979}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &278697102
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 278697103}
+  - component: {fileID: 278697104}
+  m_Layer: 0
+  m_Name: Spot Light.2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &278697103
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278697102}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 5.792, y: 3.3385, z: 11.161}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1095771452}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!108 &278697104
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278697102}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 0
+  m_Shape: 0
+  m_Color: {r: 0.9874325, g: 1, b: 0.5157232, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 90
+  m_InnerSpotAngle: 9
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1001 &300753945
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3598,6 +3691,10 @@ PrefabInstance:
       value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 6269511039872361703, guid: 579efd77e9dc6244185ff722d2942a25, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269511039872361703, guid: 579efd77e9dc6244185ff722d2942a25, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 100
       objectReference: {fileID: 0}
@@ -4230,12 +4327,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abf66f6f01881714abfdd2067824c3d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldRequireQuestLevel: 0
+  requiredQuestLevel: 0
   dialogue:
     messages:
     - Thomas Hey, hey! Eyes off the screens, punk.
     voices: 02000000
-  shouldRequireQuestLevel: 0
-  requiredQuestLevel: 0
   shouldChangeQuestLevel: 0
   rewardedQuestLevel: 0
   rewardObject: {fileID: 0}
@@ -6335,6 +6432,99 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7756507192740482762, guid: a11b5d3b7995272448c8a708151488c9, type: 3}
   m_PrefabInstance: {fileID: 843037291}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &857247638
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 857247639}
+  - component: {fileID: 857247640}
+  m_Layer: 0
+  m_Name: Spot Light.3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &857247639
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857247638}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 7.92, y: 3.852, z: 3.655}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1095771452}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!108 &857247640
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857247638}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 0
+  m_Shape: 0
+  m_Color: {r: 0.9874325, g: 1, b: 0.5157232, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 179
+  m_InnerSpotAngle: 9
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1001 &897318141
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6685,6 +6875,99 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1095032886737693981, guid: 1591870f0c9c55744a72c9c51d0bd9d1, type: 3}
   m_PrefabInstance: {fileID: 981040906}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1001360808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1001360809}
+  - component: {fileID: 1001360810}
+  m_Layer: 0
+  m_Name: Spot Light.1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1001360809
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001360808}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 5.533, y: 3.3385, z: -3.763}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1095771452}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!108 &1001360810
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001360808}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 0
+  m_Shape: 0
+  m_Color: {r: 0.9874325, g: 1, b: 0.5157232, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 90
+  m_InnerSpotAngle: 9
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1001 &1011667205
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7129,6 +7412,39 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7611549199134581147, guid: fa43cf6603cae44488a8444bcd8741e6, type: 3}
   m_PrefabInstance: {fileID: 1090840536}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1095771451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1095771452}
+  m_Layer: 0
+  m_Name: Lights
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1095771452
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095771451}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1001360809}
+  - {fileID: 278697103}
+  - {fileID: 857247639}
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1096671631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7588,6 +7904,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abf66f6f01881714abfdd2067824c3d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldRequireQuestLevel: 1
+  requiredQuestLevel: 3
   dialogue:
     messages:
     - Quackintinus I've been expecting you.
@@ -7613,8 +7931,6 @@ MonoBehaviour:
       able to locate them for you.
     - You Uhm, alright. I'll see what I can do.
     voices: 0400000004000000040000000000000004000000000000000400000004000000000000000400000000000000040000000000000004000000000000000400000000000000
-  shouldRequireQuestLevel: 1
-  requiredQuestLevel: 3
   shouldChangeQuestLevel: 1
   rewardedQuestLevel: 4
   rewardObject: {fileID: 0}
@@ -7657,6 +7973,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abf66f6f01881714abfdd2067824c3d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldRequireQuestLevel: 1
+  requiredQuestLevel: 5
   dialogue:
     messages:
     - You I found a black feather back at the house. Think you could use it?
@@ -7680,8 +7998,6 @@ MonoBehaviour:
       Meemaw's Transportation Station. It's right by Eddy's Package Store.
     - You Alright, thanks I guess. I'll try that.
     voices: 0000000004000000040000000000000004000000000000000400000004000000040000000000000004000000000000000400000000000000
-  shouldRequireQuestLevel: 1
-  requiredQuestLevel: 5
   shouldChangeQuestLevel: 1
   rewardedQuestLevel: 6
   rewardObject: {fileID: 0}
@@ -10228,8 +10544,12 @@ Transform:
   - {fileID: 2030400063}
   - {fileID: 1987525850}
   - {fileID: 1318942316}
-  - {fileID: 1208010235}
   - {fileID: 310112369}
+  - {fileID: 1208010235}
+  - {fileID: 2072649868}
+  - {fileID: 1105265667}
+  - {fileID: 1294341553}
+  - {fileID: 70391803}
   - {fileID: 47311978}
   - {fileID: 187384488}
   - {fileID: 732203701}
@@ -10238,10 +10558,6 @@ Transform:
   - {fileID: 757078134}
   - {fileID: 1663502657}
   - {fileID: 1800472377}
-  - {fileID: 2072649868}
-  - {fileID: 1105265667}
-  - {fileID: 1294341553}
-  - {fileID: 70391803}
   - {fileID: 1242227062}
   - {fileID: 31570508}
   - {fileID: 2031017465}
@@ -12872,7 +13188,8 @@ MonoBehaviour:
   destinationY: 1.4
   destinationZ: -102
   shouldRequireQuestLevel: 0
-  requiredQuestLevel: 0
+  minQuestLevel: 0
+  maxQuestLevel: 10
 --- !u!1 &1865390729
 GameObject:
   m_ObjectHideFlags: 0
@@ -16320,6 +16637,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abf66f6f01881714abfdd2067824c3d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldRequireQuestLevel: 1
+  requiredQuestLevel: 2
   dialogue:
     messages:
     - Randy Hey kid, we're kinda busy today. We don't have time for girl scout cookies.
@@ -16335,8 +16654,6 @@ MonoBehaviour:
     - You ... who?
     - Randy Head upstairs to your right. You'll know him when you see him.
     voices: 030000000000000003000000000000000300000000000000000000000300000000000000030000000000000003000000
-  shouldRequireQuestLevel: 1
-  requiredQuestLevel: 2
   shouldChangeQuestLevel: 1
   rewardedQuestLevel: 3
   rewardObject: {fileID: 0}

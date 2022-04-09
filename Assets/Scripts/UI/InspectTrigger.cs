@@ -1,4 +1,5 @@
-﻿using Character.Player;
+﻿using System;
+using Character.Player;
 using UnityEngine;
 
 namespace UI
@@ -32,8 +33,7 @@ namespace UI
                     return;
 
             _inspectIndicator.SetBool("isEnabled", true);
-            PlayerInspect.canInspect = true;
-            PlayerInspect.loadedTrigger = this;
+            LoadInspectTrigger(this);
 
             // Play audio cue
             _inspectSound.Play();
@@ -45,11 +45,16 @@ namespace UI
             if (!other.CompareTag("Player")) return;
         
             // If the player does not have the required quest level, ignore the event.
-            if (shouldRequireQuestLevel) if (PlayerLevel.IsQualified(requiredQuestLevel)) return;
+            //if (shouldRequireQuestLevel) if (PlayerLevel.IsQualified(requiredQuestLevel)) return;
 
             _inspectIndicator.SetBool("isEnabled", false);
-            PlayerInspect.canInspect = false;
-            PlayerInspect.loadedTrigger = null;
+            LoadInspectTrigger(null);
+        }
+
+        private void LoadInspectTrigger(InspectTrigger trigger)
+        {
+            PlayerInspect.canInspect = trigger != null;
+            PlayerInspect.loadedTrigger = trigger;
         }
 
     }

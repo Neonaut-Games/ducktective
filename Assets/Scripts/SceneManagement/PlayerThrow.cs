@@ -36,8 +36,13 @@ namespace SceneManagement
             _beingThrown = false;
         }
     
-        private void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter(Collider other) => Throw(other);
+        private void OnTriggerStay(Collider other) => Throw(other);
+        
+        private void Throw(Collider other)
         {
+            if (_beingThrown) return;
+            
             // If the object entering the trigger is not a player, ignore the event.
             if (!other.CompareTag("Player")) return;
 
@@ -46,9 +51,10 @@ namespace SceneManagement
             {
                 if (!(PlayerLevel.questLevel >= minQuestLevel && PlayerLevel.questLevel <= maxQuestLevel)) return;
             }
-
+            
             // Disable the character controller (temporarily)
-            other.GetComponent<CharacterController>().enabled = false;
+            var player = FindObjectOfType<PlayerController>();
+            player._characterController.enabled = false;
         
             // Prepare destination position
             _beingThrown = true;
@@ -57,6 +63,6 @@ namespace SceneManagement
             // Load the given scene
             FindObjectOfType<LoadingScreen>().Load(sceneName);
         }
-        
+
     }
 }

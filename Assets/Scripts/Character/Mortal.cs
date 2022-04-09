@@ -13,7 +13,6 @@ namespace Character
         [HideInInspector] public CapsuleCollider mortalCollider;
 
         [Header("Health Settings")]
-        public int minimumQuestLevelRequired;
         [HideInInspector] public int health;
         public int maxHealth = 100;
         
@@ -38,13 +37,8 @@ namespace Character
         (unless expanded upon or changed by a subclass) and returns a
         boolean value indicating whether or not the damage killed the enemy. */
         public bool TakeDamage(int amount)
-        {
-            /* The health of the entity will only decrement if the player has the appropriate quest level.
-            This is to stop players from completing multiple quests at once and/or cheesing the game. */
-            if (PlayerLevel.questLevel >= minimumQuestLevelRequired)
-            {
-                health -= amount;
-            }
+        { 
+            health -= amount;
             
             takeDamageSound.Play();
 
