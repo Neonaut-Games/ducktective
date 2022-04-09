@@ -22912,7 +22912,8 @@ MonoBehaviour:
   takeDamageSound: {fileID: 8074023169309661413}
   bodyDecayTime: 120
   sightRange: 30
-  victoryUI: {fileID: 876589846}
+  shouldReward: 0
+  rewardGameObject: {fileID: 876589846}
 --- !u!136 &2572800476868032073
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -28959,7 +28960,7 @@ MonoBehaviour:
   damageLayer:
     serializedVersion: 2
     m_Bits: 64
-  attackSound: {fileID: 8074023168584953833}
+  attackDamage: 20
   attackParticles: {fileID: 8074023168994735820}
 --- !u!114 &8074023169019874045
 MonoBehaviour:
@@ -28970,14 +28971,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8074023169019874041}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1263a730f631fb4998093fc4314645a, type: 3}
+  m_Script: {fileID: 11500000, guid: f409864d5feef2141bbc974c7433b4b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  footstepSounds:
-  - {fileID: 2070113003}
-  - {fileID: 429442816}
-  - {fileID: 1777757443}
-  bodyFall: {fileID: 454261378}
 --- !u!1 &8074023169309661412
 GameObject:
   m_ObjectHideFlags: 0

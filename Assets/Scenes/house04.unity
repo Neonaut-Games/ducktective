@@ -7192,7 +7192,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1502126733}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -9079,7 +9079,8 @@ MonoBehaviour:
   destinationY: 1.4
   destinationZ: -44.5
   shouldRequireQuestLevel: 0
-  requiredQuestLevel: 0
+  minQuestLevel: 0
+  maxQuestLevel: 10
 --- !u!1001 &1851726922
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10816,10 +10817,10 @@ GameObject:
   - component: {fileID: 8034688050458746424}
   - component: {fileID: 8034688050458746427}
   - component: {fileID: 8034688050458746374}
-  - component: {fileID: 8034688050458746375}
   - component: {fileID: 8034688050458746376}
+  - component: {fileID: 8034688050458746375}
   m_Layer: 0
-  m_Name: DialogueTrigger
+  m_Name: DialogueShopTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10837,6 +10838,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abf66f6f01881714abfdd2067824c3d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldRequireQuestLevel: 1
+  requiredQuestLevel: 6
   dialogue:
     messages:
     - Meemaw Whadd'ya want kid?
@@ -10853,8 +10856,6 @@ MonoBehaviour:
     - Meemaw I dont know? Kill people and take their money for all I care.
     - You Hmmm...
     voices: 05000000000000000500000000000000050000000000000005000000000000000500000005000000000000000500000000000000
-  shouldRequireQuestLevel: 1
-  requiredQuestLevel: 6
   shouldChangeQuestLevel: 1
   rewardedQuestLevel: 7
   rewardObject: {fileID: 0}
@@ -10867,21 +10868,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 8034688050458746373}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abf66f6f01881714abfdd2067824c3d6, type: 3}
+  m_Script: {fileID: 11500000, guid: bd0326eedf28044449d315a7e4143148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    messages:
-    - You 50 Coins, m'am.
-    - Meemaw How did you get this much money in one day?
-    - You Well, I-
-    - Meemaw Just kidding, I don't care.
-    - Meemaw Temedos, right?
-    - You Yes, and we need to leave as early as possible.
-    - Meemaw Calm down kid, we're leaving. Meet me at the docks.
-    voices: 00000000050000000000000005000000050000000000000005000000
   shouldRequireQuestLevel: 1
   requiredQuestLevel: 8
+  shop:
+    author: Meemaw
+    message: Want a ticket to Temedos? It's gonna cost ya.
+    price: 50
   shouldChangeQuestLevel: 1
   rewardedQuestLevel: 9
   rewardObject: {fileID: 1502126733}
@@ -10902,7 +10897,8 @@ MonoBehaviour:
   destinationY: 54.5
   destinationZ: 355.25
   shouldRequireQuestLevel: 1
-  requiredQuestLevel: 9
+  minQuestLevel: 9
+  maxQuestLevel: 10
 --- !u!4 &8034688050458746424
 Transform:
   m_ObjectHideFlags: 0

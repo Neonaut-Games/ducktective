@@ -20,9 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Extras/eHouse00.unity
     guid: 75e2e395b974fef4084313c657121e23
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/house02.unity
     guid: 445b344bd3ceb4f45a00c2c4d626e0fe

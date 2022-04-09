@@ -123,13 +123,14 @@ namespace UI.Shop
             _playerInspect.EndInspect();
 
             ShowUI(false);
-        
-            // Set the player's quest level if applicable
-            if (_trigger.shouldChangeQuestLevel) PlayerLevel.SetQuestLevel(_trigger.rewardedQuestLevel);
-            
+
             // Set gameObject to active if applicable
             if (wasPurchased)
             {
+                // Set the player's quest level if applicable
+                if (_trigger.shouldChangeQuestLevel) PlayerLevel.SetQuestLevel(_trigger.rewardedQuestLevel);
+                
+                // Enable reward game object if applicable
                 if (_trigger.rewardObject != null) _trigger.rewardObject.SetActive(true);
             }
         }

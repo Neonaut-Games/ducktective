@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6339488, g: 0.7140159, b: 0.7405487, a: 1}
+  m_IndirectSpecularColor: {r: 0.6339384, g: 0.7140164, b: 0.740649, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7580,7 +7580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55f617911df4f1147982ce537f5a9145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 6867762668037948922, guid: fd639845900b1f646ae9052d1defa03f, type: 3}
+  enemy: {fileID: 5386598844873668747, guid: 93832fdabc0533746a109588e51cd7f2, type: 3}
 --- !u!1001 &1096671631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12478,9 +12478,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: island01
-  destinationX: -36
+  destinationX: 11.13
   destinationY: 1.4
-  destinationZ: -151
+  destinationZ: -174.08
   shouldRequireQuestLevel: 0
   minQuestLevel: 0
   maxQuestLevel: 10

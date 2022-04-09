@@ -72,24 +72,13 @@ namespace Character
             death animation physics. */
             mortalRigidbody.isKinematic = true;
             mortalCollider.enabled = false;
-
-            StartCoroutine(BodyDescend());
+            
             StartCoroutine(BodyDecay());
             
             DeathReward();
         }
-        
-        public abstract void DeathReward();
 
-        public IEnumerator BodyDescend()
-        {
-            var destination = mortalRigidbody.position;
-            destination.y -= 10;
-            while (true)
-            {
-                mortalRigidbody.MovePosition(destination);
-            }
-        }
+        public abstract void DeathReward();
 
         private IEnumerator BodyDecay()
         {

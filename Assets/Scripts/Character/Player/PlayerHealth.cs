@@ -7,23 +7,22 @@ namespace Character.Player
 {
     public class PlayerHealth : MonoBehaviour
     {
-        
         public static int health = 100;
 
         [Header("Health Settings")]
         public int maxHealth = 100;
-        
-        [Header("UI Settings")]
         public Slider healthSlider;
+
+        [Header("Death Settings")]
         public GameObject gameOverUI;
         public TextMeshProUGUI secondsLeftUI;
-
+        
         private void Start()
         {
-            RefreshHealth();
+            Refresh();
         }
 
-        private void RefreshHealth()
+        private void Refresh()
         {
             // Adjust slider health stat (decoration)
             healthSlider.maxValue = maxHealth;
@@ -36,7 +35,7 @@ namespace Character.Player
             health = AdjustHealth(amount);
 
             // Adjust slider health stat (decoration)
-            RefreshHealth();
+            Refresh();
 
             // Check death conditions
             if (health <= 0) Die();
@@ -44,7 +43,6 @@ namespace Character.Player
 
         private int AdjustHealth(int amount)
         {
-            if (amount > maxHealth) amount = maxHealth;
             if (amount < 0) amount = 0;
             return amount;
         }
