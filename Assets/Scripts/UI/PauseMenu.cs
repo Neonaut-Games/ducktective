@@ -212,7 +212,7 @@ namespace UI
                     + behavior
                     + "\n\n**Computer & Game Specifications**\n"
                     + "- Operating System: " + Environment.OSVersion.VersionString
-                    + "\n- Game Version: Ducktective v1.0"
+                    + "\n- Game Version: " + Application.version
                     + "\n\n**Additional context**\n"
                     + comments
                ;
@@ -238,7 +238,7 @@ namespace UI
                     + problem
                     + "\n\n**Computer & Game Specifications**\n"
                     + "- Operating System: " + Environment.OSVersion.VersionString
-                    + "\n- Game Version: Ducktective v1.0"
+                    + "\n- Game Version: " + Application.version
                     + "\n\n**Additional context**\n"
                     + comments
                 ;
