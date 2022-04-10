@@ -12,11 +12,9 @@ namespace Character.NPC
     
         [Header("Combat Settings")]
         public int sightRange = 30;
-
-        [Header("Reward Settings")]
-        public bool shouldReward;
-        [FormerlySerializedAs("victoryUI")] [CanBeNull] public GameObject rewardGameObject;
-
+        
+        [Header("Loot Settings")]
+        [CanBeNull] public GameObject loot;
         public void Update()
         {
             var playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
@@ -35,13 +33,11 @@ namespace Character.NPC
 
         public override void DeathReward()
         {
-            if (shouldReward && rewardGameObject != null) StartCoroutine(ShowVictoryScreen());
-        }
-
-        private IEnumerator ShowVictoryScreen()
-        {
-            yield return new WaitForSeconds(4.0f);
-            rewardGameObject!.SetActive(true);
+            if (loot == null) return;
+            
+            Vector3 lootPos = transform.position;
+            lootPos.y += 2;
+            Instantiate(loot, lootPos, Quaternion.identity);
         }
     }
 }

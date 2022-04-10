@@ -1,17 +1,17 @@
+using System.Collections;
+using UnityEngine;
+
 namespace Character.Player
 {
-    public class PlayerStats
+    public static class PlayerStats
     {
-        public static bool itemFeathers;
-        public static int itemCoins;
+        private static int _playtime;
 
         public static int totalKills;
         public static int totalDeaths;
 
         public static int totalHits;
         public static int totalMisses;
-            
-        public static int totalConversations;
 
         public static float GetKDR()
         {
@@ -24,6 +24,26 @@ namespace Character.Player
             if (totalMisses == 0) return 100;
             return (float) totalHits / (totalMisses + totalHits) * 100;
         }
+
+        public static IEnumerator StartCounter()
+        {
+            _playtime++;
+            yield return new WaitForSeconds(1.0f);
+        }
+
+        public static string GetTime()
+        {
+            var min = _playtime / 60;
+            var sec = _playtime % 60;
+            return min + ":" + sec;
+        }
+
+        public static int GetScore()
+        {
+            int score = (int) ((GetKDR() * GetAccuracy() * 100) - _playtime);
+            return score;
+        }
         
+
     }
 }

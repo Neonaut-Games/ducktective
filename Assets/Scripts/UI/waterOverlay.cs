@@ -8,7 +8,6 @@ namespace UI
     public class WaterOverlay : MonoBehaviour
     {
         private bool _isTakingDamage;
-        
         private void OnTriggerStay(Collider other)
         {
             if (!other.CompareTag("Player")) return;
@@ -18,6 +17,7 @@ namespace UI
         private void OnTriggerExit(Collider other)
         {
             if (!other.CompareTag("Player")) return;
+            
             StopAllCoroutines();
             _isTakingDamage = false;
         }
@@ -25,11 +25,14 @@ namespace UI
         private IEnumerator DamageTick()
         {
             _isTakingDamage = true;
+
             while (PlayerHealth.health > 0)
             {
                 FindObjectOfType<PlayerHealth>().TakeDamage(10);
                 yield return new WaitForSeconds(1.0f);
             }
+            
+            _isTakingDamage = false;
         }
     }
 }

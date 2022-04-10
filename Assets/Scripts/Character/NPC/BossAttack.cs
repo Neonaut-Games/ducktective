@@ -18,17 +18,19 @@ namespace Character.NPC
         
         public void Attack()
         {
+            DuckLog.Normal("The boss attempted an attack.");
+            
             // Deal damage at the transform point
             Collider[] entities = Physics.OverlapSphere(attackPoint.position, attackRange, damageLayer.value);
             if (entities.Length > 0) PerformSuccessfulAttack(entities);
             else PerformFailedAttack();
+            
+            AudioManager.Impact();
+            if (attackParticles != null) attackParticles.Play();
         }
 
         private void PerformSuccessfulAttack(Collider[] entities)
         {
-            AudioManager.Impact();
-            if (attackParticles != null) attackParticles.Play();
-            
             /* Have each enemy that was touched by the boss's attack collider
             take damage. This includes the player and damageable NPCs. */
             foreach (var entity in entities)

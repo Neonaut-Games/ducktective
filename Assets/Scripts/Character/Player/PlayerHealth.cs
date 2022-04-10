@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,11 +8,13 @@ namespace Character.Player
 {
     public class PlayerHealth : MonoBehaviour
     {
+        private PlayerController _player;
         public static int health = 100;
 
         [Header("Health Settings")]
         public int maxHealth = 100;
         public Slider healthSlider;
+        public Animator damageVignette;
 
         [Header("Death Settings")]
         public GameObject gameOverUI;
@@ -20,6 +23,7 @@ namespace Character.Player
         private void Start()
         {
             Refresh();
+            _player = FindObjectOfType<PlayerController>();
         }
 
         private void Refresh()
@@ -43,7 +47,8 @@ namespace Character.Player
 
         private int AdjustHealth(int amount)
         {
-            if (amount < 0) amount = 0;
+            if (amount > maxHealth) amount = maxHealth;
+            else if (amount < 0) amount = 0;
             return amount;
         }
 
@@ -53,7 +58,14 @@ namespace Character.Player
             AudioManager.Hurt();
             
             DuckLog.Normal("The player took damage (" + amount + "hp).");
+            damageVignette.SetTrigger("hurt");
             SetHealth(health - amount);
+        }
+        
+        public void Heal(int amount)
+        {
+            DuckLog.Normal("The player was healed (" + amount + "hp).");
+            SetHealth(health + amount);
         }
 
         private void Die()
@@ -62,10 +74,11 @@ namespace Character.Player
             DuckLog.Normal("The player has died.");
 
             // Restrict player from moving around
+            _player.characterController.enabled = false;
             PlayerInspect.movementRestricted = true;
-            
+
             // Start death animation
-            FindObjectOfType<PlayerController>().playerAnimator.SetBool("isAlive", false);
+            _player.playerAnimator.SetBool("isAlive", false);
             
             // Enable game over UI
             gameOverUI.SetActive(true);
@@ -93,19 +106,20 @@ namespace Character.Player
         private void Respawn()
         {
             DuckLog.Normal("The player has respawned.");
-            
-            // Un-restrict player from moving around
-            PlayerInspect.movementRestricted = false;
-            
+
             // End death animation
-            FindObjectOfType<PlayerController>().playerAnimator.SetBool("isAlive", true);
+            _player.playerAnimator.SetBool("isAlive", true);
             
-            // Enable game over UI
+            // Disable game over UI
             gameOverUI.SetActive(false);
             
             // Teleport the player to the closest spawnpoint
             Transform closestPosition = GetClosestSpawnpoint();
             gameObject.transform.SetPositionAndRotation(closestPosition.position, gameObject.transform.rotation);
+
+            // Un-restrict player from moving around
+            _player.characterController.enabled = true;
+            PlayerInspect.movementRestricted = false;
             
             // Set the players health back to the max
             SetHealth(maxHealth);

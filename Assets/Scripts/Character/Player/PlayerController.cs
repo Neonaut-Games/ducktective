@@ -1,12 +1,13 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Character.Player
 {
     public class PlayerController : MonoBehaviour
     {
-        public CharacterController _characterController;
+        [FormerlySerializedAs("_characterController")] public CharacterController characterController;
         [Header("Camera Settings")] public Transform playerCamera;
         [Range(0, 1)] public float rotationSmoothTime = 0.1f;
         private float _turnSmoothVelocity;
@@ -27,7 +28,7 @@ namespace Character.Player
         [Header("Animation Settings")]
         public Animator playerAnimator;
         
-        private void Start() => _characterController = GetComponent<CharacterController>();
+        private void Start() => characterController = GetComponent<CharacterController>();
 
         private void Update()
         {
@@ -82,13 +83,13 @@ namespace Character.Player
                 }
 
                 // Move the player along the X, Z 
-                _characterController.Move(movementDirectionModded.normalized *
-                                          movementMultiplier *
-                                          _sprintAdditive *
-                                          Time.deltaTime);
+                characterController.Move(movementDirectionModded.normalized *
+                                         movementMultiplier *
+                                         _sprintAdditive *
+                                         Time.deltaTime);
             }
 
-            if (!_characterController.isGrounded) _characterController.Move(Physics.gravity * Time.deltaTime);
+            if (!characterController.isGrounded) characterController.Move(Physics.gravity * Time.deltaTime);
         }
         
         #endregion

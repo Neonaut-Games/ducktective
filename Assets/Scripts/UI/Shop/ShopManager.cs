@@ -29,11 +29,6 @@ namespace UI.Shop
             _playerInspect = FindObjectOfType<PlayerInspect>();
         }
 
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Space) && PlayerInspect.movementRestricted) EndShop(false);
-        }
-        
         /* Initiates a given shop sequence. This
         function is called only by ShopTrigger. */
         public void StartShop(Shop shop, ShopTrigger trigger)

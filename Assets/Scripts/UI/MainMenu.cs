@@ -1,4 +1,5 @@
 using Character;
+using Character.Player;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,6 +12,7 @@ namespace UI
         {
             AudioManager.ButtonClick();
             SceneManager.LoadScene("house00");
+            StartCoroutine(PlayerStats.StartCounter());
         }
         
         public void Tutorial()

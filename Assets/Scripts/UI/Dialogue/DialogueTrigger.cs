@@ -5,9 +5,10 @@ namespace UI.Dialogue
 {
     public class DialogueTrigger : InspectTrigger
     {
-
+        
         [Header("Dialogue Settings")]
         public Dialogue dialogue;
+        public bool shouldEnablePost = true;
 
         [Header("Completion Rewards")]
         public bool shouldChangeQuestLevel;

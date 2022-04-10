@@ -847,6 +847,101 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2130234204341834370, guid: 7dcf608f1c1348443b81d8440de96d0a, type: 3}
   m_PrefabInstance: {fileID: 40801105}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &43867418
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 43867419}
+  - component: {fileID: 43867422}
+  - component: {fileID: 43867421}
+  - component: {fileID: 43867420}
+  m_Layer: 5
+  m_Name: Vignette
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &43867419
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43867418}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 856811748}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &43867420
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43867418}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b829466789901df4499b7bb3cfd18902, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &43867421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43867418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 0}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 5c545f6dc4d3d21438a4187dc0c7c8e1, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &43867422
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43867418}
+  m_CullTransparentMesh: 1
 --- !u!1001 &44741495
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1353,7 +1448,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 72641826}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:LeftFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1451,7 +1546,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 75571346}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2253,7 +2348,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 121041724}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3740,7 +3835,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 212924696}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:RightToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4188,7 +4283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 222749190}
   - component: {fileID: 222749191}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:Group34704
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4292,7 +4387,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 231319221}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:Spine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4437,7 +4532,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 259252218}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5743,7 +5838,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 327796266}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:RightHandIndex4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6619,7 +6714,7 @@ GameObject:
   - component: {fileID: 366775414}
   - component: {fileID: 366775413}
   - component: {fileID: 366775415}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CharacterModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9579,7 +9674,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 518280943}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9862,7 +9957,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 528993227}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10082,7 +10177,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 538525698}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10691,7 +10786,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 595705808}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:LeftForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11903,7 +11998,7 @@ GameObject:
   - component: {fileID: 646837814}
   - component: {fileID: 646837813}
   - component: {fileID: 646837812}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12262,7 +12357,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 672069096}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:LeftHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12800,7 +12895,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 709083756}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:RightForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12986,7 +13081,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 728623561}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:RightToe_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13080,7 +13175,7 @@ GameObject:
   - component: {fileID: 733224751}
   - component: {fileID: 733224753}
   - component: {fileID: 733224752}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CM.FreeLook1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13731,7 +13826,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 773819937}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:Spine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14742,7 +14837,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 846364287}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:HeadTop_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14999,6 +15094,7 @@ RectTransform:
   - {fileID: 1579672103}
   - {fileID: 478299740}
   - {fileID: 2045505284}
+  - {fileID: 43867419}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16293,7 +16389,7 @@ GameObject:
   m_Component:
   - component: {fileID: 924108641}
   - component: {fileID: 924108640}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AttackSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17031,7 +17127,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 969271423}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:RightFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17474,7 +17570,7 @@ GameObject:
   m_Component:
   - component: {fileID: 988489961}
   - component: {fileID: 988489962}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BottomRig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17548,7 +17644,7 @@ GameObject:
   m_Component:
   - component: {fileID: 992396045}
   - component: {fileID: 992396046}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TopRig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18847,7 +18943,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1048637967}
   - component: {fileID: 1048637968}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MiddleRig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20457,7 +20553,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1154434683}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:RightHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22201,7 +22297,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1258087794}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:LeftShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23690,7 +23786,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1340269930}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:LeftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24602,7 +24698,7 @@ GameObject:
   - component: {fileID: 1385532983}
   - component: {fileID: 1385532982}
   - component: {fileID: 1385532981}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ducktective
   m_TagString: Player
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
@@ -24635,6 +24731,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthSlider: {fileID: 782866525}
+  damageVignette: {fileID: 43867420}
   gameOverUI: {fileID: 1579672102}
   secondsLeftUI: {fileID: 311246649}
 --- !u!114 &1385532983
@@ -24663,7 +24760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef680ae0c0a9d824d9490707f716c07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characterController: {fileID: 1385532986}
+  characterController: {fileID: 1385532986}
   playerCamera: {fileID: 2084814792}
   rotationSmoothTime: 0.1
   movementMultiplier: 5
@@ -25039,7 +25136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1404862432}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25073,7 +25170,7 @@ GameObject:
   - component: {fileID: 1405385488}
   - component: {fileID: 1405385487}
   - component: {fileID: 1405385486}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25447,7 +25544,7 @@ GameObject:
   - component: {fileID: 1425608205}
   - component: {fileID: 1425608203}
   - component: {fileID: 1425608204}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CM.Inspect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25528,7 +25625,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1430333293}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
@@ -26538,7 +26635,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1477747255}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:LeftHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26569,7 +26666,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1479544569}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29275,7 +29372,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1585582387}
   - component: {fileID: 1585582388}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:Group26319
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30575,7 +30672,7 @@ GameObject:
   - component: {fileID: 1673203352}
   - component: {fileID: 1673203351}
   - component: {fileID: 1673203350}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30908,7 +31005,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1685495979}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:LeftHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31169,7 +31266,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1701118187}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:LeftUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31878,7 +31975,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1728673906}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:LeftToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31909,7 +32006,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1731601015}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:RightUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32639,7 +32736,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1771100459}
   - component: {fileID: 1771100460}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:Group12249
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32887,7 +32984,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1783392340}
   - component: {fileID: 1783392341}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:Group15352
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36811,7 +36908,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1941546629}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:RightHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37859,7 +37956,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1971937966}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:LeftToe_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38017,7 +38114,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1985811918}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:RightHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38430,7 +38527,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2015979407}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38860,7 +38957,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2043672260}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:LeftHandIndex4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39900,7 +39997,7 @@ GameObject:
   - component: {fileID: 2084814791}
   - component: {fileID: 2084814790}
   - component: {fileID: 2084814789}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CM.Brain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40607,7 +40704,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2120813259}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: duckfull1:RightShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}

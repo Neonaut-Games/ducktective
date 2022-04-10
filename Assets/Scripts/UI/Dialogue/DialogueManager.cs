@@ -55,15 +55,9 @@ namespace UI.Dialogue
                 _messageQueue.Enqueue(entry);
             }
             
-            ShowUI(true);
+            startButton.SetBool("isEnabled", false);
+            dialogueBox.SetBool("isOpen", true);
             NextDialogueElement();
-        }
-
-        // Toggles the inspect indicator and dialogue box
-        private void ShowUI(bool activity)
-        {
-            startButton.SetBool("isEnabled", !activity);
-            dialogueBox.SetBool("isOpen", activity);
         }
         
         public void NextDialogueElement()
@@ -163,7 +157,8 @@ namespace UI.Dialogue
             // Disable inspection mode for the player
             _playerInspect.EndInspect();
 
-            ShowUI(false);
+            startButton.SetBool("isEnabled", _trigger.shouldEnablePost);
+            dialogueBox.SetBool("isOpen", false);
         
             // Set the player's quest level if applicable
             if (_trigger.shouldChangeQuestLevel) PlayerLevel.SetQuestLevel(_trigger.rewardedQuestLevel);
