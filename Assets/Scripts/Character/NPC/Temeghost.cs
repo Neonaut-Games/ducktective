@@ -32,7 +32,11 @@ namespace Character.NPC
             }
         }
 
-        public override void DeathReward()
+        public override void OnTakeDamage()
+        {
+        }
+
+        public override void OnDeath()
         {
             if (loot == null) return;
             for (int i = 0; i < Random.Range(lootMinimumAmount, lootMaximumAmount); i++)

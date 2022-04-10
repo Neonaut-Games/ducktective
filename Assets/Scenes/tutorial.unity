@@ -11450,7 +11450,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 988489960}
-  m_LocalRotation: {x: 0.23691224, y: -0.000000018689652, z: 0.000000004557556, w: 0.9715311}
+  m_LocalRotation: {x: 0.23691224, y: 0.000000018689652, z: -0.000000004557556, w: 0.9715311}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -12080,7 +12080,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1048637966}
-  m_LocalRotation: {x: 0.2544982, y: -0.000000011335882, z: 0.000000002983188, w: 0.96707326}
+  m_LocalRotation: {x: 0.2544982, y: 0.00000003097021, z: -0.000000008150224, w: 0.96707326}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -21917,9 +21917,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: menu
-  destinationX: 0
-  destinationY: 0
-  destinationZ: 0
+  destinationX: 7.27
+  destinationY: 0.675
+  destinationZ: 3.43
   shouldRequireQuestLevel: 0
   minQuestLevel: 0
   maxQuestLevel: 10
@@ -25866,7 +25866,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2084814788}
-  m_LocalRotation: {x: 0.27204666, y: 1.8816625e-14, z: -6.655821e-14, w: 0.9622841}
+  m_LocalRotation: {x: 0.27204666, y: 1.3893495e-13, z: -4.9144104e-13, w: 0.9622841}
   m_LocalPosition: {x: 0, y: 2.9470375, z: -4.795556}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []

@@ -52,7 +52,11 @@ namespace Character
             // Play hit animation
             animator.SetTrigger("takeHit");
             return false;
+            
+            OnTakeDamage();
         }
+
+        public abstract void OnTakeDamage();
 
         private void Die()
         {
@@ -69,10 +73,10 @@ namespace Character
             
             StartCoroutine(BodyDecay());
             
-            DeathReward();
+            OnDeath();
         }
 
-        public abstract void DeathReward();
+        public abstract void OnDeath();
 
         private IEnumerator BodyDecay()
         {

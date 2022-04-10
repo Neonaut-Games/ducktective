@@ -1,10 +1,5 @@
-using System.Collections;
-using Character.Player;
 using JetBrains.Annotations;
 using UnityEngine;
-using UnityEngine.Serialization;
-using Debug = System.Diagnostics.Debug;
-
 namespace Character.NPC
 {
     public class Boss : Mortal
@@ -31,7 +26,12 @@ namespace Character.NPC
             }
         }
 
-        public override void DeathReward()
+        public override void OnTakeDamage()
+        {
+            AudioManager.HurtBoss();
+        }
+
+        public override void OnDeath()
         {
             if (loot == null) return;
             

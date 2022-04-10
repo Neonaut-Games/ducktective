@@ -45,6 +45,9 @@ namespace Character.NPC
         }
 
         private void PerformFailedAttack() { }
-        
+
+        public void HurtBoss() => AudioManager.HurtBoss();
+        public void AttackBoss() => AudioManager.AttackBoss();
+
     }
 }
