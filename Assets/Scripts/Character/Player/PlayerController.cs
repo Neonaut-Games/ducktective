@@ -27,7 +27,10 @@ namespace Character.Player
         
         [Header("Animation Settings")]
         public Animator playerAnimator;
-        
+
+        private static readonly int MovementState = Animator.StringToHash("movementState");
+        private static readonly int Attacking = Animator.StringToHash("attacking");
+
         private void Start() => characterController = GetComponent<CharacterController>();
 
         private void Update()
@@ -42,7 +45,7 @@ namespace Character.Player
         {
             
             // Set the player's movement state == 0 ("idle")
-            playerAnimator.SetInteger("movementState", 0);
+            playerAnimator.SetInteger(MovementState, 0);
 
             // If the player is currently inspecting something, ignore their movement input
             if (PlayerInspect.movementRestricted) return;
@@ -73,20 +76,17 @@ namespace Character.Player
                 {
                     _sprintAdditive = sprintMultiplier;
                     // Set the player's movement state == 2 ("running")
-                    playerAnimator.SetInteger("movementState", 2);
+                    playerAnimator.SetInteger(MovementState, 2);
                 }
                 else
                 {
                     _sprintAdditive = 1.0f;
                     // Set the player's movement state == 1 ("walking")
-                    playerAnimator.SetInteger("movementState", 1);
+                    playerAnimator.SetInteger(MovementState, 1);
                 }
 
                 // Move the player along the X, Z 
-                characterController.Move(movementDirectionModded.normalized *
-                                         movementMultiplier *
-                                         _sprintAdditive *
-                                         Time.deltaTime);
+                characterController.Move(movementDirectionModded.normalized * (movementMultiplier * _sprintAdditive * Time.deltaTime));
             }
 
             if (!characterController.isGrounded) characterController.Move(Physics.gravity * Time.deltaTime);
@@ -110,7 +110,7 @@ namespace Character.Player
             PlayerInspect.movementRestricted = true;
 
             // Set the player's animator to be attacking
-            playerAnimator.SetTrigger("attacking");
+            playerAnimator.SetTrigger(Attacking);
 
             // Deal damage at the transform point
             Collider[] results = Physics.OverlapSphere(damagePoint.position, attackRange, damageableLayer.value);

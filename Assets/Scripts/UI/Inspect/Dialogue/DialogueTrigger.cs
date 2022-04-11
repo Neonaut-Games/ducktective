@@ -1,7 +1,7 @@
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace UI.Dialogue
+namespace UI.Inspect.Dialogue
 {
     public class DialogueTrigger : InspectTrigger
     {

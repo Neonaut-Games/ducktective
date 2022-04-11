@@ -1,4 +1,4 @@
-namespace UI.Shop
+namespace UI.Inspect.Shop
 {
     public class ShopElement
     {

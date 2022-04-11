@@ -15,6 +15,7 @@ namespace Character.NPC
         [CanBeNull] public GameObject loot;
         public int lootMinimumAmount;
         public int lootMaximumAmount;
+        private static readonly int IsMoving = Animator.StringToHash("isMoving");
 
         public void Update()
         {
@@ -23,13 +24,9 @@ namespace Character.NPC
 
 
             if (Vector3.Distance(playerPosition, bossPosition) > sightRange)
-            {
-                animator.SetBool("isMoving", false);
-            }
+                animator.SetBool(IsMoving, false);
             else
-            {
-                animator.SetBool("isMoving", true);
-            }
+                animator.SetBool(IsMoving, true);
         }
         
         protected override void OnDeath()

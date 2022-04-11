@@ -1,11 +1,10 @@
 ﻿using Character.Player;
-using SceneManagement;
 using TMPro;
 using UnityEngine;
 
 namespace UI
 {
-    public class VictoryScreen : MonoBehaviour
+    public class Victory : MonoBehaviour
     {
         public TextMeshProUGUI score;
         
@@ -18,9 +17,10 @@ namespace UI
         public TextMeshProUGUI accuracy;
 
         public TextMeshProUGUI time;
+
         private void Awake()
         {
-            FindObjectOfType<PlayerInspect>().BeginInspect();
+            PlayerInspect.BeginInspect();
 
             kills.SetText(PlayerStats.totalKills + " Total Kills");
             deaths.SetText(PlayerStats.totalDeaths + " Total Deaths");
@@ -35,10 +35,6 @@ namespace UI
             score.SetText(PlayerStats.GetScore().ToString());
         }
 
-        public void Exit()
-        {
-            Application.Quit();
-        }
-        
+        public void Exit() => Application.Quit();
     }
 }

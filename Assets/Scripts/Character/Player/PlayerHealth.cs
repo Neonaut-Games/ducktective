@@ -18,7 +18,9 @@ namespace Character.Player
         [Header("Death Settings")]
         public GameObject gameOverUI;
         public TextMeshProUGUI secondsLeftUI;
-        
+        private static readonly int IsAlive = Animator.StringToHash("isAlive");
+        private static readonly int Hurt = Animator.StringToHash("hurt");
+
         private void Start()
         {
             Refresh();
@@ -57,7 +59,7 @@ namespace Character.Player
             AudioManager.Hurt();
             
             DuckLog.Normal("The player took damage (" + amount + "hp).");
-            damageVignette.SetTrigger("hurt");
+            damageVignette.SetTrigger(Hurt);
             SetHealth(health - amount);
         }
         
@@ -77,7 +79,7 @@ namespace Character.Player
             PlayerInspect.movementRestricted = true;
 
             // Start death animation
-            _player.playerAnimator.SetBool("isAlive", false);
+            _player.playerAnimator.SetBool(IsAlive, false);
             
             // Enable game over UI
             gameOverUI.SetActive(true);
@@ -107,7 +109,7 @@ namespace Character.Player
             DuckLog.Normal("The player has respawned.");
 
             // End death animation
-            _player.playerAnimator.SetBool("isAlive", true);
+            _player.playerAnimator.SetBool(IsAlive, true);
             
             // Disable game over UI
             gameOverUI.SetActive(false);

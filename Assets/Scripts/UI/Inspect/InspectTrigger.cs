@@ -1,8 +1,7 @@
-﻿using System;
-using Character.Player;
+﻿using Character.Player;
 using UnityEngine;
 
-namespace UI
+namespace UI.Inspect
 {
     public abstract class InspectTrigger : MonoBehaviour
     {
@@ -13,7 +12,8 @@ namespace UI
         [Header("Trigger Requirements")]
         public bool shouldRequireQuestLevel;
         public int requiredQuestLevel;
-        
+        private static readonly int IsEnabled = Animator.StringToHash("isEnabled");
+
         public void Start()
         {
             _inspectIndicator = GameObject.FindGameObjectWithTag("InspectIndicator").GetComponent<Animator>();
@@ -32,7 +32,7 @@ namespace UI
                 if (PlayerLevel.questLevel != requiredQuestLevel)
                     return;
 
-            _inspectIndicator.SetBool("isEnabled", true);
+            _inspectIndicator.SetBool(IsEnabled, true);
             LoadInspectTrigger(this);
 
             // Play audio cue
@@ -47,7 +47,7 @@ namespace UI
             // If the player does not have the required quest level, ignore the event.
             //if (shouldRequireQuestLevel) if (PlayerLevel.IsQualified(requiredQuestLevel)) return;
 
-            _inspectIndicator.SetBool("isEnabled", false);
+            _inspectIndicator.SetBool(IsEnabled, false);
             LoadInspectTrigger(null);
         }
 

@@ -6,7 +6,7 @@ using Character.Player;
 using TMPro;
 using UnityEngine;
 
-namespace UI
+namespace UI.Menus
 {
     public class PauseMenu : MonoBehaviour
     {

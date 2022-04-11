@@ -19,6 +19,8 @@ namespace Character
         public Animator animator;
         public AudioSource takeDamageSound;
         public int bodyDecayTime = 10;
+        private static readonly int TakeHit = Animator.StringToHash("takeHit");
+        private static readonly int Die1 = Animator.StringToHash("die");
 
         private void Start()
         {
@@ -49,7 +51,7 @@ namespace Character
             }
 
             // Play hit animation
-            animator.SetTrigger("takeHit");
+            animator.SetTrigger(TakeHit);
             return false;
             
         }
@@ -58,7 +60,7 @@ namespace Character
             DuckLog.Normal(gameObject.name + " was killed.");
             
             // Animate death 
-            animator.SetTrigger("die");
+            animator.SetTrigger(Die1);
         
             /* Disable the mortal's standing collider
             and make the Rigidbody kinematic to better sell the

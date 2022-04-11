@@ -1,4 +1,4 @@
-using UI.Dialogue;
+using UI.Inspect.Dialogue;
 using UnityEngine;
 
 namespace Items

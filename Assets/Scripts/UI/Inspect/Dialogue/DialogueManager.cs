@@ -1,14 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel.Design.Serialization;
 using Character;
 using Character.Player;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace UI.Dialogue
+namespace UI.Inspect.Dialogue
 {
     public class DialogueManager : MonoBehaviour
     {
@@ -20,14 +19,11 @@ namespace UI.Dialogue
 
         private DialogueTrigger _trigger;
         private Queue<DialogueElement> _messageQueue;
-        private PlayerInspect _playerInspect;
         private AudioSource _currentVoice;
-        
-        private void Start()
-        {
-            _messageQueue = new Queue<DialogueElement>();
-            _playerInspect = FindObjectOfType<PlayerInspect>();
-        }
+        private static readonly int IsEnabled = Animator.StringToHash("isEnabled");
+        private static readonly int IsOpen = Animator.StringToHash("isOpen");
+
+        private void Start() => _messageQueue = new Queue<DialogueElement>();
 
         private void Update()
         {
@@ -55,7 +51,7 @@ namespace UI.Dialogue
             _trigger = trigger;
 
             // Enable inspection mode for the player
-            _playerInspect.BeginInspect();
+            PlayerInspect.BeginInspect();
 
             // Queue each dialogue entry from package into the messages
             _messageQueue.Clear();
@@ -65,8 +61,8 @@ namespace UI.Dialogue
                 _messageQueue.Enqueue(entry);
             }
             
-            startButton.SetBool("isEnabled", false);
-            dialogueBox.SetBool("isOpen", true);
+            startButton.SetBool(IsEnabled, false);
+            dialogueBox.SetBool(IsOpen, true);
             NextDialogueElement();
         }
         
@@ -165,10 +161,10 @@ namespace UI.Dialogue
             if (_currentVoice != null) _currentVoice.Stop();
             
             // Disable inspection mode for the player
-            _playerInspect.EndInspect();
+            PlayerInspect.EndInspect();
 
-            startButton.SetBool("isEnabled", _trigger.shouldEnablePost);
-            dialogueBox.SetBool("isOpen", false);
+            startButton.SetBool(IsEnabled, _trigger.shouldEnablePost);
+            dialogueBox.SetBool(IsOpen, false);
         
             // Set the player's quest level if applicable
             if (_trigger.shouldChangeQuestLevel) PlayerLevel.SetQuestLevel(_trigger.rewardedQuestLevel);

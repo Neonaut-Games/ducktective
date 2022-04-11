@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace UI.Shop
+namespace UI.Inspect.Shop
 {
     [Serializable]
     public class Shop

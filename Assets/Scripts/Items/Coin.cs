@@ -1,4 +1,4 @@
-using UI;
+using UI.Uninteractable;
 using UnityEngine;
 
 namespace Items
@@ -6,7 +6,6 @@ namespace Items
     public class Coin : MonoBehaviour
     {
         
-        public static int amount;
         public AudioSource pickupSound;
 
         public void OnTriggerEnter(Collider other)
@@ -15,8 +14,7 @@ namespace Items
             if (!other.CompareTag("Player")) return;
             
             // Increment coins counter and UI element
-            amount++;
-            FindObjectOfType<CoinsManager>().RefreshAmount();
+            CoinsManager.Deposit(1);
             
             // Play the sound
             pickupSound.Play();

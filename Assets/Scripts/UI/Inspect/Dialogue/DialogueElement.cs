@@ -1,4 +1,4 @@
-namespace UI.Dialogue
+namespace UI.Inspect.Dialogue
 {
     public class DialogueElement
     {

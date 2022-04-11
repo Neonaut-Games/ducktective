@@ -1,10 +1,10 @@
 using Character.Player;
-using UI.Dialogue;
+using UI.Inspect.Dialogue;
 using UnityEngine;
 
 namespace Items
 {
-    public class BlackFeather : DialogueTrigger
+    public class Feather : DialogueTrigger
     {
         public void OnTriggerEnter(Collider other)
         {

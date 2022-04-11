@@ -2,12 +2,11 @@ using System;
 using System.Collections;
 using Character;
 using Character.Player;
-using Items;
 using TMPro;
-using UnityEditor;
+using UI.Uninteractable;
 using UnityEngine;
 
-namespace UI.Shop
+namespace UI.Inspect.Shop
 {
     public class ShopManager : MonoBehaviour
     {
@@ -19,16 +18,12 @@ namespace UI.Shop
         public TextMeshProUGUI authorElement;
 
         private ShopTrigger _trigger;
-        private PlayerInspect _playerInspect;
         private string _author;
         private string _message;
         private int _price;
+        private static readonly int IsEnabled = Animator.StringToHash("isEnabled");
+        private static readonly int IsOpen = Animator.StringToHash("isOpen");
 
-        private void Start()
-        {
-            _playerInspect = FindObjectOfType<PlayerInspect>();
-        }
-        
         private void Update()
         {
             // If the player presses space at any time
@@ -55,7 +50,7 @@ namespace UI.Shop
             _trigger = trigger;
 
             // Enable inspection mode for the player
-            _playerInspect.BeginInspect();
+            PlayerInspect.BeginInspect();
 
             // Unpack the shop element
             var subpackage = shop.GetElement();
@@ -72,8 +67,8 @@ namespace UI.Shop
         // Toggles the inspect indicator and shop box
         private void ShowUI(bool activity)
         {
-            startButton.SetBool("isEnabled", !activity);
-            shopBox.SetBool("isOpen", activity);
+            startButton.SetBool(IsEnabled, !activity);
+            shopBox.SetBool(IsOpen, activity);
         }
         
         /* Displays the "write-on" animation for the message along
@@ -96,7 +91,7 @@ namespace UI.Shop
         public void Purchase()
         {
             // Check if the player has the required amount of coins
-            if (Coin.amount < _price)
+            if (CoinsManager.Balance() < _price)
             {
                 /* If the player does not have enough coins to purchase
                 the given item, play a "declined" audio cue and cancel
@@ -110,8 +105,7 @@ namespace UI.Shop
             DuckLog.Normal("An item was successfully purchased.");
             
             AudioManager.Purchase();
-            Coin.amount -= _price;
-            FindObjectOfType<CoinsManager>().RefreshAmount();
+            CoinsManager.Withdraw(_price);
             EndShop(true);
         }
         
@@ -129,7 +123,7 @@ namespace UI.Shop
             StopAllCoroutines();
 
             // Disable inspection mode for the player
-            _playerInspect.EndInspect();
+            PlayerInspect.EndInspect();
 
             ShowUI(false);
 

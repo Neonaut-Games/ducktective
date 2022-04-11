@@ -12,7 +12,9 @@ namespace Character.NPC
         
         [Header("Combat Settings")]
         public float attackRange = 3.0f;
-        
+
+        private static readonly int Attack = Animator.StringToHash("attack");
+
         // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
@@ -36,7 +38,7 @@ namespace Character.NPC
              player, stop running and switch to the attack phase. */
             if (Vector3.Distance(playerPosition, bossPosition) <= attackRange)
             {
-                animator.SetTrigger("attack");
+                animator.SetTrigger(Attack);
             }
             else
             {
@@ -47,7 +49,7 @@ namespace Character.NPC
         // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
         public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            animator.ResetTrigger("attack");
+            animator.ResetTrigger(Attack);
         }
     }
 }

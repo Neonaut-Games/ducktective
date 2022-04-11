@@ -1,13 +1,15 @@
 using System;
 using Cinemachine;
 using JetBrains.Annotations;
-using UI;
+using UI.Inspect;
 using UnityEngine;
 
 namespace Character.Player
 {
     public class PlayerInspect : MonoBehaviour
     {
+        private static PlayerInspect _instance;
+        
         public static bool movementRestricted;
         public static bool canInspect;
         [CanBeNull] public static InspectTrigger loadedTrigger = null;
@@ -15,6 +17,8 @@ namespace Character.Player
         [Header("Camera Settings")]
         public Camera stillCamera;
         public CinemachineBrain followCamera;
+
+        private void Start() => _instance = this;
 
         private void Update()
         {
@@ -38,23 +42,23 @@ namespace Character.Player
             }
         }
 
-        public void BeginInspect()
+        public static void BeginInspect()
         {
             // Swap to still-positioned camera and disable Cinemachine follow camera
-            var followCameraTransform = followCamera.transform;
-            stillCamera.transform.SetPositionAndRotation(followCameraTransform.position, followCameraTransform.rotation);
-            followCamera.gameObject.SetActive(false);
-            stillCamera.gameObject.SetActive(true);
+            var followCameraTransform = _instance.followCamera.transform;
+            _instance.stillCamera.transform.SetPositionAndRotation(followCameraTransform.position, followCameraTransform.rotation);
+            _instance.followCamera.gameObject.SetActive(false);
+            _instance.stillCamera.gameObject.SetActive(true);
             
             // Restrict the player's movement
             movementRestricted = true;
         }
 
-        public void EndInspect()
+        public static void EndInspect()
         {
             // Swap to Cinemachine follow camera and disable still-positioned camera
-            stillCamera.gameObject.SetActive(false);
-            followCamera.gameObject.SetActive(true);
+            _instance.stillCamera.gameObject.SetActive(false);
+            _instance.followCamera.gameObject.SetActive(true);
             
             // Restrict the player's movement
             movementRestricted = false;

@@ -3,7 +3,7 @@ using Character.Player;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace UI
+namespace UI.Menus
 {
     [RequireComponent(typeof(AudioSource))]
     public class MainMenu : MonoBehaviour

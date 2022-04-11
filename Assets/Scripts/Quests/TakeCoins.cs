@@ -1,5 +1,4 @@
-using Character.Player;
-using UI;
+using UI.Uninteractable;
 using UnityEngine;
 
 namespace Quests
@@ -8,8 +7,8 @@ namespace Quests
     {
         private void OnEnable()
         {
-            Items.Coin.amount -= 50;
-            FindObjectOfType<CoinsManager>().RefreshAmount();
+            CoinsManager.Withdraw(50);
+            CoinsManager.RefreshBalance();
         }
     }
 }

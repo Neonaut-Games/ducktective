@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace UI.Dialogue
+namespace UI.Inspect.Dialogue
 {
     [Serializable]
     public class Dialogue
@@ -31,7 +31,7 @@ namespace UI.Dialogue
                     "Unequal amount of messages and voices; dialogue could not be packaged.");
             }
 
-            List<DialogueElement> dialogue = new List<DialogueElement>();
+            var dialogue = new List<DialogueElement>();
             
             foreach (var mv in messages.Zip(voices, Tuple.Create)) 
             {

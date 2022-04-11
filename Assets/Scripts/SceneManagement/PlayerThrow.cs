@@ -1,6 +1,6 @@
 using System;
 using Character.Player;
-using UI;
+using UI.Uninteractable;
 using UnityEngine;
 using UnityEngine.Serialization;
 
