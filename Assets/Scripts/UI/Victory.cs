@@ -24,13 +24,13 @@ namespace UI
 
             kills.SetText(PlayerStats.totalKills + " Total Kills");
             deaths.SetText(PlayerStats.totalDeaths + " Total Deaths");
-            kdr.SetText(PlayerStats.GetKDR() + " KDR");
+            kdr.SetText(PlayerStats.GetKdr() + " KDR");
             
             hits.SetText(PlayerStats.totalHits + " Hits Landed");
             misses.SetText(PlayerStats.totalMisses + " Hits Missed");
             accuracy.SetText(PlayerStats.GetAccuracy() + "% Accuracy");
 
-            time.SetText(PlayerStats.GetTime() + " Completion Time");
+            time.SetText(PlayerStats.GetTimePlayed() + " Completion Time");
             
             score.SetText(PlayerStats.GetScore().ToString());
         }

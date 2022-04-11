@@ -12,7 +12,7 @@ namespace UI.Menus
         {
             AudioManager.ButtonClick();
             SceneManager.LoadScene("house00");
-            StartCoroutine(PlayerStats.StartCounter());
+            PlayerStats.startPlayingTime = (int) Time.time;
         }
         
         public void Tutorial()

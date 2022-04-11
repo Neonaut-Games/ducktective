@@ -231,15 +231,17 @@ namespace UI.Menus
         {
             var playerStats = new StringBuilder();
             playerStats
-                .Append("Quest Level: " + PlayerLevel.questLevel)
+                .Append("Quest Level: " + (PlayerLevel.questLevel + 1))
                 .AppendLine()
                 .AppendLine("Total Kills: " + PlayerStats.totalKills)
                 .AppendLine("Total Deaths: " + PlayerStats.totalDeaths)
-                .AppendLine("Total K/D: " + PlayerStats.GetKDR().ToString("0.00"))
+                .AppendLine("Total K/D: " + PlayerStats.GetKdr().ToString("0.00"))
                 .AppendLine()
                 .AppendLine("Total Hits Landed: " + PlayerStats.totalHits)
                 .AppendLine("Total Hits Missed: " + PlayerStats.totalMisses)
-                .AppendLine("Total Accuracy: " + PlayerStats.GetAccuracy().ToString("0.00") + "%");
+                .AppendLine("Total Accuracy: " + PlayerStats.GetAccuracy().ToString("0.00") + "%")
+                .AppendLine()
+                .AppendLine("Time Elapsed: " + PlayerStats.GetTimePlayed());
 
             statsElement.SetText(playerStats);
         }

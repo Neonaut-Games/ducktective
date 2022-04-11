@@ -1,19 +1,20 @@
 using System.Collections;
+using UI.Uninteractable;
 using UnityEngine;
 
 namespace Character.Player
 {
     public static class PlayerStats
     {
-        private static int _playtime;
-
+        public static int startPlayingTime;
+        
         public static int totalKills;
         public static int totalDeaths;
 
         public static int totalHits;
         public static int totalMisses;
 
-        public static float GetKDR()
+        public static float GetKdr()
         {
             if (totalDeaths == 0) return totalKills;
             return (float) totalKills / totalDeaths;
@@ -25,23 +26,15 @@ namespace Character.Player
             return (float) totalHits / (totalMisses + totalHits) * 100;
         }
 
-        public static IEnumerator StartCounter()
-        {
-            _playtime++;
-            yield return new WaitForSeconds(1.0f);
-        }
+        public static string GetTimePlayed() => GetMinutesPlayed() + ":" + GetSecondsPlayed().ToString("D2");
+        private static int GetSecondsPlayed() => ((int) Time.time - startPlayingTime) % 60;
+        private static int GetMinutesPlayed() => ((int) Time.time - startPlayingTime) / 60;
 
-        public static string GetTime()
-        {
-            var min = _playtime / 60;
-            var sec = _playtime % 60;
-            return min + ":" + sec;
-        }
 
-        public static int GetScore()
+        public static string GetScore()
         {
-            int score = (int) ((GetKDR() * GetAccuracy() * 100) - _playtime);
-            return score;
+            var score = (int) (GetKdr() * GetAccuracy() * 100 - (GetMinutesPlayed() * 5) - GetSecondsPlayed()) + CoinsManager.Balance() / 2;
+            return $"{score:n0}";
         }
         
 

@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Extras/eHouse01.unity
     guid: a6668a527c37c604a8176982a3361d5c
   - enabled: 1
+    path: Assets/Scenes/Extras/eBunker01.unity
+    guid: 14996b53aee04f04f8f90d7c9d3f08e8
+  - enabled: 1
     path: Assets/Scenes/house02.unity
     guid: 445b344bd3ceb4f45a00c2c4d626e0fe
   - enabled: 1

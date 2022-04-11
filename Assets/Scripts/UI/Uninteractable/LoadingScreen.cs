@@ -12,14 +12,11 @@ namespace UI.Uninteractable
         private static readonly int Stop = Animator.StringToHash("stop");
         private void Start() => _animator = GetComponent<Animator>();
         
-        public void Load(string sceneName)
-        {
-            StartCoroutine(LoadScene(sceneName));
-        }
+        public void Load(string sceneName) => StartCoroutine(LoadScene(sceneName));
 
         private IEnumerator LoadScene(string sceneName)
         {
-           _animator.SetTrigger(Start1);
+            _animator.SetTrigger(Start1);
            yield return new WaitForSeconds(0.75f);
            /* Begin loading the new scene and hold
            the function until it is finished loading. */

@@ -4,22 +4,17 @@ namespace UI.Inspect.Lock
 {
     public class LockTrigger : InspectTrigger
     {
+
+        public static bool used = false;
         
-        [Header("Object Settings")]
-        public GameObject lockUI;
-        
-        private void OnTriggerEnter(Collider other)
+        [Header("Lock Settings")]
+        public string correctSequence;
+        public GameObject reward;
+
+        public void Awake()
         {
-            if (!other.CompareTag("Player")) return;
-            lockUI.SetActive(true);
+            if (used) Destroy(gameObject);
         }
-        
-        private void OnTriggerExit(Collider other)
-        {
-            if (!other.CompareTag("Player")) return;
-            lockUI.SetActive(false);
-        }
-        
         public override void Trigger()
         {
             DuckLog.Normal("Lock was triggered by " + gameObject.name);

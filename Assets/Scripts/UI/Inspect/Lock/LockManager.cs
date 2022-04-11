@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Character;
 using Character.Player;
 using TMPro;
 using UnityEngine;
@@ -8,18 +9,20 @@ namespace UI.Inspect.Lock
 {
     public class LockManager : MonoBehaviour
     {
-        private string _currentSequence;
 
         [Header("Interface Settings")]
         public TextMeshProUGUI currentSequenceUI;
-        public string correctSequence;
+        public Animator lockPad;
         
         [Header("Color Settings")]
         public Color normal;
         public Color success;
         public Color failure;
 
+        private string _currentSequence;
+        private string _correctSequence;
         private LockTrigger _trigger;
+        private static readonly int IsEnabled = Animator.StringToHash("isEnabled");
 
         private void Update()
         {
@@ -47,28 +50,44 @@ namespace UI.Inspect.Lock
             // Enable inspection mode for the player
             PlayerInspect.BeginInspect();
             
-            _trigger.lockUI.SetActive(true);
+            lockPad.SetBool(IsEnabled, true);
+            _correctSequence = _trigger.correctSequence;
         }
 
         public void EnterKey(string character)
         {
+            AudioManager.ButtonClick();
+                
             _currentSequence += character;
             currentSequenceUI.SetText(_currentSequence);
 
-            if (_currentSequence.Length < 4) return;
-            if (_currentSequence.Equals(correctSequence)) StartCoroutine(Success());
+            if (_currentSequence.Length < _correctSequence.Length) return;
+            
+            if (_currentSequence.Equals(_correctSequence)) StartCoroutine(Success());
             else StartCoroutine(Failure());
         }
 
         private IEnumerator Success()
         {
+            AudioManager.Pause();
+            
             currentSequenceUI.color = success;
+            
             yield return new WaitForSeconds(1.0f);
+            
+            lockPad.SetBool(IsEnabled, false);
+            
+            yield return new WaitForSeconds(0.5f);
+            
             Clear();
+            if (_trigger.reward != null) _trigger.reward.SetActive(true);
+            EndLock();
         }
 
         private IEnumerator Failure()
         {
+            AudioManager.Decline();
+            
             currentSequenceUI.color = failure;
             yield return new WaitForSeconds(1.0f);
             Clear();
@@ -83,7 +102,8 @@ namespace UI.Inspect.Lock
 
         public void EndLock()
         {
-            _trigger.lockUI.SetActive(false);
+            PlayerInspect.EndInspect();
+            lockPad.SetBool(IsEnabled, false);
         }
         
     }
