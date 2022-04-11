@@ -1,15 +1,14 @@
-using System;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
-namespace Character.NPC
+
+namespace UI
 {
     public class LockPad : MonoBehaviour
     {
-
         private string _currentSequence;
-        public string correctSequence;
 
         public TextMeshProUGUI currentSequenceUI;
+        public string correctSequence;
 
         public void EnterCharacter(string character)
         {
@@ -17,20 +16,19 @@ namespace Character.NPC
             currentSequenceUI.SetText(_currentSequence);
 
             if (_currentSequence.Length < 4) return;
-            
-            if (_currentSequence == correctSequence) Success();
+            if (_currentSequence.Equals(correctSequence)) Success();
             else Failure();
         }
 
         private void Success()
         {
-            throw new NotImplementedException();
-        }
-        
-        private void Failure()
-        {
-            throw new NotImplementedException();
+            
         }
 
+        private void Failure()
+        {
+            
+        }
+        
     }
 }
