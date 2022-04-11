@@ -28,6 +28,20 @@ namespace UI.Shop
         {
             _playerInspect = FindObjectOfType<PlayerInspect>();
         }
+        
+        private void Update()
+        {
+            // If the player presses space at any time
+            if (Input.GetKeyDown(KeyCode.Space)) {
+                /* If the player is currently in inspection mod
+                mode and there is a trigger currently loaded. */
+                if (PlayerInspect.movementRestricted && PlayerInspect.loadedTrigger != null)
+                {
+                    // If the loaded trigger is a DialogueTrigger
+                    if (PlayerInspect.loadedTrigger.GetType() == typeof(ShopTrigger)) EndShop(false);
+                }
+            }
+        }
 
         /* Initiates a given shop sequence. This
         function is called only by ShopTrigger. */

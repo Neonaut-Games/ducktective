@@ -4333,6 +4333,7 @@ MonoBehaviour:
     messages:
     - Thomas Hey, hey! Eyes off the screens, punk.
     voices: 02000000
+  shouldEnablePost: 1
   shouldChangeQuestLevel: 0
   rewardedQuestLevel: 0
   rewardObject: {fileID: 0}
@@ -7908,29 +7909,30 @@ MonoBehaviour:
   requiredQuestLevel: 3
   dialogue:
     messages:
-    - Quackintinus I've been expecting you.
-    - Quackintinus I am Quackintinius the Watcher. I sit here, hour by hour, minute
+    - Quackintinius I've been expecting you.
+    - Quackintinius I am Quackintinius the Watcher. I sit here, hour by hour, minute
       by minute, watching.
-    - Quackintinus I monitor this town and all the events that unfold within it.
+    - Quackintinius I monitor this town and all the events that unfold within it.
       Do you wish to view one of these events?
     - You Uhm... Yeah? My- my mom got kidnapped.
-    - Quackintinus Sounds serious.
+    - Quackintinius Sounds serious.
     - You Could you show me what happened?
-    - Quackintinus Let me search for the scene in our databases.
-    - Quackintinus OH! OH GOD. GOD NO!
+    - Quackintinius Let me search for the scene in our databases.
+    - Quackintinius OH! OH GOD. GOD NO!
     - You What?? What happened?
-    - Quackintinus The scene is too powerful for me to show you. It would require...
+    - Quackintinius The scene is too powerful for me to show you. It would require...
       a cutscene!
     - You Can you tell me what happened?
-    - Quackintinus Your mother was taken hostage by a duck with black feathers. There
-      appears to have been a struggle. He took her to another island.
+    - Quackintinius Your mother was taken hostage by a duck with black feathers.
+      There appears to have been a struggle. He took her to another island.
     - You Where? Where did he take her?
-    - Quackintinus I'm... not sure. My power does not reach outside of this island.
+    - Quackintinius I'm... not sure. My power does not reach outside of this island.
     - You Alright; thanks anyways. At least now I know it's a black duck.
-    - Quackintinus If you can bring me a sample of the black duck's DNA, I may be
+    - Quackintinius If you can bring me a sample of the black duck's DNA, I may be
       able to locate them for you.
     - You Uhm, alright. I'll see what I can do.
     voices: 0400000004000000040000000000000004000000000000000400000004000000000000000400000000000000040000000000000004000000000000000400000000000000
+  shouldEnablePost: 1
   shouldChangeQuestLevel: 1
   rewardedQuestLevel: 4
   rewardObject: {fileID: 0}
@@ -7998,6 +8000,7 @@ MonoBehaviour:
       Meemaw's Transportation Station. It's right by Eddy's Package Store.
     - You Alright, thanks I guess. I'll try that.
     voices: 0000000004000000040000000000000004000000000000000400000004000000040000000000000004000000000000000400000000000000
+  shouldEnablePost: 1
   shouldChangeQuestLevel: 1
   rewardedQuestLevel: 6
   rewardObject: {fileID: 0}
@@ -16654,6 +16657,7 @@ MonoBehaviour:
     - You ... who?
     - Randy Head upstairs to your right. You'll know him when you see him.
     voices: 030000000000000003000000000000000300000000000000000000000300000000000000030000000000000003000000
+  shouldEnablePost: 1
   shouldChangeQuestLevel: 1
   rewardedQuestLevel: 3
   rewardObject: {fileID: 0}

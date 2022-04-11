@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using Character.Player;
 using UnityEngine;
 
 namespace Character
@@ -53,11 +52,7 @@ namespace Character
             animator.SetTrigger("takeHit");
             return false;
             
-            OnTakeDamage();
         }
-
-        public abstract void OnTakeDamage();
-
         private void Die()
         {
             DuckLog.Normal(gameObject.name + " was killed.");
@@ -76,7 +71,7 @@ namespace Character
             OnDeath();
         }
 
-        public abstract void OnDeath();
+        protected abstract void OnDeath();
 
         private IEnumerator BodyDecay()
         {

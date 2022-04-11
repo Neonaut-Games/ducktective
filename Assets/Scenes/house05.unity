@@ -14818,7 +14818,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shouldRequireQuestLevel: 1
-  requiredQuestLevel: 10
+  requiredQuestLevel: 9
   dialogue:
     messages:
     - You MOM! Don't worry you're okay now, let me get you out of there.

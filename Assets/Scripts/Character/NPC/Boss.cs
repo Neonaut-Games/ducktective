@@ -1,3 +1,4 @@
+using Character.Player;
 using JetBrains.Annotations;
 using UnityEngine;
 namespace Character.NPC
@@ -26,18 +27,15 @@ namespace Character.NPC
             }
         }
 
-        public override void OnTakeDamage()
-        {
-            AudioManager.HurtBoss();
-        }
-
-        public override void OnDeath()
+        protected override void OnDeath()
         {
             if (loot == null) return;
             
             Vector3 lootPos = transform.position;
             lootPos.y += 2;
             Instantiate(loot, lootPos, Quaternion.identity);
+            
+            PlayerLevel.SetQuestLevel(9);
         }
     }
 }

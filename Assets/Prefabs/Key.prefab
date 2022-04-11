@@ -120,9 +120,9 @@ MonoBehaviour:
     - You THAT'S FOR TAKING MY MOM!
     - You A cell key! I'm coming mom!
     voices: 0000000000000000
-  shouldEnablePost: 1
-  shouldChangeQuestLevel: 1
-  rewardedQuestLevel: 10
+  shouldEnablePost: 0
+  shouldChangeQuestLevel: 0
+  rewardedQuestLevel: 0
   rewardObject: {fileID: 0}
 --- !u!65 &7756726314238484575
 BoxCollider:

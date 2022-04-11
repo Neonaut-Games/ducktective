@@ -6,7 +6,7 @@ namespace Quests
 {
     public class TakeCoins : MonoBehaviour
     {
-        private void Awake()
+        private void OnEnable()
         {
             Items.Coin.amount -= 50;
             FindObjectOfType<CoinsManager>().RefreshAmount();

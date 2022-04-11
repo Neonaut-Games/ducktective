@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
 using Character;
 using Character.Player;
 using TMPro;
@@ -30,7 +31,16 @@ namespace UI.Dialogue
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space) && PlayerInspect.movementRestricted) EndDialogue();
+            // If the player presses space at any time
+            if (Input.GetKeyDown(KeyCode.Space)) {
+                /* If the player is currently in inspection mod
+                mode and there is a trigger currently loaded. */
+                if (PlayerInspect.movementRestricted && PlayerInspect.loadedTrigger != null)
+                {
+                    // If the loaded trigger is a DialogueTrigger
+                    if (PlayerInspect.loadedTrigger.GetType() == typeof(DialogueTrigger)) EndDialogue();
+                }
+            }
         }
         
         /* Initiates a given dialogue sequence. This function

@@ -16,7 +16,11 @@ namespace UI
         [Header("Section Elements")]
         public GameObject mainMenu;
         
+        public GameObject questMenu;
+
         public GameObject optionsMenu;
+        public TextMeshProUGUI questHeader;
+        public TextMeshProUGUI questDescription;
         
         public GameObject statsMenu;
         public TextMeshProUGUI statsElement;
@@ -76,6 +80,7 @@ namespace UI
             
             // Set all menu sections to not active
             mainMenu.SetActive(false);
+            questMenu.SetActive(false);
             optionsMenu.SetActive(false);
             controlsMenu.SetActive(false);
             statsMenu.SetActive(false);
@@ -95,6 +100,7 @@ namespace UI
             
             // Set all menu sections to not active
             mainMenu.SetActive(false);
+            questMenu.SetActive(false);
             optionsMenu.SetActive(false);
             controlsMenu.SetActive(false);
             statsMenu.SetActive(false);
@@ -124,6 +130,73 @@ namespace UI
             Application.Quit();
         }
         
+        #endregion
+
+        #region Quest Info
+
+        public void RevealSectionQuest()
+        {
+            RevealSection(questMenu);
+            RefreshQuestInfo();
+        }
+
+        private void RefreshQuestInfo()
+        {
+            var cosmeticLevel = PlayerLevel.questLevel + 1;
+            questHeader.SetText("Quest " + cosmeticLevel);
+
+            string description;
+            switch (PlayerLevel.questLevel)
+            {
+                case 0:
+                    description = 
+                        "Head over to the post office to pick up mom's package.";
+                    break;
+                case 1:
+                    description = 
+                        "The cryptic letter at the post office gave you a bad feeling; head back home to check on mom.";
+                    break;
+                case 2:
+                    description = 
+                        "Go to the police station to report your mom's disappearance and get assistance in your search to get her back.";
+                    break;
+                case 3:
+                    description = 
+                        "Randy suggested talking to Quackintinus about checking the town's cameras; head to the top floor of the police station to find him.";
+                    break;
+                case 4:
+                    description = 
+                        "Quackintinius needs a DNA sample from the kidnapper; search the house for any clues the kidnapper may have left behind.";
+                    break;
+                case 5:
+                    description = 
+                        "You found a black feather at the house and Quackintinus may be able to use it to locate your mother's kidnapper. " +
+                        "Head back to the top floor of the police station to give him the sample..";
+                    break;
+                case 6:
+                    description = 
+                        "Travel to Meemaw's Transportation Station and try to get private transportation to Temedos Island.";
+                    break;
+                case 7:
+                    description = 
+                        "You'll need 50 coins for transportation to Temedos. " +
+                        "Try rough-housing a few folks around town to see if they have any spare change for the cause.";
+                    break;
+                case 8:
+                    description = 
+                        "Travel to the castle at the top of the island and try to find your mother's kidnapper; he can't be too far.";
+                    break;
+                case 9:
+                    description = 
+                        "What are you waiting for? Unlock your mom's cell and get her out of there!";
+                    break;
+                default:
+                    throw new ArgumentException("Quest menu not updated to fit current quest level.");
+            }
+            
+            questDescription.SetText(description);
+        }
+
         #endregion
 
         #region Options
@@ -188,6 +261,14 @@ namespace UI
         {
             RevealSection(ticketMenu);
             RevealTicketTemplate();
+            describeTheBug.SetTextWithoutNotify("");
+            toReproduce.SetTextWithoutNotify("");
+            expectedBehavior.SetTextWithoutNotify("");
+            additionalContext.SetTextWithoutNotify("");
+            
+            describeTheIdea.SetTextWithoutNotify("");
+            problemRelation.SetTextWithoutNotify("");
+            additionalContext2.SetTextWithoutNotify("");
         }
 
         public void RevealTicketTemplate()

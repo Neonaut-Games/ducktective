@@ -11257,11 +11257,12 @@ MonoBehaviour:
     - Meemaw TEMEDOS ISLAND? You gotta be out of your mind, kid.
     - You I need to get to my mom. How much will it be?
     - Meemaw Alright look, you're like what, 12 and a half? I'll cut you a deal.
-    - Meemaw Bring me 100 coins and I'll take you to Temedos.
-    - You 100 COINS? How am I supposed to get that kind of money?
+    - Meemaw Bring me 50 coins and I'll take you to Temedos.
+    - You 50 COINS? How am I supposed to get that kind of money?
     - Meemaw I dont know? Kill people and take their money for all I care.
     - You Hmmm...
     voices: 05000000000000000500000000000000050000000000000005000000000000000500000005000000000000000500000000000000
+  shouldEnablePost: 1
   shouldChangeQuestLevel: 1
   rewardedQuestLevel: 7
   rewardObject: {fileID: 0}

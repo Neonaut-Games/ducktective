@@ -4436,6 +4436,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3669658876340927424, guid: 5f3a38d534e5b9a4fa9cd3b3ec81dfb2, type: 3}
   m_PrefabInstance: {fileID: 596931147}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &597755759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 597755760}
+  m_Layer: 0
+  m_Name: Spawnpoint.9
+  m_TagString: Respawn
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &597755760
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597755759}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.468798, y: -6.0288925, z: -2.72905}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1997765633}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &602080601
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5765,6 +5795,7 @@ Transform:
   - {fileID: 185872615}
   - {fileID: 982972892}
   - {fileID: 613022026}
+  - {fileID: 1997765633}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6409,6 +6440,7 @@ MonoBehaviour:
     - Linda Well, if you're looking for some quick cash, talk to my partner upstairs.
     - Linda If you do decide to head up there, I hope you're a good fighter.
     voices: 050000000500000005000000
+  shouldEnablePost: 1
   shouldChangeQuestLevel: 0
   rewardedQuestLevel: 0
   rewardObject: {fileID: 0}
@@ -8717,6 +8749,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2771145621937507115, guid: 11faa60ff496c5f44ac54cf0ade1290b, type: 3}
   m_PrefabInstance: {fileID: 1292614399}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1293753066
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1293753067}
+  m_Layer: 0
+  m_Name: Spawnpoint.10
+  m_TagString: Respawn
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1293753067
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293753066}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.67020226, y: -6.0288925, z: -10.67305}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1997765633}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1297333570
 GameObject:
   m_ObjectHideFlags: 0
@@ -13465,6 +13527,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1602383190}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1997765632
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1997765633}
+  m_Layer: 0
+  m_Name: Spawnpoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1997765633
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997765632}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.666351, y: 2.6212425, z: 0.4343803}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_Children:
+  - {fileID: 597755760}
+  - {fileID: 1293753067}
+  m_Father: {fileID: 817474793}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2006736345
 PrefabInstance:

@@ -31,12 +31,8 @@ namespace Character.NPC
                 animator.SetBool("isMoving", true);
             }
         }
-
-        public override void OnTakeDamage()
-        {
-        }
-
-        public override void OnDeath()
+        
+        protected override void OnDeath()
         {
             if (loot == null) return;
             for (int i = 0; i < Random.Range(lootMinimumAmount, lootMaximumAmount); i++)
