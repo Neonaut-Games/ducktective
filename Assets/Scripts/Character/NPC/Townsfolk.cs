@@ -1,29 +1,23 @@
 ﻿using JetBrains.Annotations;
 using UnityEngine;
-using Random = UnityEngine.Random;
+using UnityEngine.Serialization;
 
 namespace Character.NPC
 {
     public class Townsfolk : Mortal
     {
-        
+
         [Header("Loot Settings")]
         [CanBeNull] public GameObject loot;
-        public int lootMinimumAmount;
-        public int lootMaximumAmount;
+        [FormerlySerializedAs("lootMaximumAmount")] public int lootAmount;
         public GameObject gameObjectReward;
 
         protected override void OnDeath()
         {
             if (loot == null) return;
-            
-            var lootPosition = transform.position;
-            lootPosition.y += 1;
-            
-            for (int i = 0; i < Random.Range(lootMinimumAmount, lootMaximumAmount); i++)
-            {
-                Instantiate(loot, lootPosition, Quaternion.identity);
-            }
+
+            var lootPosition = GetComponent<Renderer>().bounds.center;
+            for (int i = 0; i < lootAmount; i++) Instantiate(loot, lootPosition, Quaternion.identity);
 
             if (gameObjectReward != null) gameObjectReward.SetActive(true);
         }

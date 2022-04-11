@@ -15,6 +15,7 @@ namespace Character
         [Header("Miscellaneous Audios")]
         public AudioSource thud;
         public AudioSource impact;
+        public AudioSource coin;
         
         [Header("Player-only Audios")]
         public AudioSource[] hurt;
@@ -55,6 +56,8 @@ namespace Character
         public static void Thud() => a.thud.Play();
 
         public static void Impact() => a.impact.Play();
+
+        public static void Coin() => a.coin.Play();
 
         #endregion
         

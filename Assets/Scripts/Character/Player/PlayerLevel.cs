@@ -18,10 +18,6 @@ namespace Character.Player
             questLevel = level;
         }
         
-        public static bool IsQualified(int level)
-        {
-            return questLevel >= level && questLevel <= level + 1;
-        }
-
+        public static bool IsQualified(int level) => questLevel >= level && questLevel <= level + 1;
     }
 }

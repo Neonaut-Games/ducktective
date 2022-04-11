@@ -32,10 +32,10 @@ namespace Character.NPC
         protected override void OnDeath()
         {
             if (loot == null) return;
-            for (int i = 0; i < Random.Range(lootMinimumAmount, lootMaximumAmount); i++)
-            {
-                Instantiate(loot, transform.position, Quaternion.identity);
-            }
+            
+            var lootPosition = GetComponent<Renderer>().bounds.center;
+            for (int i = 0; i < Random.Range(lootMinimumAmount, lootMaximumAmount); i++) Instantiate(loot, lootPosition, Quaternion.identity);
+            
             ambientParticles.Stop();
             ambientParticles.time = 2.0f;
         }

@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using UI.Inspect.Lock;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Character.NPC
 {
@@ -14,8 +15,7 @@ namespace Character.NPC
 
         [Header("Loot Settings")]
         [CanBeNull] public GameObject loot;
-        public int lootMinimumAmount;
-        public int lootMaximumAmount;
+        [FormerlySerializedAs("lootMaximumAmount")] public int lootAmount;
         private static readonly int IsMoving = Animator.StringToHash("isMoving");
 
         public void Update()
@@ -33,10 +33,7 @@ namespace Character.NPC
         protected override void OnDeath()
         {
             if (loot == null) return;
-            for (int i = 0; i < Random.Range(lootMinimumAmount, lootMaximumAmount); i++)
-            {
-                Instantiate(loot, transform.position, Quaternion.identity);
-            }
+            for (int i = 0; i < lootAmount; i++) Instantiate(loot, transform.position, Quaternion.identity);
             ambientParticles.Stop();
             ambientParticles.time = 2.0f;
             LockTrigger.used = true;

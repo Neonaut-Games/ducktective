@@ -26213,10 +26213,10 @@ MonoBehaviour:
   mortalRigidbody: {fileID: 0}
   mortalCollider: {fileID: 0}
   health: 0
-  maxHealth: 100
+  maxHealth: 200
   animator: {fileID: 8074023169019874043}
-  takeDamageSound: {fileID: 8074023169309661413}
-  bodyDecayTime: 120
+  takeDamageSound: {fileID: 0}
+  bodyDecayTime: 10
   sightRange: 30
   loot: {fileID: 1379448344994034757, guid: f3c7a5ab8521bc8468628d6e56c8ec05, type: 3}
 --- !u!136 &2572800476868032073
