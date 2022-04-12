@@ -4,15 +4,21 @@ using UnityEngine;
 
 namespace Items
 {
-    public class Coin : ConsumableItem
+    [RequireComponent(typeof(Rigidbody))]
+    public class Coin : MonoBehaviour
     {
 
-        [Header("Coin Settings")]
-        public int value;
-        public override void Consume()
+        public int value = 1;
+        
+        private void OnTriggerEnter(Collider other)
         {
+            if (!other.CompareTag("Player")) return;
+            
             AudioManager.Coin();
             CoinsManager.Deposit(value);
+            
+            Destroy(gameObject);
         }
+
     }
 }

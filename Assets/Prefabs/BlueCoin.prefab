@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2560821115435214409}
   - component: {fileID: 2560821115435214411}
   - component: {fileID: 2560821115435111332}
-  - component: {fileID: 1115467162175126002}
+  - component: {fileID: 3841665444186965935}
   m_Layer: 0
   m_Name: BlueCoin
   m_TagString: Untagged
@@ -126,9 +126,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b379513384b69ad4cbfc7810e6e1854f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 2
---- !u!65 &1115467162175126002
-BoxCollider:
+  value: 1
+--- !u!64 &3841665444186965935
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -137,6 +137,7 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.75, y: 1, z: 0.75}
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: f1a871656407f1843a8eea3435a3ef93, type: 3}
