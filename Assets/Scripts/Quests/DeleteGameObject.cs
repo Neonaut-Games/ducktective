@@ -5,9 +5,6 @@ namespace Quests
     public class DeleteGameObject : MonoBehaviour
     {
         public GameObject objectToDestroy;
-        private void OnEnable()
-        {
-            Destroy(objectToDestroy);
-        }
+        private void OnEnable() => Destroy(objectToDestroy);
     }
 }

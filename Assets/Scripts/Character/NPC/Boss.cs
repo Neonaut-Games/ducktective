@@ -36,7 +36,7 @@ namespace Character.NPC
         {
             if (loot == null) return;
             
-            var lootPosition = GetComponent<Renderer>().bounds.center;
+            var lootPosition = transform.position + Vector3.up;
             Debug.Assert(loot != null, nameof(loot) + " != null");
             Instantiate(loot, lootPosition, loot.transform.rotation);
             

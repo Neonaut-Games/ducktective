@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2560821115435111332}
   - component: {fileID: 1115467162175126002}
   m_Layer: 0
-  m_Name: Coin
+  m_Name: BlueCoin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 527353d9e6270254680287bb2593d299, type: 2}
+  - {fileID: 2100000, guid: b0cfeb8b980746945a0afedcf4ec2880, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b379513384b69ad4cbfc7810e6e1854f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 1
+  value: 2
 --- !u!65 &1115467162175126002
 BoxCollider:
   m_ObjectHideFlags: 0

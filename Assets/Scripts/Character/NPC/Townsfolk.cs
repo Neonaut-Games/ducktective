@@ -16,7 +16,7 @@ namespace Character.NPC
         {
             if (loot == null) return;
 
-            var lootPosition = GetComponent<Renderer>().bounds.center;
+            var lootPosition = transform.position + Vector3.up;
             for (int i = 0; i < lootAmount; i++) Instantiate(loot, lootPosition, Quaternion.identity);
 
             if (gameObjectReward != null) gameObjectReward.SetActive(true);

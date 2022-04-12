@@ -33,7 +33,7 @@ namespace Character.NPC
         {
             if (loot == null) return;
             
-            var lootPosition = GetComponent<Renderer>().bounds.center;
+            var lootPosition = transform.position + Vector3.up;
             for (int i = 0; i < Random.Range(lootMinimumAmount, lootMaximumAmount); i++) Instantiate(loot, lootPosition, Quaternion.identity);
             
             ambientParticles.Stop();

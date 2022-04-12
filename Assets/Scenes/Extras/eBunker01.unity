@@ -5645,7 +5645,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.03882268, b: 0, a: 1}
-  m_Intensity: 1
+  m_Intensity: 5
   m_Range: 5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -5687,7 +5687,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 5
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -12995,9 +12995,8 @@ MonoBehaviour:
   bodyDecayTime: 10
   ambientParticles: {fileID: 7875733963969601307}
   sightRange: 30
-  loot: {fileID: 2560821115435214408, guid: 130d4514c4c1c7245b8775a95945762b, type: 3}
-  lootMinimumAmount: 250
-  lootMaximumAmount: 250
+  loot: {fileID: 2560821115435214408, guid: 3ec12509b14521246b7737748d855d71, type: 3}
+  lootAmount: 250
 --- !u!54 &3603736850196096067
 Rigidbody:
   m_ObjectHideFlags: 0

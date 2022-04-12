@@ -1,13 +1,18 @@
 using Character;
 using Character.Player;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace UI.Menus
 {
-    [RequireComponent(typeof(AudioSource))]
     public class MainMenu : MonoBehaviour
     {
+
+        public TextMeshProUGUI version;
+
+        private void Start() => version.SetText(Application.version);
+
         public void StartGame()
         {
             AudioManager.ButtonClick();
