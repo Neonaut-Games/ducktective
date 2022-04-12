@@ -133,7 +133,7 @@ namespace Character.Player
             foreach (GameObject spawnpoint in GameObject.FindGameObjectsWithTag("Respawn"))
             {
                 float thisDistance = Vector3.Distance(spawnpoint.transform.position, gameObject.transform.position);
-                if (thisDistance < minimumDistance)
+                if (thisDistance < minimumDistance && thisDistance > 1.0)
                 {
                     closestPosition = spawnpoint.transform;
                     minimumDistance = thisDistance;
