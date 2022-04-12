@@ -2439,6 +2439,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1267963608}
     m_Modifications:
+    - target: {fileID: 4126842283589721009, guid: 184c624ad36bb4efe9d06ce5f82f1cc5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a89fb2a07eca0e642bad4525eedfacbd, type: 2}
+    - target: {fileID: 4126842283627083679, guid: 184c624ad36bb4efe9d06ce5f82f1cc5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 120c9f294aa97784881b23180f2ebad3, type: 2}
+    - target: {fileID: 4126842284011383843, guid: 184c624ad36bb4efe9d06ce5f82f1cc5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b0929bcf658f0d34c87db9325b3a63bb, type: 2}
+    - target: {fileID: 4126842284281396432, guid: 184c624ad36bb4efe9d06ce5f82f1cc5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b9a7b8e11344f2b4abda69397cc578b5, type: 2}
     - target: {fileID: 7709494183734749473, guid: 184c624ad36bb4efe9d06ce5f82f1cc5, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2486,6 +2502,10 @@ PrefabInstance:
     - target: {fileID: 7709494183734749486, guid: 184c624ad36bb4efe9d06ce5f82f1cc5, type: 3}
       propertyPath: m_Name
       value: Townsfolk.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709494183734749487, guid: 184c624ad36bb4efe9d06ce5f82f1cc5, type: 3}
+      propertyPath: lootAmount
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 7709494183734749487, guid: 184c624ad36bb4efe9d06ce5f82f1cc5, type: 3}
       propertyPath: lootMaximumAmount
@@ -8388,6 +8408,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1267963608}
     m_Modifications:
+    - target: {fileID: 4126842283627083679, guid: 184c624ad36bb4efe9d06ce5f82f1cc5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ba52e51920be1954f905daa202ae49d8, type: 2}
+    - target: {fileID: 4126842284011383843, guid: 184c624ad36bb4efe9d06ce5f82f1cc5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 58848c046f7880d47b0d2879c8f55879, type: 2}
+    - target: {fileID: 4126842284281396432, guid: 184c624ad36bb4efe9d06ce5f82f1cc5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e438cd1d3280add43ace140e53e62f34, type: 2}
     - target: {fileID: 7709494183734749473, guid: 184c624ad36bb4efe9d06ce5f82f1cc5, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -8435,6 +8467,10 @@ PrefabInstance:
     - target: {fileID: 7709494183734749486, guid: 184c624ad36bb4efe9d06ce5f82f1cc5, type: 3}
       propertyPath: m_Name
       value: Townsfolk.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709494183734749487, guid: 184c624ad36bb4efe9d06ce5f82f1cc5, type: 3}
+      propertyPath: lootAmount
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 7709494183734749487, guid: 184c624ad36bb4efe9d06ce5f82f1cc5, type: 3}
       propertyPath: lootMaximumAmount
@@ -11837,7 +11873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aac844047b5e1f742a053d9e3856b2ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bools: 01010000010101
+  bools: 0101000001010101
 --- !u!1 &4126842282973359444
 GameObject:
   m_ObjectHideFlags: 0
@@ -13514,8 +13550,7 @@ MonoBehaviour:
   takeDamageSound: {fileID: 4126842284292317640}
   bodyDecayTime: 10
   loot: {fileID: 2560821115435214408, guid: 130d4514c4c1c7245b8775a95945762b, type: 3}
-  lootMinimumAmount: 20
-  lootMaximumAmount: 25
+  lootAmount: 25
   gameObjectReward: {fileID: 294046451}
 --- !u!54 &7709494184215531371
 Rigidbody:

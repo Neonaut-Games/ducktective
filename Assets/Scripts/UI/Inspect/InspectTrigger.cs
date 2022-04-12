@@ -22,15 +22,16 @@ namespace UI.Inspect
 
         public abstract void Trigger();
 
-        private void OnTriggerEnter(Collider other)
+        private void OnTriggerStay(Collider other)
         {
             // If the object is not a player, ignore the event.
             if (!other.CompareTag("Player")) return;
 
             // If the player does not have the required quest level, ignore the event.
             if (shouldRequireQuestLevel)
-                if (PlayerLevel.questLevel != requiredQuestLevel)
-                    return;
+            {
+                if (PlayerLevel.questLevel != requiredQuestLevel) return;
+            }
 
             _inspectIndicator.SetBool(IsEnabled, true);
             LoadInspectTrigger(this);
@@ -43,9 +44,6 @@ namespace UI.Inspect
         {
             // If the object is not a player, ignore the event.
             if (!other.CompareTag("Player")) return;
-        
-            // If the player does not have the required quest level, ignore the event.
-            //if (shouldRequireQuestLevel) if (PlayerLevel.IsQualified(requiredQuestLevel)) return;
 
             _inspectIndicator.SetBool(IsEnabled, false);
             LoadInspectTrigger(null);

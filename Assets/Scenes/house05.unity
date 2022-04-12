@@ -17297,7 +17297,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1390488856}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.69, y: 2.89, z: 3.5}
+  m_LocalPosition: {x: 12, y: 3.25, z: 3.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 458131750}
@@ -22687,6 +22687,7 @@ GameObject:
   - component: {fileID: 1841122263}
   - component: {fileID: 1841122262}
   - component: {fileID: 1841122264}
+  - component: {fileID: 1841122265}
   m_Layer: 0
   m_Name: DoorTrigger
   m_TagString: Untagged
@@ -22743,6 +22744,25 @@ MonoBehaviour:
   shouldChangeQuestLevel: 0
   rewardedQuestLevel: 0
   rewardObject: {fileID: 0}
+--- !u!114 &1841122265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841122261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eac154bd482cb6b4e814d62e312f671a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: 
+  destinationX: 0
+  destinationY: 0
+  destinationZ: 0
+  shouldRequireQuestLevel: 1
+  minQuestLevel: 10
+  maxQuestLevel: 10
 --- !u!1 &1843521787
 GameObject:
   m_ObjectHideFlags: 0
@@ -25482,47 +25502,47 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8387812288188927564, guid: a13b8883072533940b5bcfde3cbc03a0, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.3465
       objectReference: {fileID: 0}
     - target: {fileID: 8387812288188927564, guid: a13b8883072533940b5bcfde3cbc03a0, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.3465
       objectReference: {fileID: 0}
     - target: {fileID: 8387812288188927564, guid: a13b8883072533940b5bcfde3cbc03a0, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 1.3465
       objectReference: {fileID: 0}
     - target: {fileID: 8387812288188927564, guid: a13b8883072533940b5bcfde3cbc03a0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.9122505
+      value: 8.872
       objectReference: {fileID: 0}
     - target: {fileID: 8387812288188927564, guid: a13b8883072533940b5bcfde3cbc03a0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.0095718
+      value: -1.017
       objectReference: {fileID: 0}
     - target: {fileID: 8387812288188927564, guid: a13b8883072533940b5bcfde3cbc03a0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.04935527
+      value: 0.015
       objectReference: {fileID: 0}
     - target: {fileID: 8387812288188927564, guid: a13b8883072533940b5bcfde3cbc03a0, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.41843683
+      value: 0.41620025
       objectReference: {fileID: 0}
     - target: {fileID: 8387812288188927564, guid: a13b8883072533940b5bcfde3cbc03a0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: -0.043205637
       objectReference: {fileID: 0}
     - target: {fileID: 8387812288188927564, guid: a13b8883072533940b5bcfde3cbc03a0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.9082459
+      value: -0.9033913
       objectReference: {fileID: 0}
     - target: {fileID: 8387812288188927564, guid: a13b8883072533940b5bcfde3cbc03a0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.093780816
       objectReference: {fileID: 0}
     - target: {fileID: 8387812288188927564, guid: a13b8883072533940b5bcfde3cbc03a0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -11.853
       objectReference: {fileID: 0}
     - target: {fileID: 8387812288188927564, guid: a13b8883072533940b5bcfde3cbc03a0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -26311,7 +26331,7 @@ MonoBehaviour:
   health: 0
   maxHealth: 200
   animator: {fileID: 8074023169019874043}
-  takeDamageSound: {fileID: 0}
+  takeDamageSound: {fileID: 8074023169309661413}
   bodyDecayTime: 10
   sightRange: 30
   loot: {fileID: 1379448344994034757, guid: f3c7a5ab8521bc8468628d6e56c8ec05, type: 3}

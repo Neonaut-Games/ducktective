@@ -100,7 +100,7 @@ namespace Character.Player
         {
             if (Input.GetKeyDown(KeyCode.Mouse0) && !PlayerInspect.movementRestricted)
             {
-                StartCoroutine(Attack());
+                    StartCoroutine(Attack());
             }
         }
 
