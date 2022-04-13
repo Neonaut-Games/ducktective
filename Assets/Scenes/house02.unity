@@ -15277,7 +15277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abf66f6f01881714abfdd2067824c3d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shouldRequireQuestLevel: 0
+  shouldRequireQuestLevel: 1
   requiredQuestLevel: 0
   dialogue:
     messages:
@@ -15286,6 +15286,7 @@ MonoBehaviour:
     - Eddy Yeah she said she'd swing by later so I put it on the table for ya.
     - You Awesome, thanks! I'll check it out.
     voices: 02000000000000000200000000000000
+  shouldEnablePost: 1
   shouldChangeQuestLevel: 0
   rewardedQuestLevel: 0
   rewardObject: {fileID: 0}
@@ -15373,7 +15374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abf66f6f01881714abfdd2067824c3d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shouldRequireQuestLevel: 0
+  shouldRequireQuestLevel: 1
   requiredQuestLevel: 0
   dialogue:
     messages:
@@ -15387,6 +15388,7 @@ MonoBehaviour:
     - Eddy Have any idea who could've sent it?
     - You I'm not sure. I better get home and tell mom about it.
     voices: 0000000002000000000000000000000002000000000000000200000000000000
+  shouldEnablePost: 1
   shouldChangeQuestLevel: 1
   rewardedQuestLevel: 1
   rewardObject: {fileID: 0}

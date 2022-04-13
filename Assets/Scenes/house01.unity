@@ -7607,7 +7607,7 @@ Transform:
   - {fileID: 711479981}
   - {fileID: 230567603}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &814673348
 PrefabInstance:
@@ -13847,6 +13847,74 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1753955851246280489, guid: a30a1848c63e8504eade6a510775e9d2, type: 3}
   m_PrefabInstance: {fileID: 1539481268}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1547789105
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1547789108}
+  - component: {fileID: 1547789107}
+  - component: {fileID: 1547789106}
+  m_Layer: 0
+  m_Name: DialogueTrigger.1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1547789106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547789105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf66f6f01881714abfdd2067824c3d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shouldRequireQuestLevel: 1
+  requiredQuestLevel: 2
+  dialogue:
+    messages:
+    - You Eugh! Still gives me the heebie jeebies.
+    - You I need to get back out there and find this creep.
+    voices: 0000000000000000
+  shouldEnablePost: 1
+  shouldChangeQuestLevel: 1
+  rewardedQuestLevel: 2
+  rewardObject: {fileID: 0}
+--- !u!65 &1547789107
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547789105}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1547789108
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547789105}
+  m_LocalRotation: {x: 0.0020814787, y: 0.19680445, z: -0.010368932, w: 0.9803857}
+  m_LocalPosition: {x: -0.4100001, y: -0.39, z: 6.49}
+  m_LocalScale: {x: 10.624015, y: 1.4941651, z: 15.273008}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0.468, y: 22.697, z: -1.118}
 --- !u!1001 &1549671308
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20119,7 +20187,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0.853, y: 135.403, z: -0.936}
 --- !u!33 &8954041187353239287
 MeshFilter:
