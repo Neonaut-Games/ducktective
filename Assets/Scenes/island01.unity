@@ -5514,9 +5514,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: house04
-  destinationX: 7
-  destinationY: 0.75
-  destinationZ: 3.5
+  destinationX: -6
+  destinationY: 1
+  destinationZ: 3.8
   shouldRequireQuestLevel: 1
   minQuestLevel: 6
   maxQuestLevel: 10
@@ -7319,8 +7319,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: house02
-  destinationX: 7
-  destinationY: 0.75
+  destinationX: -5
+  destinationY: 1
   destinationZ: 3.5
   shouldRequireQuestLevel: 0
   minQuestLevel: 0
