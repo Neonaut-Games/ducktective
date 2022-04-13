@@ -7,7 +7,7 @@ namespace UI.Inspect.Shop
     {
 
         [Header("Shop Settings")]
-        public Inspect.Shop.Shop shop;
+        public Shop shop;
         
         [Header("Purchase Rewards")]
         public bool shouldChangeQuestLevel;

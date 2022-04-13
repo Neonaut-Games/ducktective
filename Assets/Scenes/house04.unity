@@ -11241,6 +11241,7 @@ MonoBehaviour:
     author: Meemaw
     message: Want a ticket to Temedos? It's gonna cost ya.
     price: 50
+    voice: 5
   shouldChangeQuestLevel: 1
   rewardedQuestLevel: 8
   rewardObject: {fileID: 0}

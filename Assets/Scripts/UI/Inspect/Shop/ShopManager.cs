@@ -3,8 +3,10 @@ using System.Collections;
 using Character;
 using Character.Player;
 using TMPro;
+using UI.Inspect.Dialogue;
 using UI.Uninteractable;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace UI.Inspect.Shop
 {
@@ -19,7 +21,9 @@ namespace UI.Inspect.Shop
         private ShopTrigger _trigger;
         private string _author;
         private string _message;
+        private VoiceType _voice;
         private int _price;
+        private AudioSource _currentVoice;
         private static readonly int IsOpen = Animator.StringToHash("isOpen");
 
         private void Update()
@@ -55,18 +59,46 @@ namespace UI.Inspect.Shop
             _author = subpackage.GetAuthor();
             _price = subpackage.GetPrice();
             _message = subpackage.GetMessage();
+            _voice = subpackage.GetVoice();
+            AudioSource[] voice;
+            switch (_voice)
+            {
+                case VoiceType.Boss:
+                    voice = AudioManager.a.voiceBoss;
+                    break;
+                case VoiceType.Eddy:
+                    voice = AudioManager.a.voiceEddy;
+                    break;
+                case VoiceType.Meemaw:
+                    voice = AudioManager.a.voiceMeemaw;
+                    break;
+                case VoiceType.Mom:
+                    voice = AudioManager.a.voiceMom;
+                    break;
+                case VoiceType.Player:
+                    voice = AudioManager.a.voicePlayer;
+                    break;
+                case VoiceType.Quackintinius:
+                    voice = AudioManager.a.voiceQuackintinius;
+                    break;
+                case VoiceType.Randy:
+                    voice = AudioManager.a.voiceRandy;
+                    break;
+                default:
+                    throw new ArgumentException("The given voice has no sound available.");
+            }
 
             InspectIcon.Disable();
             shopBox.SetBool(IsOpen, true);
             
             priceElement.SetText("PURCHASE ($" + _price + ")");
             authorElement.SetText(_author);
-            StartCoroutine(PlayShopElement(_message));
+            StartCoroutine(PlayShopElement(_message, voice));
         }
 
         /* Displays the "write-on" animation for the message along
         with the character typing sound. */
-        private IEnumerator PlayShopElement(string message)
+        private IEnumerator PlayShopElement(string message, AudioSource[] voice)
         {
             // Clear the previous message
             messageElement.SetText("");
@@ -76,9 +108,22 @@ namespace UI.Inspect.Shop
                 character-by-character with a typing sound. */
                 if (!AudioManager.a.messageSound.isPlaying) AudioManager.a.messageSound.Play();
                 messageElement.SetText(messageElement.text + character);
+                
+                /* If the previous voice-line is not playing, play a new
+                random voice-line from the character's voice type. */
+                if (_currentVoice == null || !_currentVoice.isPlaying)
+                { 
+                    _currentVoice = SelectRandomAudio(voice);
+                    _currentVoice.Play();
+                }
 
                 yield return new WaitForSeconds(0.025f);
             }
+        }
+        
+        private AudioSource SelectRandomAudio(AudioSource[] audioSources)
+        {
+            return audioSources[Random.Range(0, audioSources.Length)];
         }
 
         public void Purchase()

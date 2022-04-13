@@ -8648,6 +8648,7 @@ MonoBehaviour:
     message: Looking to bet some cash? I'll spawn in some creatures for ya and if
       you win, you get to keep their money.
     price: 5
+    voice: 2
   shouldChangeQuestLevel: 0
   rewardedQuestLevel: 0
   rewardObject: {fileID: 1090376444}
