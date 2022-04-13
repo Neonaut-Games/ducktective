@@ -11,7 +11,8 @@ namespace UI.Menus
 {
     public class PauseMenu : MonoBehaviour
     {
-        
+
+        public static bool isPaused;
         public GameObject pauseMenu;
         
         [Header("Section Elements")]
@@ -63,10 +64,37 @@ namespace UI.Menus
                 if (!pauseMenu.activeSelf) Pause();
                 else Resume();
             }
+
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                if (LoadingScreen.isLoading)
+                {
+                    AudioManager.Decline();
+                    return;
+                }
+
+                if (!pauseMenu.activeSelf) Pause();
+                RevealSectionQuest();
+                
+            }
+            
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                if (LoadingScreen.isLoading)
+                {
+                    AudioManager.Decline();
+                    return;
+                }
+
+                if (!pauseMenu.activeSelf) Pause();
+                RevealSectionTickets();
+
+            }
         }
 
         private void Pause()
         {
+            isPaused = true;
             AudioManager.Pause();
             RevealSectionMain();
             pauseMenu.SetActive(true);
@@ -75,6 +103,7 @@ namespace UI.Menus
 
         public void Resume()
         {
+            isPaused = false;
             AudioManager.Pause();
             pauseMenu.SetActive(false);
             Time.timeScale = 1.0f;

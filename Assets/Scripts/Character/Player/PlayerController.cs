@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using UI.Menus;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -100,9 +101,10 @@ namespace Character.Player
 
         private void Combat()
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0) && !PlayerInspect.movementRestricted)
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                    StartCoroutine(Attack());
+                if (PlayerInspect.movementRestricted || PauseMenu.isPaused) return;
+                StartCoroutine(Attack());
             }
         }
 
