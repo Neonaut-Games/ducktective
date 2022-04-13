@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: Cooper Sullivan
   productName: Ducktective
-  defaultCursor: {fileID: 0}
+  defaultCursor: {fileID: 2800000, guid: 3f4387bf3e3a28049bb1e48854fb10ef, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_ShowUnitySplashScreen: 1
@@ -138,7 +138,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: v1.6-ALPHA
+  bundleVersion: v1.7-ALPHA
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -274,7 +274,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 24bf11cba7d4bf34ba338d6f383f5195, type: 3}
+      m_Icon: {fileID: 2800000, guid: 3f4387bf3e3a28049bb1e48854fb10ef, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
