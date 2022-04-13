@@ -22,9 +22,9 @@ namespace Character.Player
 
         private void Update()
         {
-            /* If the player is pressing "I" and is not already movementRestricted
+            /* If the player is pressing "E" and is not already movementRestricted
              (detects if they are already inspecting something), attempt inspect. */
-            if (Input.GetKeyDown(KeyCode.I) && !movementRestricted)
+            if (Input.GetKeyDown(KeyCode.E) && !movementRestricted)
             {
                 // If the player can currently inspect something, perform inspect.
                 if (canInspect)

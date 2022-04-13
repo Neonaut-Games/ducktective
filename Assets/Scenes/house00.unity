@@ -12293,7 +12293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 6, z: -9}
+  m_FollowOffset: {x: 0, y: 4, z: -9}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -13321,7 +13321,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 733224750}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 6, z: 9}
+  m_LocalPosition: {x: 0, y: 4, z: 9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 992396045}
@@ -13450,7 +13450,7 @@ MonoBehaviour:
   m_BindingMode: 4
   m_SplineCurvature: 0
   m_Orbits:
-  - m_Height: 6
+  - m_Height: 4
     m_Radius: 9
   - m_Height: 2
     m_Radius: 7
@@ -18514,7 +18514,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 988489960}
-  m_LocalRotation: {x: 0.0000000040764014, y: 0.9715311, z: -0.2369122, w: 0.000000016716532}
+  m_LocalRotation: {x: -0.0000000052454396, y: 0.98753077, z: -0.15742612, w: -0.000000032904534}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -18588,7 +18588,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 992396044}
-  m_LocalRotation: {x: -0, y: 0.9622841, z: -0.27204666, w: 0}
+  m_LocalRotation: {x: -0.0000000016690964, y: 0.9811606, z: -0.1931942, w: -0.000000008476713}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -19480,7 +19480,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1048637966}
-  m_LocalRotation: {x: -0.000000008150224, y: 0.96707326, z: -0.2544982, w: -0.000000030970213}
+  m_LocalRotation: {x: -0.0000000015011564, y: 0.9845123, z: -0.17531544, w: -0.000000008429987}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -23930,10 +23930,17 @@ MonoBehaviour:
     LEFT-MOUSE-CLICK
     attacks
 
-    I enables inspection mode
+    E enables inspection mode
 
     SPACE exits the current dialogue
     sequence
+
+    Q opens the quest log.
+
+    M enlarges the minimap.
+
+    R opens
+    the "submit a ticket" menu.
 
     ESC pauses the game'
   m_isRightToLeft: 0
@@ -25676,10 +25683,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  healthSlider: {fileID: 0}
-  damageVignette: {fileID: 0}
-  gameOverUI: {fileID: 0}
-  secondsLeftUI: {fileID: 0}
+  healthSlider: {fileID: 406182788}
+  damageVignette: {fileID: 1279476459}
+  gameOverUI: {fileID: 1756283349}
+  secondsLeftUI: {fileID: 1700410433}
 --- !u!114 &1385532983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26132,7 +26139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 6, z: -9}
+  m_FollowOffset: {x: 0, y: 4, z: -9}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -31031,7 +31038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 6, z: -9}
+  m_FollowOffset: {x: 0, y: 4, z: -9}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -41020,8 +41027,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2084814788}
-  m_LocalRotation: {x: -4.918683e-13, y: 0.9622841, z: -0.27204666, w: -1.3905577e-13}
-  m_LocalPosition: {x: 0, y: 2.9470375, z: 4.795556}
+  m_LocalRotation: {x: -0.0000000016690959, y: 0.9811605, z: -0.19319421, w: -0.000000008476713}
+  m_LocalPosition: {x: 0, y: 2.9471862, z: 7.1936674}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1385532988}

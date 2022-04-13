@@ -1613,7 +1613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6018d27712c1d645970f0165010d22f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 1385532988}
 --- !u!20 &73596674
 Camera:
   m_ObjectHideFlags: 0
@@ -12650,7 +12650,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 6, z: -9}
+  m_FollowOffset: {x: 0, y: 4, z: -9}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -12804,10 +12804,17 @@ MonoBehaviour:
     LEFT-MOUSE-CLICK
     attacks
 
-    I enables inspection mode
+    E enables inspection mode
 
     SPACE exits the current dialogue
     sequence
+
+    Q opens the quest log.
+
+    M enlarges the minimap.
+
+    R opens
+    the "submit a ticket" menu.
 
     ESC pauses the game'
   m_isRightToLeft: 0
@@ -13947,7 +13954,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 733224750}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 6, z: -9}
+  m_LocalPosition: {x: 0, y: 4, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 992396045}
@@ -14076,7 +14083,7 @@ MonoBehaviour:
   m_BindingMode: 4
   m_SplineCurvature: 0
   m_Orbits:
-  - m_Height: 6
+  - m_Height: 4
     m_Radius: 9
   - m_Height: 2
     m_Radius: 7
@@ -17326,7 +17333,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 988489960}
-  m_LocalRotation: {x: 0.23691224, y: 0.000000018689652, z: -0.000000004557556, w: 0.9715311}
+  m_LocalRotation: {x: 0.15742612, y: -0.000000018907812, z: 0.0000000030141678, w: 0.98753077}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -17400,7 +17407,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 992396044}
-  m_LocalRotation: {x: 0.27204666, y: 3e-45, z: -1e-45, w: 0.9622841}
+  m_LocalRotation: {x: 0.1931942, y: -0.000000008441112, z: 0.0000000016620865, w: 0.9811606}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -18237,7 +18244,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1048637966}
-  m_LocalRotation: {x: 0.2544982, y: -0.000000011335882, z: 0.000000002983188, w: 0.96707326}
+  m_LocalRotation: {x: 0.17531544, y: 0.00000000846995, z: -0.0000000015082725, w: 0.9845123}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -20382,10 +20389,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Exit
+  m_text: EXIT
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a7c03fb100c5fb642a698324b3275d58, type: 2}
-  m_sharedMaterial: {fileID: -8250754062308979354, guid: a7c03fb100c5fb642a698324b3275d58, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4c045a1ce22844efe934569141e41519, type: 2}
+  m_sharedMaterial: {fileID: 7899119010124887505, guid: 4c045a1ce22844efe934569141e41519, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -20445,7 +20452,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 0.55070776}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -20473,7 +20480,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8250754062308979354, guid: a7c03fb100c5fb642a698324b3275d58, type: 2}
+  - {fileID: 7899119010124887505, guid: 4c045a1ce22844efe934569141e41519, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20503,16 +20510,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1197245788}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -0.8436446}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: 0, y: 0, z: -0.864}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.5}
   m_Children: []
   m_Father: {fileID: 817474793}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.7542496, y: -0.023703933}
-  m_SizeDelta: {x: 2, y: 3}
+  m_AnchoredPosition: {x: 6.7542496, y: 0.389}
+  m_SizeDelta: {x: 2, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1228068151
 GameObject:
@@ -23337,10 +23344,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  healthSlider: {fileID: 0}
-  damageVignette: {fileID: 0}
-  gameOverUI: {fileID: 0}
-  secondsLeftUI: {fileID: 0}
+  healthSlider: {fileID: 750797931}
+  damageVignette: {fileID: 644002743}
+  gameOverUI: {fileID: 2063601870}
+  secondsLeftUI: {fileID: 1131629653}
 --- !u!114 &1385532983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23732,7 +23739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 6, z: -9}
+  m_FollowOffset: {x: 0, y: 4, z: -9}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -28453,7 +28460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 6, z: -9}
+  m_FollowOffset: {x: 0, y: 4, z: -9}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -30958,7 +30965,7 @@ MonoBehaviour:
     messages:
     - Ducktective When you're close to an area or object that can be inspected, you'll
       see an "inspect icon" appear at the top of your screen.
-    - Ducktective When this icon is present, press "I" at any time to enable inspection
+    - Ducktective When this icon is present, press "E" at any time to enable inspection
       mode.
     - Ducktective This inspection zone is highlighted with a white glow, shown below
       your feet. Normally, inspection zones are invisible and only indicated through
@@ -36231,8 +36238,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2084814788}
-  m_LocalRotation: {x: 0.27204666, y: 1.8816625e-14, z: -6.655821e-14, w: 0.9622841}
-  m_LocalPosition: {x: 0, y: 2.9470375, z: -4.795556}
+  m_LocalRotation: {x: 0.19319421, y: -0.0000000084410745, z: 0.0000000016618935, w: 0.9811605}
+  m_LocalPosition: {x: 0, y: 2.9471862, z: -7.1936674}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1385532988}
