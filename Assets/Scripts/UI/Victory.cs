@@ -28,11 +28,11 @@ namespace UI
             
             hits.SetText(PlayerStats.totalHits + " Hits Landed");
             misses.SetText(PlayerStats.totalMisses + " Hits Missed");
-            accuracy.SetText(PlayerStats.GetAccuracy() + "% Accuracy");
+            accuracy.SetText(PlayerStats.GetAccuracy().ToString("0.00") + "% Accuracy");
 
             time.SetText(PlayerStats.GetTimePlayed() + " Completion Time");
             
-            score.SetText(PlayerStats.GetScore().ToString());
+            score.SetText(PlayerStats.GetScore());
         }
 
         public void Exit() => Application.Quit();
