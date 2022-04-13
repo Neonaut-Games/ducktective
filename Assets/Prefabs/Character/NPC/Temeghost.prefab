@@ -5946,6 +5946,7 @@ MonoBehaviour:
   maxHealth: 30
   animator: {fileID: 1835733826859549749}
   takeDamageSound: {fileID: 1835733826109445675}
+  damageColor: {r: 1, g: 0, b: 0, a: 0.49019608}
   bodyDecayTime: 5
   ambientParticles: {fileID: 1553243648126485456}
   sightRange: 30
