@@ -1684,12 +1684,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mortalRigidbody: {fileID: 0}
   mortalCollider: {fileID: 0}
-  minimumQuestLevelRequired: 0
   health: 0
   maxHealth: 100
   animator: {fileID: 4126842284367288940}
   takeDamageSound: {fileID: 4126842284776245134}
+  damageColor: {r: 1, g: 0, b: 0, a: 1}
   bodyDecayTime: 10
   loot: {fileID: 2560821115435214408, guid: 130d4514c4c1c7245b8775a95945762b, type: 3}
-  lootMinimumAmount: 10
-  lootMaximumAmount: 15
+  lootAmount: 15
+  gameObjectReward: {fileID: 0}
