@@ -1442,64 +1442,6 @@ Transform:
   m_Father: {fileID: 599360375}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &294046451
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 294046452}
-  - component: {fileID: 294046454}
-  - component: {fileID: 294046453}
-  m_Layer: 0
-  m_Name: DeleteTrigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &294046452
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 294046451}
-  m_LocalRotation: {x: -0, y: -0.70693076, z: -0, w: 0.7072828}
-  m_LocalPosition: {x: 0.42684233, y: -2.03, z: 2.376093}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7709494184215531367}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 26.369, z: 0}
---- !u!114 &294046453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 294046451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37fba8b29f44ab541911ad780f2e31ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToDestroy: {fileID: 2061899042}
---- !u!65 &294046454
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 294046451}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 7, y: 1, z: 8}
-  m_Center: {x: 0, y: 0, z: 1}
 --- !u!4 &301542590 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4641518397717404, guid: f2b055ed15f48bd4793c0d0ef6185ee5, type: 3}
@@ -9027,75 +8969,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3faa669cb80455548924ba322fa8e119, type: 3}
---- !u!1 &2061899042
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2061899045}
-  - component: {fileID: 2061899044}
-  - component: {fileID: 2061899043}
-  m_Layer: 0
-  m_Name: DialogueTrigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2061899043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2061899042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abf66f6f01881714abfdd2067824c3d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shouldRequireQuestLevel: 0
-  requiredQuestLevel: 0
-  dialogue:
-    messages:
-    - Thomas Whadd'ya want, kid?
-    - You Uhh, nothing. Sorry.
-    - Thomas Yeah, get lost.
-    voices: 020000000000000002000000
-  shouldEnablePost: 1
-  shouldChangeQuestLevel: 0
-  rewardedQuestLevel: 0
-  rewardObject: {fileID: 0}
---- !u!65 &2061899044
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2061899042}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 7, y: 1, z: 8}
-  m_Center: {x: 0, y: 0, z: 1}
---- !u!4 &2061899045
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2061899042}
-  m_LocalRotation: {x: -0, y: -0.70693076, z: -0, w: 0.7072828}
-  m_LocalPosition: {x: 0.42684233, y: -0.79, z: 2.376093}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7709494184215531367}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 26.369, z: 0}
 --- !u!1 &2062428640
 GameObject:
   m_ObjectHideFlags: 0
@@ -13507,8 +13380,6 @@ Transform:
   m_Children:
   - {fileID: 4126842284852280363}
   - {fileID: 4126842284292317643}
-  - {fileID: 2061899045}
-  - {fileID: 294046452}
   m_Father: {fileID: 1267963608}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 116.341, z: 0}
@@ -13552,7 +13423,7 @@ MonoBehaviour:
   bodyDecayTime: 10
   loot: {fileID: 2560821115435214408, guid: 130d4514c4c1c7245b8775a95945762b, type: 3}
   lootAmount: 25
-  gameObjectReward: {fileID: 294046451}
+  gameObjectReward: {fileID: 0}
 --- !u!54 &7709494184215531371
 Rigidbody:
   m_ObjectHideFlags: 0
