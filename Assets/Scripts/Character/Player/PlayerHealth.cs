@@ -19,7 +19,7 @@ namespace Character.Player
         public GameObject gameOverUI;
         public TextMeshProUGUI secondsLeftUI;
 
-        private bool _isAlive = true;
+        public static bool isAlive = true;
         private static readonly int IsAlive = Animator.StringToHash("isAlive");
         private static readonly int Hurt = Animator.StringToHash("hurt");
 
@@ -57,7 +57,7 @@ namespace Character.Player
 
         public void TakeDamage(int amount)
         {
-            if (!_isAlive) return;
+            if (!isAlive) return;
             
             // Play "take damage" audio cue
             AudioManager.Hurt();
@@ -75,7 +75,7 @@ namespace Character.Player
 
         private void Die()
         {
-            _isAlive = false;
+            isAlive = false;
             PlayerStats.totalDeaths++;
             DuckLog.Normal("The player has died.");
 
@@ -113,7 +113,7 @@ namespace Character.Player
         {
             DuckLog.Normal("The player has respawned.");
 
-            _isAlive = true;
+            isAlive = true;
             // End death animation
             _player.playerAnimator.SetBool(IsAlive, true);
             

@@ -103,7 +103,9 @@ namespace Character.Player
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                if (PlayerInspect.movementRestricted || PauseMenu.isPaused) return;
+                if (PlayerInspect.movementRestricted) return;
+                if (!PlayerHealth.isAlive) return;
+                if (PauseMenu.isPaused) return;
                 StartCoroutine(Attack());
             }
         }
