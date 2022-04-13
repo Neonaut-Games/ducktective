@@ -49,8 +49,11 @@ namespace Character.Player
             // Set the player's movement state == 0 ("idle")
             playerAnimator.SetInteger(MovementState, 0);
 
-            // If the player is currently inspecting something, ignore their movement input
+            /* If the player is currently restricted in
+            some way, ignore their movement entirely. */
             if (PlayerInspect.movementRestricted) return;
+            if (!PlayerHealth.isAlive) return;
+            if (PauseMenu.isPaused) return;
 
             // Get the movement inputs from the W, A, S, D, and space keys
             float horizontal = Input.GetAxisRaw("Horizontal");
