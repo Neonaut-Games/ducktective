@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Character.NPC
+namespace Character.NPC.Boss
 { 
     public class BossRun : StateMachineBehaviour
     {

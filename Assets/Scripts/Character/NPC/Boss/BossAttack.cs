@@ -2,7 +2,7 @@ using Character.Player;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Character.NPC
+namespace Character.NPC.Boss
 {
     public class BossAttack : MonoBehaviour
     {

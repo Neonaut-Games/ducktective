@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace Character.NPC
+namespace Character.NPC.Townsfolk
 {
     public class Townsfolk : Mortal
     {

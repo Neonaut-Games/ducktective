@@ -1,7 +1,7 @@
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Character.NPC
+namespace Character.NPC.Temeghost
 {
     public class Temeghost : Mortal
     {

@@ -8,6 +8,8 @@ namespace Character
     public abstract class Mortal : MonoBehaviour
     {
 
+        private MeshRenderer _renderer;
+        
         [HideInInspector] public Rigidbody mortalRigidbody;
         [HideInInspector] public CapsuleCollider mortalCollider;
 
@@ -19,8 +21,9 @@ namespace Character
         public Animator animator;
         public AudioSource takeDamageSound;
         public int bodyDecayTime = 10;
-        private static readonly int TakeHit = Animator.StringToHash("takeHit");
+
         private static readonly int Die1 = Animator.StringToHash("die");
+        private static readonly int TakeHit = Animator.StringToHash("takeHit");
 
         private void Start()
         {
@@ -32,6 +35,9 @@ namespace Character
             mortal entities into their respective variables. */
             mortalRigidbody = GetComponent<Rigidbody>();
             mortalCollider = GetComponent<CapsuleCollider>();
+            
+            // Initialize renderer
+            _renderer = GetComponentInChildren<MeshRenderer>();
         }
 
         /* This function manages all damage taken by Mortal enemies
@@ -42,6 +48,7 @@ namespace Character
             health -= amount;
             
             takeDamageSound.Play();
+            StartCoroutine(DamageAnimation());
 
             /* If the mortal's health is == 0 or
             below, transition to the death function. */
@@ -49,12 +56,19 @@ namespace Character
                 Die();
                 return true;
             }
-
-            // Play hit animation
+            
             animator.SetTrigger(TakeHit);
             return false;
-            
         }
+
+        private IEnumerator DamageAnimation()
+        {
+            var material = _renderer.material;
+            material.color = Color.red;
+            yield return new WaitForSeconds(0.5f);
+            material.color = Color.white;
+        }
+
         private void Die()
         {
             DuckLog.Normal(gameObject.name + " was killed.");

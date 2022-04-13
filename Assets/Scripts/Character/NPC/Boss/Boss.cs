@@ -1,21 +1,19 @@
+using Character.Player;
 using JetBrains.Annotations;
-using UI.Inspect.Lock;
 using UnityEngine;
-using UnityEngine.Serialization;
+using Debug = System.Diagnostics.Debug;
 
-namespace Character.NPC
+namespace Character.NPC.Boss
 {
-    public class TemeghostBoss : Mortal
+    public class Boss : Mortal
     {
-        [Header("Cosmetic Settings")]
-        public ParticleSystem ambientParticles;
-        
+    
         [Header("Combat Settings")]
         public int sightRange = 30;
-
+        
         [Header("Loot Settings")]
         [CanBeNull] public GameObject loot;
-        [FormerlySerializedAs("lootMaximumAmount")] public int lootAmount;
+
         private static readonly int IsMoving = Animator.StringToHash("isMoving");
 
         public void Update()
@@ -25,18 +23,24 @@ namespace Character.NPC
 
 
             if (Vector3.Distance(playerPosition, bossPosition) > sightRange)
+            {
                 animator.SetBool(IsMoving, false);
+            }
             else
+            {
                 animator.SetBool(IsMoving, true);
+            }
         }
-        
+
         protected override void OnDeath()
         {
             if (loot == null) return;
-            for (int i = 0; i < lootAmount; i++) Instantiate(loot, transform.position, Quaternion.identity);
-            ambientParticles.Stop();
-            ambientParticles.time = 2.0f;
-            LockTrigger.used = true;
+            
+            var lootPosition = transform.position + Vector3.up;
+            Debug.Assert(loot != null, nameof(loot) + " != null");
+            Instantiate(loot, lootPosition, loot.transform.rotation);
+            
+            PlayerLevel.SetQuestLevel(9);
         }
     }
 }

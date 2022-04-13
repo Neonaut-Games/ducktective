@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Character.NPC
+namespace Character.NPC.Townsfolk
 {
     public class TownsfolkHit : StateMachineBehaviour
     {
