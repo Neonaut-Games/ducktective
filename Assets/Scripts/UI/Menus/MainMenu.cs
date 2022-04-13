@@ -1,6 +1,7 @@
 using Character;
 using Character.Player;
 using TMPro;
+using UI.Uninteractable;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,21 +10,26 @@ namespace UI.Menus
     public class MainMenu : MonoBehaviour
     {
 
+        private LoadingScreen _loadingScreen;
         public TextMeshProUGUI version;
 
-        private void Start() => version.SetText(Application.version);
+        private void Start()
+        {
+            version.SetText(Application.version);
+            _loadingScreen = FindObjectOfType<LoadingScreen>();
+        }
 
         public void StartGame()
         {
             AudioManager.ButtonClick();
-            SceneManager.LoadScene("house00");
+            _loadingScreen.Load("house00");
             PlayerStats.startPlayingTime = (int) Time.time;
         }
         
         public void Tutorial()
         {
             AudioManager.ButtonClick();
-            SceneManager.LoadScene("tutorial");
+            _loadingScreen.Load("tutorial");
         }
 
         public void About()

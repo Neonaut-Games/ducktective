@@ -339,7 +339,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 26704383}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -88, y: 1.4, z: -102}
+  m_LocalPosition: {x: -88, y: 1.782, z: -102}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258602217}
@@ -1126,6 +1126,7 @@ MonoBehaviour:
   requiredQuestLevel: 0
   correctSequence: 6841
   reward: {fileID: 831693776}
+  shouldEnablePost: 0
 --- !u!1 &215870321
 GameObject:
   m_ObjectHideFlags: 0
@@ -1227,7 +1228,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 234730619}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.09, y: 1.4, z: -174.08}
+  m_LocalPosition: {x: 20.09, y: 1.62, z: -174.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258602217}
@@ -2712,7 +2713,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 655605970}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -36.36, y: 1.4, z: -151.21}
+  m_LocalPosition: {x: -36.36, y: 1.813, z: -151.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258602217}
@@ -6627,7 +6628,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1430594909}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.13, y: 1.4, z: -174.08}
+  m_LocalPosition: {x: 11.13, y: 1.62, z: -174.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258602217}
@@ -7990,7 +7991,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1810273308}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 77.6, y: 1.4, z: -98.6}
+  m_LocalPosition: {x: 77.6, y: 1.71, z: -98.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258602217}

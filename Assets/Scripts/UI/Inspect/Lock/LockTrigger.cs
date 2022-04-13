@@ -10,6 +10,7 @@ namespace UI.Inspect.Lock
         [Header("Lock Settings")]
         public string correctSequence;
         public GameObject reward;
+        public bool shouldEnablePost = false;
 
         public void Awake()
         {

@@ -2540,7 +2540,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 59, y: 50, z: 59}
+  m_Size: {x: 90, y: 50, z: 90}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &134099623
 Transform:
@@ -10834,6 +10834,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentSequenceUI: {fileID: 1941046945}
   lockPad: {fileID: 767011024}
+  startButton: {fileID: 0}
   normal: {r: 0.62352943, g: 0.79215693, b: 1, a: 1}
   success: {r: 0.16140087, g: 0.8773585, b: 0.2714259, a: 1}
   failure: {r: 0.8773585, g: 0.34349412, b: 0.34349412, a: 1}

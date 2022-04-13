@@ -36,6 +36,7 @@ namespace Character.Player
         private void Update()
         {
             Move();
+            Gravity();
             Combat();
         }
 
@@ -89,9 +90,10 @@ namespace Character.Player
                 characterController.Move(movementDirectionModded.normalized * (movementMultiplier * _sprintAdditive * Time.deltaTime));
             }
 
-            if (!characterController.isGrounded) characterController.Move(Physics.gravity * Time.deltaTime);
         }
-        
+
+        private void Gravity() => characterController.Move(Physics.gravity * Time.deltaTime);
+
         #endregion
 
         #region Combat Mechanics
