@@ -18,16 +18,18 @@ namespace Character.Player
         [Header("Death Settings")]
         public GameObject gameOverUI;
         public TextMeshProUGUI secondsLeftUI;
+
+        private bool _isAlive = true;
         private static readonly int IsAlive = Animator.StringToHash("isAlive");
         private static readonly int Hurt = Animator.StringToHash("hurt");
 
         private void Start()
         {
-            Refresh();
+            RefreshHUD();
             _player = FindObjectOfType<PlayerController>();
         }
 
-        private void Refresh()
+        private void RefreshHUD()
         {
             // Adjust slider health stat (decoration)
             healthSlider.maxValue = maxHealth;
@@ -37,16 +39,16 @@ namespace Character.Player
         private void SetHealth(int amount)
         {
             // Adjust global health stat (real)
-            health = AdjustHealth(amount);
+            health = CorrectHealthAmount(amount);
 
             // Adjust slider health stat (decoration)
-            Refresh();
+            RefreshHUD();
 
             // Check death conditions
             if (health <= 0) Die();
         }
 
-        private int AdjustHealth(int amount)
+        private int CorrectHealthAmount(int amount)
         {
             if (amount > maxHealth) amount = maxHealth;
             else if (amount < 0) amount = 0;
@@ -55,6 +57,8 @@ namespace Character.Player
 
         public void TakeDamage(int amount)
         {
+            if (!_isAlive) return;
+            
             // Play "take damage" audio cue
             AudioManager.Hurt();
             
@@ -71,6 +75,7 @@ namespace Character.Player
 
         private void Die()
         {
+            _isAlive = false;
             PlayerStats.totalDeaths++;
             DuckLog.Normal("The player has died.");
 
@@ -108,6 +113,7 @@ namespace Character.Player
         {
             DuckLog.Normal("The player has respawned.");
 
+            _isAlive = true;
             // End death animation
             _player.playerAnimator.SetBool(IsAlive, true);
             
@@ -133,7 +139,7 @@ namespace Character.Player
             foreach (GameObject spawnpoint in GameObject.FindGameObjectsWithTag("Respawn"))
             {
                 float thisDistance = Vector3.Distance(spawnpoint.transform.position, gameObject.transform.position);
-                if (thisDistance < minimumDistance && thisDistance > 1.0)
+                if (thisDistance < minimumDistance && thisDistance > 3.0)
                 {
                     closestPosition = spawnpoint.transform;
                     minimumDistance = thisDistance;

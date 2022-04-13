@@ -9,6 +9,7 @@ namespace Character
         [Header("UI Audios")]
         public AudioSource pause;
         public AudioSource buttonClick;
+        public AudioSource pop;
         public AudioSource decline;
         public AudioSource purchase;
 
@@ -46,6 +47,8 @@ namespace Character
 
         public static void Pause() => a.pause.Play();
         public static void ButtonClick() => a.buttonClick.Play();
+
+        public static void Pop() => a.pop.Play();
         public static void Decline() => a.decline.Play();
         public static void Purchase() => a.purchase.Play();
         

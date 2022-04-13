@@ -12,7 +12,6 @@ namespace UI.Inspect.Shop
     {
         [Header("Component Settings")]
         public Animator shopBox;
-        public Animator startButton;
         public TextMeshProUGUI messageElement;
         public TextMeshProUGUI priceElement;
         public TextMeshProUGUI authorElement;
@@ -21,7 +20,6 @@ namespace UI.Inspect.Shop
         private string _author;
         private string _message;
         private int _price;
-        private static readonly int IsEnabled = Animator.StringToHash("isEnabled");
         private static readonly int IsOpen = Animator.StringToHash("isOpen");
 
         private void Update()
@@ -58,19 +56,14 @@ namespace UI.Inspect.Shop
             _price = subpackage.GetPrice();
             _message = subpackage.GetMessage();
 
-            ShowUI(true);
+            InspectIcon.Disable();
+            shopBox.SetBool(IsOpen, true);
+            
             priceElement.SetText("PURCHASE ($" + _price + ")");
             authorElement.SetText(_author);
             StartCoroutine(PlayShopElement(_message));
         }
 
-        // Toggles the inspect indicator and shop box
-        private void ShowUI(bool activity)
-        {
-            startButton.SetBool(IsEnabled, !activity);
-            shopBox.SetBool(IsOpen, activity);
-        }
-        
         /* Displays the "write-on" animation for the message along
         with the character typing sound. */
         private IEnumerator PlayShopElement(string message)
@@ -124,8 +117,9 @@ namespace UI.Inspect.Shop
 
             // Disable inspection mode for the player
             PlayerInspect.EndInspect();
-
-            ShowUI(false);
+            
+            InspectIcon.Enable();
+            shopBox.SetBool(IsOpen, false);
 
             // Set gameObject to active if applicable
             if (wasPurchased)

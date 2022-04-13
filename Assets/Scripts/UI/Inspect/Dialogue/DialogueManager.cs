@@ -13,14 +13,12 @@ namespace UI.Inspect.Dialogue
     {
         [Header("Component Settings")]
         public Animator dialogueBox;
-        public Animator startButton;
         public TextMeshProUGUI messageElement;
         public TextMeshProUGUI authorElement;
 
         private DialogueTrigger _trigger;
         private Queue<DialogueElement> _messageQueue;
         private AudioSource _currentVoice;
-        private static readonly int IsEnabled = Animator.StringToHash("isEnabled");
         private static readonly int IsOpen = Animator.StringToHash("isOpen");
 
         private void Start() => _messageQueue = new Queue<DialogueElement>();
@@ -61,7 +59,7 @@ namespace UI.Inspect.Dialogue
                 _messageQueue.Enqueue(entry);
             }
             
-            startButton.SetBool(IsEnabled, false);
+            InspectIcon.Disable();
             dialogueBox.SetBool(IsOpen, true);
             NextDialogueElement();
         }
@@ -163,7 +161,7 @@ namespace UI.Inspect.Dialogue
             // Disable inspection mode for the player
             PlayerInspect.EndInspect();
 
-            startButton.SetBool(IsEnabled, _trigger.shouldEnablePost);
+            if (_trigger.shouldEnablePost) InspectIcon.Enable();
             dialogueBox.SetBool(IsOpen, false);
         
             // Set the player's quest level if applicable

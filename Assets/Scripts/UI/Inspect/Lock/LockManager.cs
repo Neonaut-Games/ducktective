@@ -13,8 +13,7 @@ namespace UI.Inspect.Lock
         [Header("Interface Settings")]
         public TextMeshProUGUI currentSequenceUI;
         public Animator lockPad;
-        public Animator startButton;
-        
+
         [Header("Color Settings")]
         public Color normal;
         public Color success;
@@ -51,7 +50,7 @@ namespace UI.Inspect.Lock
             // Enable inspection mode for the player
             PlayerInspect.BeginInspect();
             
-            startButton.SetBool(IsEnabled, false);
+            InspectIcon.Disable();
             lockPad.SetBool(IsEnabled, true);
             _correctSequence = _trigger.correctSequence;
         }
@@ -105,7 +104,7 @@ namespace UI.Inspect.Lock
         public void EndLock()
         {
             PlayerInspect.EndInspect();
-            startButton.SetBool(IsEnabled, _trigger.shouldEnablePost);
+            if (_trigger.shouldEnablePost) InspectIcon.Enable();
             lockPad.SetBool(IsEnabled, false);
         }
         
