@@ -28,6 +28,9 @@ namespace UI.Menus
         public TextMeshProUGUI statsElement;
         
         public GameObject controlsMenu;
+
+        public GameObject minimapMenu;
+        public GameObject minimapElement;
         
         [Header("Ticket Center")]
         public GameObject ticketMenu;
@@ -90,6 +93,19 @@ namespace UI.Menus
                 RevealSectionTickets();
 
             }
+            
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                if (LoadingScreen.isLoading)
+                {
+                    AudioManager.Decline();
+                    return;
+                }
+
+                if (!pauseMenu.activeSelf) Pause();
+                RevealSectionMinimap();
+
+            }
         }
 
         private void Pause()
@@ -106,6 +122,7 @@ namespace UI.Menus
             isPaused = false;
             AudioManager.Pause();
             pauseMenu.SetActive(false);
+            minimapElement.SetActive(true);
             Time.timeScale = 1.0f;
         }
 
@@ -119,6 +136,8 @@ namespace UI.Menus
             questMenu.SetActive(false);
             optionsMenu.SetActive(false);
             controlsMenu.SetActive(false);
+            minimapMenu.SetActive(false);
+            minimapElement.SetActive(false);
             statsMenu.SetActive(false);
             ticketMenu.SetActive(false);
             bugReportMenu.SetActive(false);
@@ -139,10 +158,13 @@ namespace UI.Menus
             questMenu.SetActive(false);
             optionsMenu.SetActive(false);
             controlsMenu.SetActive(false);
+            minimapMenu.SetActive(false);
+            minimapElement.SetActive(false);
             statsMenu.SetActive(false);
             ticketMenu.SetActive(false);
             bugReportMenu.SetActive(false);
             featureSuggestMenu.SetActive(false);
+            success.SetActive(false);
 
             // Set section to active
             foreach (var section in sections)
@@ -291,6 +313,16 @@ namespace UI.Menus
             RevealSection(controlsMenu);
         }
 
+        #endregion
+
+        #region Minimap
+
+        public void RevealSectionMinimap()
+        {
+            minimapElement.SetActive(false);
+            RevealSection(minimapMenu);
+        }
+        
         #endregion
 
         #region Submit a Ticket

@@ -26,7 +26,11 @@ namespace UI.Uninteractable
             /* Begin loading the new scene and hold
             the function until it is finished loading. */ 
             var loadOperation = SceneManager.LoadSceneAsync(sceneName); 
-            while (!loadOperation.isDone) yield return null; 
+            while (!loadOperation.isDone) yield return null;
+
+            // Adjust minimaps in-case of indoors/outdoors change
+            var minimaps = FindObjectsOfType<MinimapTextureManager>();
+            foreach (var minimap in minimaps) minimap.Refresh(sceneName);
             
             // Mandatory 0.25f seconds of wait time for camera adjustment
             yield return new WaitForSeconds(0.25f); 
