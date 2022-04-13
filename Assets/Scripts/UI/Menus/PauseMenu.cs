@@ -4,6 +4,7 @@ using System.Web;
 using Character;
 using Character.Player;
 using TMPro;
+using UI.Uninteractable;
 using UnityEngine;
 
 namespace UI.Menus
@@ -53,6 +54,12 @@ namespace UI.Menus
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
+                if (LoadingScreen.isLoading)
+                {
+                    AudioManager.Decline();
+                    return;
+                }
+                
                 if (!pauseMenu.activeSelf) Pause();
                 else Resume();
             }
