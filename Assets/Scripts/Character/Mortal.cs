@@ -9,7 +9,7 @@ namespace Character
     public abstract class Mortal : MonoBehaviour
     {
 
-        // private SkinnedMeshRenderer[] _renderer;
+        private SkinnedMeshRenderer[] _renderer;
         
         [HideInInspector] public Rigidbody mortalRigidbody;
         [HideInInspector] public CapsuleCollider mortalCollider;
@@ -21,7 +21,6 @@ namespace Character
         [Header("Animation Settings")]
         public Animator animator;
         public AudioSource takeDamageSound;
-        public Color damageColor = Color.red;
         public int bodyDecayTime = 10;
 
         private static readonly int Die1 = Animator.StringToHash("die");
@@ -39,7 +38,7 @@ namespace Character
             mortalCollider = GetComponent<CapsuleCollider>();
             
             // Initialize renderer
-            // _renderer = GetComponentsInChildren<SkinnedMeshRenderer>();
+            _renderer = GetComponentsInChildren<SkinnedMeshRenderer>();
         }
 
         /* This function manages all damage taken by Mortal enemies
@@ -50,7 +49,7 @@ namespace Character
             health -= amount;
             
             takeDamageSound.Play();
-            //StartCoroutine(DamageTint());
+            StartCoroutine(DamageTint());
 
             /* If the mortal's health is == 0 or
             below, transition to the death function. */
@@ -63,25 +62,29 @@ namespace Character
             return false;
         }
 
-        // private IEnumerator DamageTint()
-        // {
-        //     yield return new WaitForSeconds(0.1f);
-        //     
-        //     var colors = new Dictionary<string, Color>();
-        //     foreach (var component in _renderer)
-        //     {
-        //         colors.Add(component.name, component.material.color);
-        //         component.material.color = damageColor;
-        //     }
-        //     
-        //     yield return new WaitForSeconds(0.15f);
-        //     
-        //     foreach (var component in _renderer)
-        //     {
-        //         colors.TryGetValue(component.name, out var previousMaterial);
-        //         component.material.color = previousMaterial;
-        //     }
-        // }
+        private IEnumerator DamageTint()
+        {
+            yield return new WaitForSeconds(0.1f);
+            
+            var colors = new Dictionary<string, Color>();
+            foreach (var component in _renderer)
+            {
+                var previousColor = component.material.color;
+                colors.Add(component.name, previousColor);
+                previousColor.r = 1;
+                previousColor.g /= 2;
+                previousColor.b /= 2;
+                component.material.color = previousColor;
+            }
+            
+            yield return new WaitForSeconds(0.5f);
+            
+            foreach (var component in _renderer)
+            {
+                colors.TryGetValue(component.name, out var previousMaterial);
+                component.material.color = previousMaterial;
+            }
+        }
 
         private void Die()
         {

@@ -21,6 +21,7 @@ namespace Character.Player
         [Header("Combat Settings")]
         public Transform damagePoint;
         public float attackRange;
+        public GameObject attackArrow;
         public LayerMask damageableLayer;
         public int damage = 10;
         public float attackCooldown = 1.0f;
@@ -109,6 +110,18 @@ namespace Character.Player
                 if (!PlayerHealth.isAlive) return;
                 if (PauseMenu.isPaused) return;
                 StartCoroutine(Attack());
+            }
+            
+            if (Input.GetKey(KeyCode.Mouse1))
+            {
+                if (PlayerInspect.movementRestricted) return;
+                if (!PlayerHealth.isAlive) return;
+                if (PauseMenu.isPaused) return;
+                attackArrow.SetActive(true);
+            }
+            else if (attackArrow.activeSelf)
+            {
+                attackArrow.SetActive(false);
             }
         }
 
