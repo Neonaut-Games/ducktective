@@ -45,7 +45,6 @@ namespace Character.Player
 
         private void Move()
         {
-            
             // Set the player's movement state == 0 ("idle")
             playerAnimator.SetInteger(MovementState, 0);
 

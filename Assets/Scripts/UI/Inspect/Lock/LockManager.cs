@@ -19,6 +19,7 @@ namespace UI.Inspect.Lock
         public Color success;
         public Color failure;
 
+        private bool _processing = false;
         private string _currentSequence;
         private string _correctSequence;
         private LockTrigger _trigger;
@@ -57,6 +58,7 @@ namespace UI.Inspect.Lock
 
         public void EnterKey(string character)
         {
+            if (_processing) return;
             AudioManager.ButtonClick();
                 
             _currentSequence += character;
@@ -70,6 +72,7 @@ namespace UI.Inspect.Lock
 
         private IEnumerator Success()
         {
+            _processing = true; 
             AudioManager.Pause();
             
             currentSequenceUI.color = success;
@@ -83,15 +86,18 @@ namespace UI.Inspect.Lock
             Clear();
             if (_trigger.reward != null) _trigger.reward.SetActive(true);
             EndLock();
+            _processing = false;
         }
 
         private IEnumerator Failure()
         {
+            _processing = true;
             AudioManager.Decline();
             
             currentSequenceUI.color = failure;
             yield return new WaitForSeconds(1.0f);
             Clear();
+            _processing = false;
         }
 
         public void Clear()
