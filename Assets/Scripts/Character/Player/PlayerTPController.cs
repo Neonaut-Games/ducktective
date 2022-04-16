@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 
 namespace Character.Player
 {
-    public class PlayerController : MonoBehaviour
+    public class PlayerTPController : MonoBehaviour
     {
         [FormerlySerializedAs("_characterController")] public CharacterController characterController;
         [Header("Camera Settings")] public Transform playerCamera;

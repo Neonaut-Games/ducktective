@@ -18647,7 +18647,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 988489960}
-  m_LocalRotation: {x: 0.0000000030284562, y: 0.98753077, z: -0.15742612, w: 0.000000018997444}
+  m_LocalRotation: {x: -2.8894567e-10, y: 0.99765396, z: -0.06845912, w: -0.000000004210801}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -18721,7 +18721,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 992396044}
-  m_LocalRotation: {x: 0.0000000016620865, y: 0.9811606, z: -0.1931942, w: 0.000000008441112}
+  m_LocalRotation: {x: -0.0000000016620865, y: 0.9811606, z: -0.1931942, w: -0.000000008441112}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -19940,7 +19940,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1048637966}
-  m_LocalRotation: {x: -0.000000001508272, y: 0.9845123, z: -0.17531544, w: -0.000000008469946}
+  m_LocalRotation: {x: 0.0000000022382254, y: 0.99150336, z: -0.1300811, w: 0.000000017060186}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -41416,7 +41416,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2084814788}
-  m_LocalRotation: {x: 0.0000000016618931, y: 0.9811605, z: -0.19319421, w: 0.0000000084410745}
+  m_LocalRotation: {x: 0.0000000016620583, y: 0.9811605, z: -0.19319421, w: 0.0000000084411065}
   m_LocalPosition: {x: 0, y: 2.9471862, z: 7.1936674}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -41661,6 +41661,7 @@ GameObject:
   - component: {fileID: 2090359652}
   - component: {fileID: 2090359654}
   - component: {fileID: 2090359653}
+  - component: {fileID: 2090359655}
   m_Layer: 0
   m_Name: MinimapCamera
   m_TagString: Untagged
@@ -41675,8 +41676,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2090359651}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -1782.5, y: -892.5, z: 0}
+  m_LocalRotation: {x: 0.19319421, y: 0.0000000084411065, z: -0.0000000016620583, w: 0.9811605}
+  m_LocalPosition: {x: -1778.865, y: -940.68896, z: -1.8818305}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 119250674}
@@ -41722,7 +41723,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 75
+  orthographic size: 10
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -41738,6 +41739,40 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &2090359655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090359651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowDebugText: 0
+  m_ShowCameraFrustum: 1
+  m_IgnoreTimeScale: 0
+  m_WorldUpOverride: {fileID: 0}
+  m_UpdateMethod: 2
+  m_BlendUpdateMethod: 1
+  m_DefaultBlend:
+    m_Style: 1
+    m_Time: 2
+    m_CustomCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  m_CustomBlends: {fileID: 0}
+  m_CameraCutEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraActivatedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &2106089063
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,18 +10,18 @@ namespace Character.Player
         public Color fail = Color.red;
         
         private MeshRenderer[] _renderers;
-        private PlayerController _player;
+        private PlayerTPController _playerTp;
 
         private void Awake()
         {
             _renderers = GetComponentsInChildren<MeshRenderer>();
-            _player = FindObjectOfType<PlayerController>();
+            _playerTp = FindObjectOfType<PlayerTPController>();
         }
 
         private void Update()
         {
             // Deal damage at the transform point
-            Collider[] results = Physics.OverlapSphere(_player.damagePoint.position, _player.attackRange, _player.damageableLayer.value);
+            Collider[] results = Physics.OverlapSphere(_playerTp.damagePoint.position, _playerTp.attackRange, _playerTp.damageableLayer.value);
             if (results.Length > 0)
             {
                 foreach (var _renderer in _renderers) _renderer.material.color = success;
