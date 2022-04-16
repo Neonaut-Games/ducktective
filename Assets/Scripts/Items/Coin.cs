@@ -7,7 +7,7 @@ namespace Items
     [RequireComponent(typeof(Rigidbody))]
     public class Coin : MonoBehaviour
     {
-
+        
         public int value = 1;
         
         private void OnTriggerEnter(Collider other)
