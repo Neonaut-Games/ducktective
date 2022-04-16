@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace UI
@@ -6,10 +5,11 @@ namespace UI
     public class Minimap : MonoBehaviour
     {
         public Transform target;
+
         private void FixedUpdate()
         {
-            transform.position = new Vector3(target.position.x, transform.position.y, target.position.z);
+            var pos = transform.position;
+            transform.position = new Vector3(target.position.x, pos.y, pos.z);
         }
-        
     }
 }
