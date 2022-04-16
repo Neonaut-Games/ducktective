@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace Character.NPC.Boss
+namespace Character.NPC.Temeduck
 { 
-    public class BossRun : StateMachineBehaviour
+    public class TemeduckRun : StateMachineBehaviour
     {
         private Transform _player;
         private Rigidbody _rigidbody;

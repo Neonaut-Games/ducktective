@@ -12113,30 +12113,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5501463826058925403, guid: a13d069b2efd7874bb438cec39d00001, type: 3}
   m_PrefabInstance: {fileID: 1422852553}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1430333185
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8954041187352429303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 534249eaaf48f5745b950861afd31562, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shouldRequireQuestLevel: 1
-  requiredQuestLevel: 4
-  dialogue:
-    messages:
-    - You This is it, a black feather!
-    - You I should head back to the police station to show Quackintinus.
-    - You God, I've got to stop talking to myself like this.
-    voices: 000000000000000000000000
-  shouldEnablePost: 1
-  shouldChangeQuestLevel: 1
-  rewardedQuestLevel: 5
-  rewardObject: {fileID: 0}
 --- !u!65 &1430333186
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20167,7 +20143,7 @@ GameObject:
   - component: {fileID: 8954041187354369079}
   - component: {fileID: 8954041187352429302}
   - component: {fileID: 1430333186}
-  - component: {fileID: 1430333185}
+  - component: {fileID: 8954041187352429304}
   m_Layer: 0
   m_Name: Feather
   m_TagString: Untagged
@@ -20175,6 +20151,30 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
+--- !u!114 &8954041187352429304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8954041187352429303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa3b7b7d230423b9369d94dc8b54485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shouldRequireQuestLevel: 1
+  requiredQuestLevel: 4
+  dialogue:
+    messages:
+    - You This is it, a black feather!
+    - You I should head back to the police station to show Quackintinus.
+    - You Aw Quack, I've gotta stop talking to myself like this.
+    voices: 000000000000000000000000
+  shouldEnablePost: 0
+  shouldChangeQuestLevel: 1
+  rewardedQuestLevel: 5
+  rewardObject: {fileID: 0}
 --- !u!4 &8954041187352469207
 Transform:
   m_ObjectHideFlags: 0

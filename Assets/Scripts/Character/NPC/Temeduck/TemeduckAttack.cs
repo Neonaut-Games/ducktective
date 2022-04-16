@@ -2,9 +2,9 @@ using Character.Player;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Character.NPC.Boss
+namespace Character.NPC.Temeduck
 {
-    public class BossAttack : MonoBehaviour
+    public class TemeduckAttack : MonoBehaviour
     {
 
         [Header("Required Settings")]

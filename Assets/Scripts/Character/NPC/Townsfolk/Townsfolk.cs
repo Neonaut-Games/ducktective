@@ -12,6 +12,10 @@ namespace Character.NPC.Townsfolk
         [FormerlySerializedAs("lootMaximumAmount")] public int lootAmount;
         public GameObject gameObjectReward;
 
+        protected override void AfterStart() {}
+
+        protected override void OnTakeDamage() {}
+
         protected override void OnDeath()
         {
             if (loot == null) return;

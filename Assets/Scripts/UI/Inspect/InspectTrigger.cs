@@ -14,8 +14,7 @@ namespace UI.Inspect
         public int requiredQuestLevel;
 
         public abstract void Trigger();
-
-
+        
         private void OnTriggerEnter(Collider other)
         {
             // If the object is not a player, ignore the event.
@@ -52,7 +51,7 @@ namespace UI.Inspect
             LoadInspectTrigger(null);
         }
 
-        private void LoadInspectTrigger(InspectTrigger trigger)
+        public static void LoadInspectTrigger(InspectTrigger trigger)
         {
             PlayerInspect.canInspect = trigger != null;
             PlayerInspect.loadedTrigger = trigger;

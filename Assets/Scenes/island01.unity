@@ -1367,7 +1367,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 215104466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -109.14, y: 3.6, z: -1.36}
+  m_LocalPosition: {x: -109, y: -1.46, z: -1.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 831693777}
@@ -15750,13 +15750,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b844982c600b4e218c14bd81f86a69a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAlive: 1
+  renderers: []
   mortalRigidbody: {fileID: 0}
   mortalCollider: {fileID: 0}
   health: 0
   maxHealth: 100
   animator: {fileID: 4126842284852280362}
   takeDamageSound: {fileID: 4126842284292317640}
-  damageColor: {r: 1, g: 0, b: 0, a: 1}
   bodyDecayTime: 10
   loot: {fileID: 2560821115435214408, guid: 130d4514c4c1c7245b8775a95945762b, type: 3}
   lootAmount: 25

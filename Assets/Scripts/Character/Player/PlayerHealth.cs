@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Character.Player
@@ -12,7 +13,7 @@ namespace Character.Player
 
         [Header("Health Settings")]
         public int maxHealth = 100;
-        public Slider healthSlider;
+        [FormerlySerializedAs("healthSlider")] public Slider healthBar;
         public Animator damageVignette;
 
         [Header("Death Settings")]
@@ -31,9 +32,8 @@ namespace Character.Player
 
         private void RefreshHUD()
         {
-            // Adjust slider health stat (decoration)
-            healthSlider.maxValue = maxHealth;
-            healthSlider.value = health;
+            healthBar.maxValue = maxHealth;
+            healthBar.value = health;
         }
 
         private void SetHealth(int amount)

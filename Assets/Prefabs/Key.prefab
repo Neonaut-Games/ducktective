@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 1379448344994998341}
   - component: {fileID: 1379448344995965573}
   - component: {fileID: 8394124047649860600}
-  - component: {fileID: 1379448344994034758}
   - component: {fileID: 7756726314238484575}
   - component: {fileID: 3252577287534043954}
+  - component: {fileID: 1061949861941468450}
   m_Layer: 0
   m_Name: Key
   m_TagString: Untagged
@@ -101,29 +101,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &1379448344994034758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1379448344994034757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52708f945bf8e4242829fed83111bf15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shouldRequireQuestLevel: 0
-  requiredQuestLevel: 0
-  dialogue:
-    messages:
-    - You THAT'S FOR TAKING MY MOM!
-    - You A cell key! I'm coming mom!
-    voices: 0000000000000000
-  shouldEnablePost: 0
-  shouldChangeQuestLevel: 0
-  rewardedQuestLevel: 0
-  rewardObject: {fileID: 0}
 --- !u!65 &7756726314238484575
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -150,3 +127,26 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.25
   m_Center: {x: 0.0000000066924346, y: -0.0000001981423, z: 0.0641602}
+--- !u!114 &1061949861941468450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379448344994034757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa3b7b7d230423b9369d94dc8b54485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shouldRequireQuestLevel: 0
+  requiredQuestLevel: 0
+  dialogue:
+    messages:
+    - You THAT'S FOR TAKING MY MOM!
+    - You A cell key! I'm coming mom!
+    voices: 0000000000000000
+  shouldEnablePost: 1
+  shouldChangeQuestLevel: 0
+  rewardedQuestLevel: 0
+  rewardObject: {fileID: 0}

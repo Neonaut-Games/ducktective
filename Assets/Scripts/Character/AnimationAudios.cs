@@ -9,6 +9,7 @@ namespace Character
     {
         public void Footstep() => AudioManager.Footstep();
         public void BodyFall() => AudioManager.BodyFall();
-        public void Thud() => AudioManager.Thud(); 
+        public void Thud() => AudioManager.Thud();
+        public void StompBoss() => AudioManager.StompBoss();
     }
 }

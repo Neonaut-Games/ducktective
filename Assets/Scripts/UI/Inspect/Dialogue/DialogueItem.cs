@@ -1,16 +1,21 @@
 using Character.Player;
-using UI.Inspect.Dialogue;
 using UnityEngine;
 
-namespace Items
+namespace UI.Inspect.Dialogue
 {
-    public class Feather : DialogueTrigger
+    public class DialogueItem : DialogueTrigger
     {
-        public void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter(Collider other)
         {
-            // If a player did not perform the event, ignore it.
             if (!other.CompareTag("Player")) return;
-            
+            LoadInspectTrigger(this);
+            Trigger();
+        }
+
+        public override void Trigger()
+        {
+            DuckLog.Normal("Dialogue was triggered by item " + gameObject.name);
+
             // If the player does not have the required level, ignore it.
             if (shouldRequireQuestLevel) if (PlayerLevel.questLevel != requiredQuestLevel) return;
             
@@ -20,5 +25,6 @@ namespace Items
             
             Destroy(gameObject);
         }
+
     }
 }

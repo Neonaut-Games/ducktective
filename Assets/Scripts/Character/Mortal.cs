@@ -9,8 +9,8 @@ namespace Character
     public abstract class Mortal : MonoBehaviour
     {
 
-        private SkinnedMeshRenderer[] _renderer;
-        
+        [HideInInspector] public bool isAlive = true;
+        [HideInInspector] public SkinnedMeshRenderer[] renderers;
         [HideInInspector] public Rigidbody mortalRigidbody;
         [HideInInspector] public CapsuleCollider mortalCollider;
 
@@ -36,10 +36,12 @@ namespace Character
             mortal entities into their respective variables. */
             mortalRigidbody = GetComponent<Rigidbody>();
             mortalCollider = GetComponent<CapsuleCollider>();
+            renderers = GetComponentsInChildren<SkinnedMeshRenderer>();
             
-            // Initialize renderer
-            _renderer = GetComponentsInChildren<SkinnedMeshRenderer>();
+            AfterStart();
         }
+
+        protected abstract void AfterStart();
 
         /* This function manages all damage taken by Mortal enemies
         (unless expanded upon or changed by a subclass) and returns a
@@ -50,6 +52,7 @@ namespace Character
             
             takeDamageSound.Play();
             StartCoroutine(DamageTint());
+            OnTakeDamage();
 
             /* If the mortal's health is == 0 or
             below, transition to the death function. */
@@ -61,13 +64,15 @@ namespace Character
             animator.SetTrigger(TakeHit);
             return false;
         }
+        
+        protected abstract void OnTakeDamage();
 
         private IEnumerator DamageTint()
         {
             yield return new WaitForSeconds(0.1f);
             
             var colors = new Dictionary<string, Color>();
-            foreach (var component in _renderer)
+            foreach (var component in renderers)
             {
                 var previousColor = component.material.color;
                 colors.Add(component.name, previousColor);
@@ -79,7 +84,7 @@ namespace Character
             
             yield return new WaitForSeconds(0.5f);
             
-            foreach (var component in _renderer)
+            foreach (var component in renderers)
             {
                 colors.TryGetValue(component.name, out var previousMaterial);
                 component.material.color = previousMaterial;
@@ -89,6 +94,8 @@ namespace Character
         private void Die()
         {
             DuckLog.Normal(gameObject.name + " was killed.");
+
+            isAlive = false;
             
             // Animate death 
             animator.SetTrigger(Die1);
@@ -99,8 +106,8 @@ namespace Character
             mortalRigidbody.isKinematic = true;
             mortalCollider.enabled = false;
             
-            StartCoroutine(BodyDecay());
             OnDeath();
+            StartCoroutine(BodyDecay());
         }
 
         protected abstract void OnDeath();

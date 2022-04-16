@@ -14,7 +14,7 @@ namespace UI.Inspect.Lock
 
         public void Awake()
         {
-            if (used) Destroy(gameObject);
+            if (!used) transform.SetPositionAndRotation(new Vector3(-109f, 3.5f, -1.35f), transform.rotation);
         }
         public override void Trigger()
         {

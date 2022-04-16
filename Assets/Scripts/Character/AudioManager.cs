@@ -24,6 +24,7 @@ namespace Character
         [Header("Boss-only Audios")]
         public AudioSource[] attackBoss;
         public AudioSource[] hurtBoss;
+        public AudioSource[] stompBoss;
         
         [Header("Dialogue-related Audios")]
         public AudioSource messageSound;
@@ -74,6 +75,7 @@ namespace Character
 
         public static void AttackBoss() => PlayRandomSoundFromArray(a.attackBoss);
         public static void HurtBoss() => PlayRandomSoundFromArray(a.hurtBoss);
+        public static void StompBoss() => PlayRandomSoundFromArray(a.stompBoss);
 
         #endregion
 
