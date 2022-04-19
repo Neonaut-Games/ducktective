@@ -9,7 +9,7 @@ namespace UI
         private void FixedUpdate()
         {
             var pos = transform.position;
-            transform.position = new Vector3(target.position.x, pos.y, pos.z);
+            transform.position = new Vector3(target.position.x, pos.y, target.position.z);
         }
     }
 }

@@ -1804,7 +1804,6 @@ GameObject:
   - component: {fileID: 299087157}
   - component: {fileID: 299087156}
   - component: {fileID: 299087155}
-  - component: {fileID: 299087154}
   m_Layer: 5
   m_Name: HouseCanvas
   m_TagString: Untagged
@@ -1812,18 +1811,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &299087154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 299087153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd353d1fc7c0a5f4080128b9a51bbef9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &299087155
 MonoBehaviour:
   m_ObjectHideFlags: 0
