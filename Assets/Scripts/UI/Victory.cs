@@ -1,5 +1,6 @@
 ﻿using Character.Player;
 using TMPro;
+using UI.Uninteractable;
 using UnityEngine;
 
 namespace UI
@@ -36,5 +37,8 @@ namespace UI
         }
 
         public void Exit() => Application.Quit();
+        
+        public void MainMenu() => FindObjectOfType<LoadingScreen>().Load("menu");
+        
     }
 }

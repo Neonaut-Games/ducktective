@@ -37,6 +37,9 @@ namespace Character.Player
 
         private void Update()
         {
+            // Set the player's movement state == 0 ("idle")
+            playerAnimator.SetInteger(MovementState, 0);
+            
             /* If the player is currently restricted in
             some way, ignore their movement entirely. */
             if (!characterController.enabled) return;
@@ -53,8 +56,6 @@ namespace Character.Player
 
         private void Move()
         {
-            // Set the player's movement state == 0 ("idle")
-            playerAnimator.SetInteger(MovementState, 0);
 
             // Get the movement inputs from the W, A, S, D, and space keys
             float horizontal = Input.GetAxisRaw("Horizontal");

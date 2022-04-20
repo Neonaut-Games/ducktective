@@ -1,14 +1,20 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace SceneManagement
 {
     public class PersistentObject : MonoBehaviour
     {
-        private static readonly Dictionary<string, PersistentObject> PersistentObjects =
+        public static Dictionary<string, PersistentObject> PersistentObjects = 
             new Dictionary<string, PersistentObject>();
 
-        void Awake()
+        private void Start()
+        {
+            SceneManager.activeSceneChanged += OnActiveSceneChanged;
+        }
+        
+        private void Awake()
         {
             if (PersistentObjects.ContainsKey(gameObject.name))
             {
@@ -28,6 +34,15 @@ namespace SceneManagement
                 DontDestroyOnLoad(gameObject);
             }
 
+        }
+        
+        private void OnActiveSceneChanged(Scene current, Scene next)
+        {
+            var sceneName = SceneManager.GetActiveScene().name;
+            if (!sceneName.ToLower().Contains("house05")) return;
+            
+            SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetActiveScene());
+            PersistentObjects.Remove(gameObject.name);
         }
     
     }
