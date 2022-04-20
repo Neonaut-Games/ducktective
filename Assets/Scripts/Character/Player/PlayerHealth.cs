@@ -8,7 +8,7 @@ namespace Character.Player
 {
     public class PlayerHealth : MonoBehaviour
     {
-        private PlayerTPController _playerTp;
+        private PlayerController _player;
         public static int health = 100;
 
         [Header("Health Settings")]
@@ -27,7 +27,7 @@ namespace Character.Player
         private void Start()
         {
             RefreshHUD();
-            _playerTp = FindObjectOfType<PlayerTPController>();
+            _player = FindObjectOfType<PlayerController>();
         }
 
         private void RefreshHUD()
@@ -80,11 +80,11 @@ namespace Character.Player
             DuckLog.Normal("The player has died.");
 
             // Restrict player from moving around
-            _playerTp.characterController.enabled = false;
+            _player.characterController.enabled = false;
             PlayerInspect.movementRestricted = true;
 
             // Start death animation
-            _playerTp.playerAnimator.SetBool(IsAlive, false);
+            _player.playerAnimator.SetBool(IsAlive, false);
             
             // Enable game over UI
             gameOverUI.SetActive(true);
@@ -115,7 +115,7 @@ namespace Character.Player
 
             isAlive = true;
             // End death animation
-            _playerTp.playerAnimator.SetBool(IsAlive, true);
+            _player.playerAnimator.SetBool(IsAlive, true);
             
             // Disable game over UI
             gameOverUI.SetActive(false);
@@ -125,7 +125,7 @@ namespace Character.Player
             gameObject.transform.SetPositionAndRotation(closestPosition.position, gameObject.transform.rotation);
 
             // Un-restrict player from moving around
-            _playerTp.characterController.enabled = true;
+            _player.characterController.enabled = true;
             PlayerInspect.movementRestricted = false;
             
             // Set the players health back to the max

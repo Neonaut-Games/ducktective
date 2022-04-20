@@ -53,7 +53,7 @@ namespace SceneManagement
             }
             
             // Disable the character controller (temporarily)
-            var player = FindObjectOfType<PlayerTPController>();
+            var player = FindObjectOfType<PlayerController>();
             player.characterController.enabled = false;
         
             // Prepare destination position

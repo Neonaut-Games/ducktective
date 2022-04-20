@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 
 namespace Character.Player
 {
-    public class PlayerTPController : MonoBehaviour
+    public class PlayerController : MonoBehaviour
     {
         [FormerlySerializedAs("_characterController")] public CharacterController characterController;
         [Header("Camera Settings")] public Transform playerCamera;
@@ -37,6 +37,13 @@ namespace Character.Player
 
         private void Update()
         {
+            /* If the player is currently restricted in
+            some way, ignore their movement entirely. */
+            if (!characterController.enabled) return;
+            if (PlayerInspect.movementRestricted) return;
+            if (!PlayerHealth.isAlive) return;
+            if (PauseMenu.isPaused) return;
+            
             Move();
             Gravity();
             Combat();
@@ -48,12 +55,6 @@ namespace Character.Player
         {
             // Set the player's movement state == 0 ("idle")
             playerAnimator.SetInteger(MovementState, 0);
-
-            /* If the player is currently restricted in
-            some way, ignore their movement entirely. */
-            if (PlayerInspect.movementRestricted) return;
-            if (!PlayerHealth.isAlive) return;
-            if (PauseMenu.isPaused) return;
 
             // Get the movement inputs from the W, A, S, D, and space keys
             float horizontal = Input.GetAxisRaw("Horizontal");
@@ -104,25 +105,12 @@ namespace Character.Player
 
         private void Combat()
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
-            {
-                if (PlayerInspect.movementRestricted) return;
-                if (!PlayerHealth.isAlive) return;
-                if (PauseMenu.isPaused) return;
-                StartCoroutine(Attack());
-            }
+            // Initiate an attack
+            if (Input.GetKeyDown(KeyCode.Mouse0)) StartCoroutine(Attack());
             
-            if (Input.GetKey(KeyCode.Mouse1))
-            {
-                if (PlayerInspect.movementRestricted) return;
-                if (!PlayerHealth.isAlive) return;
-                if (PauseMenu.isPaused) return;
-                attackArrow.SetActive(true);
-            }
-            else if (attackArrow.activeSelf)
-            {
-                attackArrow.SetActive(false);
-            }
+            // Show and/or hide attack indicator
+            if (Input.GetKey(KeyCode.Mouse1)) attackArrow.SetActive(true);
+            else if (attackArrow.activeSelf) attackArrow.SetActive(false);
         }
 
         private IEnumerator Attack()
@@ -134,7 +122,7 @@ namespace Character.Player
             playerAnimator.SetTrigger(Attacking);
 
             // Deal damage at the transform point
-            Collider[] results = Physics.OverlapSphere(damagePoint.position, attackRange, damageableLayer.value);
+            var results = Physics.OverlapSphere(damagePoint.position, attackRange, damageableLayer.value);
             if (results.Length > 0)
             {
                 PlayerStats.totalHits++;
