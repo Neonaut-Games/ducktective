@@ -76,9 +76,12 @@ namespace UI.Menus
                     return;
                 }
 
-                if (!pauseMenu.activeSelf) Pause();
-                RevealSectionQuest();
-                
+                if (!questMenu.activeSelf)
+                {
+                    Pause();
+                    RevealSectionQuest();
+                } else Resume();
+
             }
             
             if (Input.GetKeyDown(KeyCode.R))
@@ -89,8 +92,11 @@ namespace UI.Menus
                     return;
                 }
 
-                if (!pauseMenu.activeSelf) Pause();
-                RevealSectionTickets();
+                if (!ticketMenu.activeSelf)
+                {
+                    Pause();
+                    RevealSectionTickets();
+                } else Resume();
 
             }
             
@@ -102,8 +108,11 @@ namespace UI.Menus
                     return;
                 }
 
-                if (!pauseMenu.activeSelf) Pause();
-                RevealSectionMinimap();
+                if (!minimapMenu.activeSelf)
+                {
+                    Pause();
+                    RevealSectionMinimap();
+                } else Resume();
 
             }
         }
@@ -119,6 +128,7 @@ namespace UI.Menus
 
         public void Resume()
         {
+            RevealSectionMain();
             isPaused = false;
             AudioManager.Pause();
             pauseMenu.SetActive(false);

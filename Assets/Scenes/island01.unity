@@ -2898,6 +2898,63 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &563601278
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6032814883673558259, guid: d0ebde99279bb344b95db6b16e7f9b3a, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032814883673558259, guid: d0ebde99279bb344b95db6b16e7f9b3a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 106.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032814883673558259, guid: d0ebde99279bb344b95db6b16e7f9b3a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.521
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032814883673558259, guid: d0ebde99279bb344b95db6b16e7f9b3a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -60.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032814883673558259, guid: d0ebde99279bb344b95db6b16e7f9b3a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8516663
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032814883673558259, guid: d0ebde99279bb344b95db6b16e7f9b3a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032814883673558259, guid: d0ebde99279bb344b95db6b16e7f9b3a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.52408457
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032814883673558259, guid: d0ebde99279bb344b95db6b16e7f9b3a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032814883673558259, guid: d0ebde99279bb344b95db6b16e7f9b3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032814883673558259, guid: d0ebde99279bb344b95db6b16e7f9b3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -63.213
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032814883673558259, guid: d0ebde99279bb344b95db6b16e7f9b3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032814883673558268, guid: d0ebde99279bb344b95db6b16e7f9b3a, type: 3}
+      propertyPath: m_Name
+      value: NPC
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d0ebde99279bb344b95db6b16e7f9b3a, type: 3}
 --- !u!1001 &568538120
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5382,6 +5439,77 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4416177195472200, guid: 37338ca5476fa424c932cea9208100d3, type: 3}
   m_PrefabInstance: {fileID: 921018848}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &951559677
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 951559680}
+  - component: {fileID: 951559679}
+  - component: {fileID: 951559678}
+  m_Layer: 0
+  m_Name: DialogueTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &951559678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951559677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf66f6f01881714abfdd2067824c3d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shouldRequireQuestLevel: 0
+  requiredQuestLevel: 0
+  dialogue:
+    messages:
+    - Bruce There's something fishy up with this town. That old guy Mulligan's got
+      way too much spending going on to be ethical.
+    - You Mulligan? What do you mean?
+    - Bruce He's been spending millions for that bunker over there behind that hill.
+      It's got to have a load of cash in it.
+    voices: 020000000000000002000000
+  shouldEnablePost: 1
+  shouldChangeQuestLevel: 0
+  rewardedQuestLevel: 0
+  rewardObject: {fileID: 0}
+--- !u!65 &951559679
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951559677}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &951559680
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951559677}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 105.9, y: -0.33, z: -60.15}
+  m_LocalScale: {x: 8.412973, y: 1.4941651, z: 11.15225}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1004018914
 PrefabInstance:
   m_ObjectHideFlags: 0
