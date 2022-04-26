@@ -60,7 +60,7 @@ namespace UI.Menus
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                if (LoadingScreen.isLoading)
+                if (LoadingScreen.isLoading || !PlayerHealth.isAlive)
                 {
                     AudioManager.Decline();
                     return;
@@ -200,6 +200,7 @@ namespace UI.Menus
             PlayerHealth.health = 100;
             PlayerLevel.questLevel = 0;
             PlayerStats.Reset();
+            PlayerInspect.EndInspect();
             
             foreach (var obj in PersistentObject.PersistentObjects)
             {
