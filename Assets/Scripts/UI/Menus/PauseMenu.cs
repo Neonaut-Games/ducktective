@@ -3,9 +3,11 @@ using System.Text;
 using System.Web;
 using Character;
 using Character.Player;
+using SceneManagement;
 using TMPro;
 using UI.Uninteractable;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace UI.Menus
 {
@@ -190,6 +192,22 @@ namespace UI.Menus
         public void RevealSectionMain()
         {
             RevealSection(mainMenu);
+        }
+        
+        public void MainMenu()
+        {
+            // Reset player stats
+            PlayerHealth.health = 100;
+            PlayerLevel.questLevel = 0;
+            PlayerStats.Reset();
+            
+            foreach (var obj in PersistentObject.PersistentObjects)
+            {
+                SceneManager.MoveGameObjectToScene(obj.Value.gameObject, SceneManager.GetActiveScene());
+            }
+            PersistentObject.PersistentObjects.Clear();
+            FindObjectOfType<LoadingScreen>().Load("menu");
+            Resume();
         }
         
         public void QuitGame()

@@ -14,6 +14,14 @@ namespace Character.Player
         public static int totalHits;
         public static int totalMisses;
 
+        public static void Reset()
+        {
+            totalKills = 0;
+            totalDeaths = 0;
+            totalHits = 0;
+            totalMisses = 0;
+        }
+        
         public static float GetKdr()
         {
             if (totalDeaths == 0) return totalKills;
