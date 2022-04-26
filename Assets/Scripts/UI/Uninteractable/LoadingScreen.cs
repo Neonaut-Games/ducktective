@@ -36,6 +36,9 @@ namespace UI.Uninteractable
             yield return new WaitForSeconds(0.25f); 
             
             _animator.SetTrigger(Stop);
+            
+            // Wait until animator is done for pausing to be allowed
+            yield return new WaitForSeconds(1.0f); 
             isLoading = false;
         }
         
